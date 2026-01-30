@@ -10,7 +10,8 @@
     "lint:fix": "biome lint --write ./lib ./app ./components",
     "format": "biome format --write ./lib ./app ./components",
     "check": "biome check ./lib ./app ./components",
-    "check:fix": "biome check --write ./lib ./app ./components"
+    "check:fix": "biome check --write ./lib ./app ./components",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.2",
