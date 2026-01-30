@@ -11,7 +11,7 @@ export function TechGrid(): React.ReactElement {
   const { skills } = content;
 
   return (
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {skillCategories.map((category) => {
         const categorySkills = skills.filter((skill) => skill.category === category);
 
@@ -23,12 +23,12 @@ export function TechGrid(): React.ReactElement {
                 {t(category)}
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
+            <CardContent className="pt-0 sm:pt-0">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {categorySkills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground"
+                    className="inline-flex items-center rounded-full bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground sm:px-3 sm:py-1 sm:text-sm"
                   >
                     {skill.name}
                   </span>
