@@ -13,7 +13,7 @@
     "aboutMe": "Über mich",
     "getInTouch": "Kontakt",
     "downloadCV": "Lebenslauf",
-    "taglineExtended": "Ehemaliger CTO, jetzt praxisorientierter Ingenieur. Aufbau und Skalierung einer digitalen Gesundheitsplattform vom Startup bis zur Bedienung tausender Nutzer täglich. Zusammenarbeit mit DFKI, Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere an innovativen Projekten."
+    "taglineExtended": "Zuvor CTO eines Healthcare-Startups, jetzt fokussiert auf technische Umsetzung. Erfahrung in Gesundheitswesen, KI-Forschung (DFKI), Entrepreneurship (Data4Life am Hasso-Plattner-Institut) und Enterprise-Systemen (Fraunhofer, John Deere)."
   },
   "about": {
     "title": "Über mich",
@@ -56,7 +56,7 @@
     "highlight3": "Einrichtung von API-Management mit Gravitee für Developer Experience, Governance und externe Partnerintegrationen",
     "highlight4": "Architektur von Microservices-Infrastruktur auf GCP, die mit dem signifikanten Geschäftswachstum skalierte",
     "highlight5": "Integration von Zahlungssystemen (PayPal, Adyen) und Logistik-APIs (Deutsche Post), die neue Einnahmequellen erschlossen",
-    "skills": "Mein technisches Profil umfasst GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich bin es gewohnt, in agilen Teams zu arbeiten, schnelle Entscheidungen unter Unsicherheit zu treffen und komplexe technische Herausforderungen in ressourcenbeschränkten Umgebungen zu lösen.",
+    "skills": "Mein technisches Profil umfasst GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich setze aktiv KI-gestutzte Entwicklungstools ein, um Prototyping zu beschleunigen und hohe Geschwindigkeit vom Konzept bis zur Produktion zu halten. Ich bin es gewohnt, in agilen Teams zu arbeiten, schnelle Entscheidungen unter Unsicherheit zu treffen und komplexe technische Herausforderungen in ressourcenbeschränkten Umgebungen zu lösen.",
     "closing": "Ich freue mich auf die Möglichkeit, meine Startup-Erfahrung und nachgewiesene Erfolgsbilanz im Bereich Wachstum in Ihr Team einzubringen. Ich freue mich darauf, zu besprechen, wie ich zu Ihrem Erfolg beitragen kann.",
     "signOff": "Mit freundlichen Grüßen,"
   },

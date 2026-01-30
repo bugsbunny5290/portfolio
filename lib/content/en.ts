@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
-  tagline: "Building scalable systems at the intersection of cloud architecture and platform engineering",
+  tagline: "Driving technical strategy and building systems that scale from zero to millions",
   location: "Heidelberg, Germany",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
@@ -9,24 +9,24 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Staff Engineer with 8+ years of experience building and scaling digital systems across healthcare, gaming, and AI research domains. Former CTO at DrAnsay AU-Schein GmbH, now focused on hands-on platform engineering. Proven track record of growing startups from early-stage to established businesses. Collaborated with renowned institutions including DFKI (German AI Research Center), Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere. Expert in cloud architecture, Kubernetes, and infrastructure as code.`;
+export const professionalSummary = `Staff Engineer with 8+ years of experience driving technical strategy and building systems that scale. I specialize in solving complex, cross-cutting problems - from architecting cloud infrastructure to defining engineering standards that elevate entire teams. Former CTO at DrAnsay AU-Schein GmbH where I grew the platform from zero to 2M+ users and scaled revenue from EUR 15k to EUR 20M. I bridge the gap between business goals and technical execution, making high-impact architectural decisions while staying hands-on. Collaborated with DFKI, Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere. Expert in GCP, Kubernetes, GitOps, and infrastructure as code.`;
 
 export const whatIDo = [
   {
+    title: "Technical Strategy",
+    description: "Defining architecture roadmaps, evaluating build-vs-buy decisions, and making high-impact technical choices that align with business goals.",
+  },
+  {
     title: "Platform Engineering",
-    description: "Building and maintaining cloud infrastructure, CI/CD pipelines, and developer tooling that enables teams to ship faster.",
+    description: "Building cloud infrastructure, CI/CD pipelines, and developer platforms that enable teams to ship faster and more reliably.",
   },
   {
-    title: "API Design & Architecture",
-    description: "Designing robust, scalable APIs and microservices. Integrating third-party systems like payment providers and logistics platforms.",
+    title: "AI-Assisted Development",
+    description: "Leveraging AI tools for rapid concept-to-solution prototyping. Accelerating development cycles while maintaining code quality and architectural integrity.",
   },
   {
-    title: "Technical Leadership",
-    description: "Consulting engineers on architecture decisions, conducting code reviews, and mentoring team members on best practices.",
-  },
-  {
-    title: "Full-Stack Development",
-    description: "End-to-end feature development from database design to frontend implementation when needed.",
+    title: "Hands-On Execution",
+    description: "Staying close to the code - architecting systems, writing critical path code, and unblocking teams on tough technical challenges.",
   },
 ];
 
@@ -171,6 +171,8 @@ export const skills = [
   { name: "Python", category: "languages" as const },
   { name: "SQL", category: "languages" as const },
   { name: "Bash", category: "languages" as const },
+  { name: "AI-Assisted Development", category: "devops" as const },
+  { name: "Cursor/Copilot", category: "devops" as const },
 ];
 
 export const navLinks = [
