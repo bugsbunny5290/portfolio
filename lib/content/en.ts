@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Pranav Gautam",
-  title: "Senior Software Engineer",
+  title: "Staff Engineer",
   tagline: "Building scalable systems at the intersection of cloud architecture and platform engineering",
   location: "Heidelberg, Germany",
   email: "pranav.gautam.pro@gmail.com",
@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Senior Software Engineer with 8+ years of experience building and scaling digital systems across healthcare, gaming, and AI research domains. Former CTO at DrAnsay AU-Schein GmbH, now focused on hands-on platform engineering. Proven track record of growing startups from early-stage to established businesses. Collaborated with renowned institutions including DFKI (German AI Research Center), Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere. Expert in cloud architecture, Kubernetes, and infrastructure as code.`;
+export const professionalSummary = `Staff Engineer with 8+ years of experience building and scaling digital systems across healthcare, gaming, and AI research domains. Former CTO at DrAnsay AU-Schein GmbH, now focused on hands-on platform engineering. Proven track record of growing startups from early-stage to established businesses. Collaborated with renowned institutions including DFKI (German AI Research Center), Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere. Expert in cloud architecture, Kubernetes, and infrastructure as code.`;
 
 export const whatIDo = [
   {
@@ -33,7 +33,7 @@ export const whatIDo = [
 export const experiences = [
   {
     company: "DrAnsay AU-Schein GmbH",
-    role: "Senior Software Engineer",
+    role: "Staff Engineer",
     location: "Hamburg, Germany (Remote from Heidelberg)",
     startDate: "Dec 2019",
     endDate: "Present",

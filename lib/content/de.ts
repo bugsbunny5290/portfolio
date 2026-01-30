@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Pranav Gautam",
-  title: "Senior Software Engineer",
+  title: "Staff Engineer",
   tagline: "Entwicklung skalierbarer Systeme an der Schnittstelle von Cloud-Architektur und Platform Engineering",
   location: "Heidelberg, Deutschland",
   email: "pranav.gautam.pro@gmail.com",
@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Senior Software Engineer mit 8+ Jahren Erfahrung im Aufbau und der Skalierung digitaler Systeme in den Bereichen Gesundheitswesen, Gaming und KI-Forschung. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, jetzt fokussiert auf praxisorientiertes Platform Engineering. Nachgewiesene Erfolgsbilanz beim Wachstum von Startups vom Frühstadium zu etablierten Unternehmen. Zusammenarbeit mit renommierten Institutionen wie DFKI (Deutsches Forschungszentrum für Künstliche Intelligenz), Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte für Cloud-Architektur, Kubernetes und Infrastructure as Code.`;
+export const professionalSummary = `Staff Engineer mit 8+ Jahren Erfahrung im Aufbau und der Skalierung digitaler Systeme in den Bereichen Gesundheitswesen, Gaming und KI-Forschung. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, jetzt fokussiert auf praxisorientiertes Platform Engineering. Nachgewiesene Erfolgsbilanz beim Wachstum von Startups vom Frühstadium zu etablierten Unternehmen. Zusammenarbeit mit renommierten Institutionen wie DFKI (Deutsches Forschungszentrum für Künstliche Intelligenz), Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte für Cloud-Architektur, Kubernetes und Infrastructure as Code.`;
 
 export const whatIDo = [
   {
@@ -33,7 +33,7 @@ export const whatIDo = [
 export const experiences = [
   {
     company: "DrAnsay AU-Schein GmbH",
-    role: "Senior Software Engineer",
+    role: "Staff Engineer",
     location: "Hamburg, Deutschland (Remote aus Heidelberg)",
     startDate: "Dez 2019",
     endDate: "Heute",
