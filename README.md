@@ -4,7 +4,7 @@ Personal portfolio and CV website built with Next.js 16, showcasing professional
 
 ## Live Demo
 
-[pranavgautam.dev](https://pranavgautam.dev) (coming soon)
+[pranavgautam.me](https://pranavgautam.me)
 
 ## Features
 
