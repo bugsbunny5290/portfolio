@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pranav Gautam - Portfolio
+
+Personal portfolio and CV website built with Next.js 16, showcasing professional experience, skills, and providing downloadable CV in multiple formats.
+
+## Live Demo
+
+[pranavgautam.dev](https://pranavgautam.dev) (coming soon)
+
+## Features
+
+- **Bilingual Support** - Full English and German translations with language toggle
+- **Dynamic CV Generation** - Download CV as PDF or Word document in both languages
+- **Dark/Light Mode** - System preference detection with manual toggle
+- **Responsive Design** - Mobile-first approach, works on all devices
+- **ATS-Friendly CV** - Generated CVs optimized for Applicant Tracking Systems
+- **Accessible** - WCAG compliant with proper ARIA labels and semantic HTML
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript (strict mode) |
+| Styling | Tailwind CSS 4 |
+| PDF Generation | @react-pdf/renderer |
+| Word Generation | docx |
+| Theme | next-themes |
+| Linting | Biome |
+| CI/CD | GitHub Actions + Vercel |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 22+
+- npm 10+
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone git@github.com:bugsbunny5290/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run Biome linter |
+| `npm run lint:fix` | Auto-fix lint issues |
+| `npm run format` | Format code with Biome |
+| `npm run check` | Run all Biome checks |
+| `npm run typecheck` | TypeScript type checking |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+portfolio/
+├── app/                    # Next.js App Router pages
+│   ├── api/cv/            # CV generation API route
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── skills/            # Skills page
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── globals.css        # Global styles + Tailwind
+├── components/
+│   ├── about/             # About page components
+│   ├── contact/           # Contact page components
+│   ├── home/              # Home page components
+│   ├── layout/            # Header, Footer, Navigation
+│   ├── skills/            # Skills page components
+│   ├── ui/                # Reusable UI components
+│   └── providers.tsx      # Theme + Language providers
+├── lib/
+│   ├── data.ts            # English content/data
+│   ├── data-de.ts         # German content/data
+│   ├── cv-template.tsx    # PDF CV template
+│   ├── cv-docx.ts         # Word CV generator
+│   ├── language-context.tsx # i18n context
+│   └── utils.ts           # Utility functions
+├── .github/workflows/     # CI pipeline
+└── biome.json             # Linter configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## CV Download API
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The CV is generated dynamically via API routes:
 
-## Deploy on Vercel
+```
+GET /api/cv?lang=en&format=pdf   # English PDF
+GET /api/cv?lang=de&format=pdf   # German PDF
+GET /api/cv?lang=en&format=docx  # English Word
+GET /api/cv?lang=de&format=docx  # German Word
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is configured for deployment on Vercel:
+
+1. Push to GitHub
+2. Import repository in Vercel
+3. Deploy automatically
+
+GitHub Actions runs lint and type checks on every PR.
+
+## License
+
+MIT
+
+## Contact
+
+- Email: pranav.gautam.pro@gmail.com
+- GitHub: [@bugsbunny5290](https://github.com/bugsbunny5290)
+- LinkedIn: [pranavgautam](https://linkedin.com/in/pranavgautam)
