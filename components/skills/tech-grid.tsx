@@ -1,25 +1,26 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 import { useLanguage } from "@/lib/language-context";
+import { skillCategories, type SkillCategory } from "@/lib/content";
 
 export function TechGrid(): React.ReactElement {
-  const { data } = useLanguage();
-  const { skills, skillCategories } = data;
-  const categories = Object.keys(skillCategories) as Array<keyof typeof skillCategories>;
+  const t = useTranslations("categories");
+  const { content } = useLanguage();
+  const { skills } = content;
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {categories.map((category) => {
+      {skillCategories.map((category) => {
         const categorySkills = skills.filter((skill) => skill.category === category);
-        const categoryInfo = skillCategories[category];
 
         return (
           <Card key={category}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CategoryIcon icon={categoryInfo.icon} />
-                {categoryInfo.label}
+                <CategoryIcon icon={category} />
+                {t(category)}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -42,11 +43,11 @@ export function TechGrid(): React.ReactElement {
 }
 
 interface CategoryIconProps {
-  icon: string;
+  icon: SkillCategory;
 }
 
 function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
-  const iconMap: Record<string, React.ReactElement> = {
+  const iconMap: Record<SkillCategory, React.ReactElement> = {
     cloud: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,7 @@ function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
         <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
       </svg>
     ),
-    server: (
+    backend: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -82,7 +83,7 @@ function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
         <line x1="6" x2="6.01" y1="18" y2="18" />
       </svg>
     ),
-    layout: (
+    frontend: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -100,7 +101,7 @@ function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
         <line x1="9" x2="9" y1="21" y2="9" />
       </svg>
     ),
-    git: (
+    devops: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -118,7 +119,7 @@ function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
         <line x1="15" x2="21" y1="12" y2="12" />
       </svg>
     ),
-    code: (
+    languages: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -137,5 +138,5 @@ function CategoryIcon({ icon }: CategoryIconProps): React.ReactElement {
     ),
   };
 
-  return iconMap[icon] || iconMap.code;
+  return iconMap[icon];
 }

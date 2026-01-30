@@ -22,6 +22,7 @@ Personal portfolio and CV website built with Next.js 16, showcasing professional
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript (strict mode) |
 | Styling | Tailwind CSS 4 |
+| i18n | next-intl |
 | PDF Generation | @react-pdf/renderer |
 | Word Generation | docx |
 | Theme | next-themes |
@@ -69,7 +70,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ```
 portfolio/
 ├── app/                    # Next.js App Router pages
-│   ├── api/cv/            # CV generation API route
+│   ├── api/
+│   │   ├── cv/            # CV generation API
+│   │   └── cover-letter/  # Cover letter generation API
 │   ├── about/             # About page
 │   ├── contact/           # Contact page
 │   ├── skills/            # Skills page
@@ -84,26 +87,45 @@ portfolio/
 │   ├── skills/            # Skills page components
 │   ├── ui/                # Reusable UI components
 │   └── providers.tsx      # Theme + Language providers
+├── messages/
+│   ├── en.json            # English UI translations
+│   └── de.json            # German UI translations
+├── i18n/
+│   └── request.ts         # next-intl configuration
 ├── lib/
-│   ├── data.ts            # English content/data
-│   ├── data-de.ts         # German content/data
+│   ├── content/           # Localized content data
+│   │   ├── en.ts          # English content (experiences, skills)
+│   │   ├── de.ts          # German content
+│   │   └── index.ts       # Content exports
 │   ├── cv-template.tsx    # PDF CV template
 │   ├── cv-docx.ts         # Word CV generator
-│   ├── language-context.tsx # i18n context
+│   ├── cover-letter-template.tsx  # PDF cover letter
+│   ├── cover-letter-docx.ts       # Word cover letter
+│   ├── language-context.tsx # Language state context
+│   ├── i18n.ts            # Locale types
 │   └── utils.ts           # Utility functions
 ├── .github/workflows/     # CI pipeline
 └── biome.json             # Linter configuration
 ```
 
-## CV Download API
+## Document Download API
 
-The CV is generated dynamically via API routes:
+CV and Cover Letter are generated dynamically via API routes:
 
+### CV / Resume
 ```
 GET /api/cv?lang=en&format=pdf   # English PDF
 GET /api/cv?lang=de&format=pdf   # German PDF
 GET /api/cv?lang=en&format=docx  # English Word
 GET /api/cv?lang=de&format=docx  # German Word
+```
+
+### Cover Letter
+```
+GET /api/cover-letter?lang=en&format=pdf   # English PDF
+GET /api/cover-letter?lang=de&format=pdf   # German PDF
+GET /api/cover-letter?lang=en&format=docx  # English Word
+GET /api/cover-letter?lang=de&format=docx  # German Word
 ```
 
 ## Deployment

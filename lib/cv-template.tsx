@@ -1,6 +1,6 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
-import * as dataEn from "./data";
-import * as dataDe from "./data-de";
+import { getContent, skillCategories } from "./content";
+import type { Locale } from "./i18n";
 
 const styles = StyleSheet.create({
   page: {
@@ -131,41 +131,50 @@ const styles = StyleSheet.create({
 });
 
 interface CVDocumentProps {
-  language: "en" | "de";
+  language: Locale;
 }
 
+const categoryLabels = {
+  en: {
+    cloud: "Cloud & Infrastructure",
+    backend: "Backend",
+    frontend: "Frontend",
+    devops: "DevOps",
+    languages: "Languages",
+  },
+  de: {
+    cloud: "Cloud & Infrastruktur",
+    backend: "Backend",
+    frontend: "Frontend",
+    devops: "DevOps",
+    languages: "Programmiersprachen",
+  },
+};
+
 export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
-  const data = language === "de" ? dataDe : dataEn;
-  const { personalInfo, professionalSummary, experiences, education, skills, skillCategories } =
-    data;
+  const content = getContent(language);
+  const { personalInfo, professionalSummary, experiences, education, skills } = content;
 
   const sectionTitles =
     language === "de"
       ? {
-          summary: "Zusammenfassung",
-          experience: "Berufserfahrung",
-          education: "Ausbildung",
-          skills: "Technische Fähigkeiten",
-        }
+        summary: "Zusammenfassung",
+        experience: "Berufserfahrung",
+        education: "Ausbildung",
+        skills: "Technische Fähigkeiten",
+      }
       : {
-          summary: "Professional Summary",
-          experience: "Experience",
-          education: "Education",
-          skills: "Technical Skills",
-        };
+        summary: "Professional Summary",
+        experience: "Experience",
+        education: "Education",
+        skills: "Technical Skills",
+      };
 
-  const groupedSkills = Object.keys(skillCategories).reduce(
-    (acc, category) => {
-      acc[category] = skills.filter((s) => s.category === category);
-      return acc;
-    },
-    {} as Record<string, typeof skills>,
-  );
+  const labels = categoryLabels[language];
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        {/* Header */}
         <View style={styles.header}>
           <Text style={styles.name}>{personalInfo.name}</Text>
           <Text style={styles.title}>{personalInfo.title}</Text>
@@ -176,13 +185,11 @@ export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
           </View>
         </View>
 
-        {/* Summary */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{sectionTitles.summary}</Text>
           <Text style={styles.summary}>{professionalSummary}</Text>
         </View>
 
-        {/* Experience */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{sectionTitles.experience}</Text>
           {experiences.map((exp) => (
@@ -208,7 +215,6 @@ export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
           ))}
         </View>
 
-        {/* Education */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{sectionTitles.education}</Text>
           {education.map((edu) => (
@@ -226,23 +232,25 @@ export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
           ))}
         </View>
 
-        {/* Skills */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{sectionTitles.skills}</Text>
-          {Object.entries(groupedSkills).map(([category, categorySkills]) => (
-            <View key={category} style={styles.skillCategory}>
-              <Text style={styles.skillCategoryTitle}>
-                {skillCategories[category as keyof typeof skillCategories].label}:
-              </Text>
-              <View style={styles.skillsContainer}>
-                {categorySkills.map((skill) => (
-                  <Text key={skill.name} style={styles.skillTag}>
-                    {skill.name}
-                  </Text>
-                ))}
+          {skillCategories.map((category) => {
+            const categorySkills = skills.filter((s) => s.category === category);
+            return (
+              <View key={category} style={styles.skillCategory}>
+                <Text style={styles.skillCategoryTitle}>
+                  {labels[category as keyof typeof labels]}:
+                </Text>
+                <View style={styles.skillsContainer}>
+                  {categorySkills.map((skill) => (
+                    <Text key={skill.name} style={styles.skillTag}>
+                      {skill.name}
+                    </Text>
+                  ))}
+                </View>
               </View>
-            </View>
-          ))}
+            );
+          })}
         </View>
       </Page>
     </Document>

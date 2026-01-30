@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useLanguage } from "@/lib/language-context";
 import { cn } from "@/lib/utils";
 
 export function MobileNav(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
-  const { data } = useLanguage();
+  const t = useTranslations("nav");
+  const { content } = useLanguage();
 
   function toggleMenu(): void {
     setIsOpen(!isOpen);
@@ -25,7 +27,7 @@ export function MobileNav(): React.ReactElement {
         className={cn(
           "inline-flex h-9 w-9 items-center justify-center rounded-md border border-border",
           "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
-          "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
         )}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
@@ -76,18 +78,18 @@ export function MobileNav(): React.ReactElement {
           <nav
             className={cn(
               "fixed right-0 top-16 z-50 w-full max-w-xs border-l border-border bg-background p-6",
-              "h-[calc(100vh-4rem)] overflow-y-auto",
+              "h-[calc(100vh-4rem)] overflow-y-auto"
             )}
           >
             <ul className="flex flex-col gap-4">
-              {data.navLinks.map((link) => (
+              {content.navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={closeMenu}
                     className="block py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
                   >
-                    {link.label}
+                    {t(link.label)}
                   </Link>
                 </li>
               ))}

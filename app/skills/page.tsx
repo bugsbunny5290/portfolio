@@ -1,15 +1,15 @@
 "use client";
 
-import { TechGrid } from "@/components/skills/tech-grid";
+import { useTranslations } from "next-intl";
 import { Section, SectionHeader } from "@/components/ui";
-import { useLanguage } from "@/lib/language-context";
+import { TechGrid } from "@/components/skills/tech-grid";
 
 export default function SkillsPage(): React.ReactElement {
-  const { data } = useLanguage();
+  const t = useTranslations("skills");
 
   return (
     <Section>
-      <SectionHeader title={data.ui.skills.title} description={data.ui.skills.subtitle} />
+      <SectionHeader title={t("title")} description={t("subtitle")} />
       <TechGrid />
     </Section>
   );

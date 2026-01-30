@@ -1,8 +1,7 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Senior Software Engineer",
-  tagline:
-    "Building scalable systems at the intersection of cloud architecture and platform engineering",
+  tagline: "Building scalable systems at the intersection of cloud architecture and platform engineering",
   location: "Heidelberg, Germany",
   email: "pranav.gautam.pro@gmail.com",
   github: "https://github.com/bugsbunny5290",
@@ -11,76 +10,26 @@ export const personalInfo = {
 
 export const professionalSummary = `Senior Software Engineer at DrAnsay AU-Schein GmbH with 7 years of experience building and scaling digital healthcare systems. Evolved from CTO to hands-on platform engineering role, focusing on cloud architecture, infrastructure as code, and technical leadership. Passionate about building robust, maintainable systems that deliver real value.`;
 
-export interface Skill {
-  name: string;
-  category: "cloud" | "backend" | "frontend" | "devops" | "languages";
-}
-
-export const skills: Skill[] = [
-  { name: "GCP", category: "cloud" },
-  { name: "Firebase", category: "cloud" },
-  { name: "AWS", category: "cloud" },
-  { name: "Pulumi", category: "devops" },
-  { name: "Docker", category: "devops" },
-  { name: "CI/CD", category: "devops" },
-  { name: "GitHub Actions", category: "devops" },
-  { name: "NestJS", category: "backend" },
-  { name: "Node.js", category: "backend" },
-  { name: "Express", category: "backend" },
-  { name: "PostgreSQL", category: "backend" },
-  { name: "Next.js", category: "frontend" },
-  { name: "React", category: "frontend" },
-  { name: "Vue.js", category: "frontend" },
-  { name: "Tailwind CSS", category: "frontend" },
-  { name: "TypeScript", category: "languages" },
-  { name: "JavaScript", category: "languages" },
-  { name: "Python", category: "languages" },
-  { name: "SQL", category: "languages" },
-];
-
-export const skillCategories = {
-  cloud: { label: "Cloud & Infrastructure", icon: "cloud" },
-  backend: { label: "Backend", icon: "server" },
-  frontend: { label: "Frontend", icon: "layout" },
-  devops: { label: "DevOps", icon: "git" },
-  languages: { label: "Languages", icon: "code" },
-} as const;
-
-export interface Experience {
-  company: string;
-  role: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  highlights: string[];
-  technologies: string[];
-}
-
 export const whatIDo = [
   {
     title: "Platform Engineering",
-    description:
-      "Building and maintaining cloud infrastructure, CI/CD pipelines, and developer tooling that enables teams to ship faster.",
+    description: "Building and maintaining cloud infrastructure, CI/CD pipelines, and developer tooling that enables teams to ship faster.",
   },
   {
     title: "API Design & Architecture",
-    description:
-      "Designing robust, scalable APIs and microservices. Integrating third-party systems like payment providers and logistics platforms.",
+    description: "Designing robust, scalable APIs and microservices. Integrating third-party systems like payment providers and logistics platforms.",
   },
   {
     title: "Technical Leadership",
-    description:
-      "Consulting engineers on architecture decisions, conducting code reviews, and mentoring team members on best practices.",
+    description: "Consulting engineers on architecture decisions, conducting code reviews, and mentoring team members on best practices.",
   },
   {
     title: "Full-Stack Development",
-    description:
-      "End-to-end feature development from database design to frontend implementation when needed.",
+    description: "End-to-end feature development from database design to frontend implementation when needed.",
   },
 ];
 
-export const experiences: Experience[] = [
+export const experiences = [
   {
     company: "DrAnsay AU-Schein GmbH",
     role: "Senior Software Engineer",
@@ -167,16 +116,7 @@ export const experiences: Experience[] = [
   },
 ];
 
-export interface Education {
-  degree: string;
-  institution: string;
-  location: string;
-  startYear: string;
-  endYear: string;
-  description?: string;
-}
-
-export const education: Education[] = [
+export const education = [
   {
     degree: "European Masters in Software Engineering",
     institution: "TU Kaiserslautern & Universidad Politécnica de Madrid",
@@ -195,51 +135,31 @@ export const education: Education[] = [
   },
 ];
 
-export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/skills", label: "Skills" },
-  { href: "/contact", label: "Contact" },
-] as const;
+export const skills = [
+  { name: "GCP", category: "cloud" as const },
+  { name: "Firebase", category: "cloud" as const },
+  { name: "AWS", category: "cloud" as const },
+  { name: "Pulumi", category: "devops" as const },
+  { name: "Docker", category: "devops" as const },
+  { name: "CI/CD", category: "devops" as const },
+  { name: "GitHub Actions", category: "devops" as const },
+  { name: "NestJS", category: "backend" as const },
+  { name: "Node.js", category: "backend" as const },
+  { name: "Express", category: "backend" as const },
+  { name: "PostgreSQL", category: "backend" as const },
+  { name: "Next.js", category: "frontend" as const },
+  { name: "React", category: "frontend" as const },
+  { name: "Vue.js", category: "frontend" as const },
+  { name: "Tailwind CSS", category: "frontend" as const },
+  { name: "TypeScript", category: "languages" as const },
+  { name: "JavaScript", category: "languages" as const },
+  { name: "Python", category: "languages" as const },
+  { name: "SQL", category: "languages" as const },
+];
 
-// UI Translations
-export const ui = {
-  hero: {
-    greeting: "Hello, I'm",
-    yearsExperience: "Years Experience",
-    currentRole: "Current Role",
-    focus: "Focus",
-    aboutMe: "About Me",
-    getInTouch: "Get in Touch",
-    downloadCV: "Download CV",
-  },
-  about: {
-    title: "About Me",
-    subtitle: "My professional journey and experience",
-    whatIDo: "What I Do",
-    experience: "Experience",
-    education: "Education",
-  },
-  skills: {
-    title: "Skills & Technologies",
-    subtitle: "The tools and technologies I work with",
-  },
-  contact: {
-    title: "Get in Touch",
-    subtitle: "Feel free to reach out for opportunities or collaborations",
-    email: "Email",
-    location: "Location",
-    cvResume: "CV / Resume",
-    downloadPdf: "Download PDF",
-    downloadWord: "Download Word",
-  },
-  footer: {
-    allRightsReserved: "All rights reserved.",
-  },
-  nav: {
-    home: "Home",
-    about: "About",
-    skills: "Skills",
-    contact: "Contact",
-  },
-};
+export const navLinks = [
+  { href: "/", label: "home" },
+  { href: "/about", label: "about" },
+  { href: "/skills", label: "skills" },
+  { href: "/contact", label: "contact" },
+] as const;

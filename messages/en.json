@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "yearsExperience": "Years Experience",
+    "currentRole": "Current Role",
+    "focus": "Focus",
+    "aboutMe": "About Me",
+    "getInTouch": "Get in Touch",
+    "downloadCV": "Download CV",
+    "taglineExtended": "Currently leading platform engineering efforts for a digital healthcare company, building robust infrastructure and scalable systems that serve thousands of users daily."
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "My professional journey and experience",
+    "whatIDo": "What I Do",
+    "experience": "Experience",
+    "education": "Education"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "The tools and technologies I work with"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Feel free to reach out for opportunities or collaborations",
+    "email": "Email",
+    "location": "Location",
+    "cvResume": "CV / Resume",
+    "coverLetter": "Cover Letter"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved."
+  },
+  "categories": {
+    "cloud": "Cloud & Infrastructure",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "devops": "DevOps",
+    "languages": "Languages"
+  },
+  "coverLetter": {
+    "greeting": "Dear Hiring Manager,",
+    "intro": "I am writing to express my interest in the position at your company. As a Senior Software Engineer with over 7 years of experience building and scaling digital systems, I bring comprehensive expertise in cloud architecture, platform engineering, and technical leadership.",
+    "experience": "In my current role at DrAnsay AU-Schein GmbH, I am responsible for platform engineering and cloud architecture for a digital healthcare platform. Previously serving as CTO, I transitioned to a hands-on engineering role to stay closer to technical implementation.",
+    "highlightsTitle": "Key accomplishments include:",
+    "highlight1": "Architecting and maintaining microservices infrastructure on Google Cloud Platform",
+    "highlight2": "Implementing Infrastructure as Code with Pulumi for reproducible deployments",
+    "highlight3": "Integrating payment systems (PayPal, Adyen) and logistics APIs (Deutsche Post)",
+    "highlight4": "Technical leadership and mentoring of development teams",
+    "skills": "My technical profile includes GCP, TypeScript, Next.js, NestJS, Pulumi, and modern CI/CD practices. I am comfortable working in agile teams and solving complex technical challenges.",
+    "closing": "I look forward to the opportunity to bring my experience and skills to your team and collaborate on innovative solutions.",
+    "signOff": "Best regards,"
+  },
+  "cv": {
+    "summary": "Professional Summary",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Technical Skills"
+  }
+}
