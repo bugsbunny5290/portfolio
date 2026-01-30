@@ -79,6 +79,7 @@ export function CoverLetterDocument({ language }: CoverLetterDocumentProps): Rea
           <Text style={styles.name}>{personalInfo.name}</Text>
           <Text style={styles.contactInfo}>{personalInfo.email}</Text>
           <Text style={styles.contactInfo}>{personalInfo.location}</Text>
+          <Text style={styles.contactInfo}>{personalInfo.website}</Text>
           <Text style={styles.contactInfo}>{personalInfo.github}</Text>
         </View>
 

@@ -181,6 +181,7 @@ export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
           <View style={styles.contactRow}>
             <Text style={styles.contactItem}>{personalInfo.email}</Text>
             <Text style={styles.contactItem}>{personalInfo.location}</Text>
+            <Text style={styles.contactItem}>{personalInfo.website}</Text>
             <Text style={styles.contactItem}>{personalInfo.github}</Text>
           </View>
         </View>

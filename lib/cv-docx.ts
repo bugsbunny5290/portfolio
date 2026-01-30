@@ -68,7 +68,7 @@ export async function generateCVDocx(language: Locale): Promise<Buffer> {
           new Paragraph({
             children: [
               new TextRun({
-                text: `${personalInfo.email}  |  ${personalInfo.location}  |  ${personalInfo.github}`,
+                text: `${personalInfo.email}  |  ${personalInfo.location}  |  ${personalInfo.website}  |  ${personalInfo.github}`,
                 size: 20,
                 color: "666666",
               }),
