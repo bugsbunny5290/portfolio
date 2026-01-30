@@ -91,6 +91,8 @@ export function CoverLetterDocument({ language }: CoverLetterDocumentProps): Rea
 
         <Text style={styles.paragraph}>{t.experience}</Text>
 
+        <Text style={styles.paragraph}>{t.impactMetrics}</Text>
+
         <Text style={styles.paragraph}>{t.startupExperience}</Text>
 
         <Text style={styles.paragraph}>{t.highlightsTitle}</Text>

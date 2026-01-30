@@ -8,7 +8,7 @@ export function Timeline(): React.ReactElement {
   const { content } = useLanguage();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-4 sm:space-y-8">
       {content.experiences.map((experience, index) => (
         <TimelineItem key={`${experience.company}-${index}`} experience={experience} />
       ))}

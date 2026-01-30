@@ -112,6 +112,16 @@ export async function generateCoverLetterDocx(language: Locale): Promise<Buffer>
           new Paragraph({
             children: [
               new TextRun({
+                text: t.impactMetrics,
+                size: 22,
+              }),
+            ],
+            spacing: { after: 200 },
+          }),
+
+          new Paragraph({
+            children: [
+              new TextRun({
                 text: t.startupExperience,
                 size: 22,
               }),
