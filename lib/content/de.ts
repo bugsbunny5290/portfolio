@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
-  tagline: "Entwicklung skalierbarer Systeme an der Schnittstelle von Cloud-Architektur und Platform Engineering",
+  tagline: "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren",
   location: "Heidelberg, Deutschland",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
@@ -9,24 +9,24 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Staff Engineer mit 8+ Jahren Erfahrung im Aufbau und der Skalierung digitaler Systeme in den Bereichen Gesundheitswesen, Gaming und KI-Forschung. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, jetzt fokussiert auf praxisorientiertes Platform Engineering. Nachgewiesene Erfolgsbilanz beim Wachstum von Startups vom Frühstadium zu etablierten Unternehmen. Zusammenarbeit mit renommierten Institutionen wie DFKI (Deutsches Forschungszentrum für Künstliche Intelligenz), Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte für Cloud-Architektur, Kubernetes und Infrastructure as Code.`;
+export const professionalSummary = `Staff Engineer mit 8+ Jahren Erfahrung in der Entwicklung technischer Strategien und dem Aufbau skalierbarer Systeme. Ich spezialisiere mich auf die Losung komplexer, ubergreifender Probleme - von der Architektur der Cloud-Infrastruktur bis zur Definition von Engineering-Standards, die ganze Teams voranbringen. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, wo ich die Plattform von Null auf uber 2 Millionen Nutzer skaliert und den Umsatz von 15.000 EUR auf 20 Millionen EUR gesteigert habe. Ich verbinde Geschaftsziele mit technischer Umsetzung und treffe wirkungsvolle Architekturentscheidungen, wahrend ich praxisnah bleibe. Zusammenarbeit mit DFKI, Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte fur GCP, Kubernetes, GitOps und Infrastructure as Code.`;
 
 export const whatIDo = [
   {
+    title: "Technische Strategie",
+    description: "Definition von Architektur-Roadmaps, Bewertung von Build-vs-Buy-Entscheidungen und wirkungsvolle technische Entscheidungen im Einklang mit Geschaftszielen.",
+  },
+  {
     title: "Platform Engineering",
-    description: "Aufbau und Wartung von Cloud-Infrastruktur, CI/CD-Pipelines und Entwickler-Tools, die Teams schneller liefern lassen.",
+    description: "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlassiger liefern lassen.",
   },
   {
-    title: "API-Design & Architektur",
-    description: "Entwurf robuster, skalierbarer APIs und Microservices. Integration von Drittanbietersystemen wie Zahlungsanbietern und Logistikplattformen.",
+    title: "KI-gestutzte Entwicklung",
+    description: "Einsatz von KI-Tools fur schnelles Prototyping vom Konzept zur Losung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalitat und Architekturintegritat.",
   },
   {
-    title: "Technische Führung",
-    description: "Beratung von Entwicklern bei Architekturentscheidungen, Durchführung von Code Reviews und Mentoring von Teammitgliedern.",
-  },
-  {
-    title: "Full-Stack-Entwicklung",
-    description: "End-to-End Feature-Entwicklung vom Datenbankdesign bis zur Frontend-Implementierung.",
+    title: "Praxisnahe Umsetzung",
+    description: "Nah am Code bleiben - Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstutzen.",
   },
 ];
 
@@ -171,6 +171,8 @@ export const skills = [
   { name: "Python", category: "languages" as const },
   { name: "SQL", category: "languages" as const },
   { name: "Bash", category: "languages" as const },
+  { name: "KI-gestutzte Entwicklung", category: "devops" as const },
+  { name: "Cursor/Copilot", category: "devops" as const },
 ];
 
 export const navLinks = [

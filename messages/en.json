@@ -13,7 +13,7 @@
     "aboutMe": "About Me",
     "getInTouch": "Get in Touch",
     "downloadCV": "Download CV",
-    "taglineExtended": "Former CTO turned hands-on engineer. Built and scaled a digital healthcare platform from startup to serving thousands of users daily. Worked with DFKI, Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere on cutting-edge projects."
+    "taglineExtended": "Previously CTO at a healthcare startup, now focused on technical execution. Experience across healthcare, AI research (DFKI), entrepreneurship (Data4Life at Hasso Plattner Institute), and enterprise systems (Fraunhofer, John Deere)."
   },
   "about": {
     "title": "About Me",
@@ -56,7 +56,7 @@
     "highlight3": "Setting up API management with Gravitee for developer experience, governance, and external partner integrations",
     "highlight4": "Architecting microservices infrastructure on GCP that scaled with significant business growth",
     "highlight5": "Integrating payment systems (PayPal, Adyen) and logistics APIs (Deutsche Post) that enabled new revenue streams",
-    "skills": "My technical profile includes GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi, and modern CI/CD practices. I am comfortable working in agile teams, making quick decisions under uncertainty, and solving complex technical challenges in resource-constrained environments.",
+    "skills": "My technical profile includes GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi, and modern CI/CD practices. I actively leverage AI-assisted development tools to accelerate prototyping and maintain high velocity from concept to production. I am comfortable working in agile teams, making quick decisions under uncertainty, and solving complex technical challenges in resource-constrained environments.",
     "closing": "I am excited about the opportunity to bring my startup experience and proven track record of driving growth to your team. I look forward to discussing how I can contribute to your success.",
     "signOff": "Best regards,"
   },
