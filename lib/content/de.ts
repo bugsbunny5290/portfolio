@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
-  tagline: "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren",
+  tagline: "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren - sowohl beim Umsatz als auch bei der Nutzerbasis",
   location: "Heidelberg, Deutschland",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
