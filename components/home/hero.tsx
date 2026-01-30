@@ -1,34 +1,33 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui";
 import { useLanguage } from "@/lib/language-context";
 
 const techHighlights = ["GCP", "TypeScript", "Next.js", "NestJS", "Pulumi", "CI/CD"];
 
 export function Hero(): React.ReactElement {
-  const { data, language } = useLanguage();
-  const { personalInfo, ui } = data;
+  const t = useTranslations("hero");
+  const { content } = useLanguage();
+  const { personalInfo } = content;
 
   const highlights = [
-    { label: ui.hero.yearsExperience, value: "7+" },
-    { label: ui.hero.currentRole, value: "Senior SWE" },
-    { label: ui.hero.focus, value: "Platform Engineering" },
+    { label: t("yearsExperience"), value: "7+" },
+    { label: t("currentRole"), value: "Senior SWE" },
+    { label: t("focus"), value: "Platform Engineering" },
   ];
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
       <div className="max-w-3xl">
-        <p className="text-sm font-medium text-primary sm:text-base">{ui.hero.greeting}</p>
+        <p className="text-sm font-medium text-primary sm:text-base">{t("greeting")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
           {personalInfo.name}
         </h1>
         <p className="mt-4 text-xl text-muted-foreground sm:text-2xl">{personalInfo.title}</p>
 
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-          {personalInfo.tagline}.{" "}
-          {language === "de"
-            ? "Derzeit leite ich Platform-Engineering-Aktivitäten für ein digitales Gesundheitsunternehmen und baue robuste Infrastruktur und skalierbare Systeme, die täglich Tausende von Nutzern bedienen."
-            : "Currently leading platform engineering efforts for a digital healthcare company, building robust infrastructure and scalable systems that serve thousands of users daily."}
+          {personalInfo.tagline}. {t("taglineExtended")}
         </p>
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -53,13 +52,13 @@ export function Hero(): React.ReactElement {
 
         <div className="mt-10 flex flex-wrap gap-4">
           <Button href="/about" size="lg">
-            {ui.hero.aboutMe}
+            {t("aboutMe")}
           </Button>
           <Button href="/contact" variant="outline" size="lg">
-            {ui.hero.getInTouch}
+            {t("getInTouch")}
           </Button>
           <Button href="/contact" variant="secondary" size="lg">
-            {ui.hero.downloadCV}
+            {t("downloadCV")}
           </Button>
         </div>
 

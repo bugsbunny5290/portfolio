@@ -1,15 +1,15 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui";
-import type { Experience } from "@/lib/data";
 import { useLanguage } from "@/lib/language-context";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui";
+import type { Experience } from "@/lib/content";
 
 export function Timeline(): React.ReactElement {
-  const { data } = useLanguage();
+  const { content } = useLanguage();
 
   return (
     <div className="space-y-8">
-      {data.experiences.map((experience, index) => (
+      {content.experiences.map((experience, index) => (
         <TimelineItem key={`${experience.company}-${index}`} experience={experience} />
       ))}
     </div>

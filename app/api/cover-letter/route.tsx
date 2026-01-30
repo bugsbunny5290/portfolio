@@ -1,6 +1,6 @@
 import { renderToBuffer } from "@react-pdf/renderer";
-import { CVDocument } from "@/lib/cv-template";
-import { generateCVDocx } from "@/lib/cv-docx";
+import { CoverLetterDocument } from "@/lib/cover-letter-template";
+import { generateCoverLetterDocx } from "@/lib/cover-letter-docx";
 import type { NextRequest } from "next/server";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
@@ -14,11 +14,11 @@ export async function GET(request: NextRequest): Promise<Response> {
 
   const content = getContent(lang);
   const langSuffix = lang === "de" ? "DE" : "EN";
-  const filename = `${content.personalInfo.name.replace(/\s+/g, "_")}_CV_${langSuffix}`;
+  const filename = `${content.personalInfo.name.replace(/\s+/g, "_")}_Cover_Letter_${langSuffix}`;
 
   try {
     if (format === "docx") {
-      const buffer = await generateCVDocx(lang);
+      const buffer = await generateCoverLetterDocx(lang);
 
       return new Response(new Uint8Array(buffer), {
         headers: {
@@ -30,7 +30,7 @@ export async function GET(request: NextRequest): Promise<Response> {
       });
     }
 
-    const buffer = await renderToBuffer(<CVDocument language={lang} />);
+    const buffer = await renderToBuffer(<CoverLetterDocument language={lang} />);
 
     return new Response(new Uint8Array(buffer), {
       headers: {
@@ -40,7 +40,7 @@ export async function GET(request: NextRequest): Promise<Response> {
       },
     });
   } catch (error) {
-    console.error("Error generating CV:", error);
-    return new Response("Error generating CV", { status: 500 });
+    console.error("Error generating cover letter:", error);
+    return new Response("Error generating cover letter", { status: 500 });
   }
 }

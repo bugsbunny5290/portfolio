@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "yearsExperience": "Jahre Erfahrung",
+    "currentRole": "Aktuelle Rolle",
+    "focus": "Fokus",
+    "aboutMe": "Über mich",
+    "getInTouch": "Kontakt",
+    "downloadCV": "Lebenslauf",
+    "taglineExtended": "Derzeit leite ich Platform-Engineering-Aktivitäten für ein digitales Gesundheitsunternehmen und baue robuste Infrastruktur und skalierbare Systeme, die täglich Tausende von Nutzern bedienen."
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Mein beruflicher Werdegang und Erfahrung",
+    "whatIDo": "Was ich mache",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung"
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "subtitle": "Die Tools und Technologien, mit denen ich arbeite"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Nehmen Sie gerne Kontakt auf für Möglichkeiten oder Zusammenarbeit",
+    "email": "E-Mail",
+    "location": "Standort",
+    "cvResume": "Lebenslauf",
+    "coverLetter": "Anschreiben"
+  },
+  "footer": {
+    "allRightsReserved": "Alle Rechte vorbehalten."
+  },
+  "categories": {
+    "cloud": "Cloud & Infrastruktur",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "devops": "DevOps",
+    "languages": "Programmiersprachen"
+  },
+  "coverLetter": {
+    "greeting": "Sehr geehrte Damen und Herren,",
+    "intro": "mit großem Interesse bewerbe ich mich auf die ausgeschriebene Position in Ihrem Unternehmen. Als Senior Software Engineer mit über 7 Jahren Erfahrung in der Entwicklung und Skalierung digitaler Systeme bringe ich umfassende Expertise in Cloud-Architektur, Platform Engineering und technischer Führung mit.",
+    "experience": "In meiner aktuellen Position bei DrAnsay AU-Schein GmbH verantworte ich die Platform-Engineering- und Cloud-Architektur für eine digitale Gesundheitsplattform. Zuvor war ich als CTO tätig und habe den Wechsel zu einer praxisorientierten Engineering-Rolle vollzogen, um näher an der technischen Umsetzung zu arbeiten.",
+    "highlightsTitle": "Meine Kernkompetenzen:",
+    "highlight1": "Architektur und Wartung von Microservices-Infrastruktur auf Google Cloud Platform",
+    "highlight2": "Implementierung von Infrastructure as Code mit Pulumi für reproduzierbare Deployments",
+    "highlight3": "Integration von Zahlungssystemen (PayPal, Adyen) und Logistik-APIs (Deutsche Post)",
+    "highlight4": "Technische Führung und Mentoring von Entwicklungsteams",
+    "skills": "Mein technisches Profil umfasst GCP, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich bin es gewohnt, in agilen Teams zu arbeiten und komplexe technische Herausforderungen zu lösen.",
+    "closing": "Ich freue mich auf die Möglichkeit, meine Erfahrungen und Fähigkeiten in Ihr Team einzubringen und gemeinsam innovative Lösungen zu entwickeln.",
+    "signOff": "Mit freundlichen Grüßen,"
+  },
+  "cv": {
+    "summary": "Zusammenfassung",
+    "experience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "skills": "Technische Fähigkeiten"
+  }
+}

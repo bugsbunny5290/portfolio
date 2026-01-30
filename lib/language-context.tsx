@@ -1,55 +1,78 @@
 "use client";
 
-import { createContext, type ReactNode, useContext, useEffect, useState } from "react";
-import * as dataEn from "./data";
-import * as dataDe from "./data-de";
-
-type Language = "en" | "de";
-
-// Use a more flexible type that accepts both language data structures
-type DataType = typeof dataEn | typeof dataDe;
+import { createContext, useContext, useState, useEffect, useTransition, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
+import type { Locale } from "./i18n";
+import { getContent, type Content } from "./content";
 
 interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  data: DataType;
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+  content: Content;
+  isPending: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 interface LanguageProviderProps {
   children: ReactNode;
+  initialLocale: Locale;
 }
 
-export function LanguageProvider({ children }: LanguageProviderProps): React.ReactElement {
-  const [language, setLanguageState] = useState<Language>("en");
-  const [mounted, setMounted] = useState(false);
+const COOKIE_NAME = "language";
+const COOKIE_MAX_AGE = 31536000; // 1 year in seconds
+
+async function getCookie(name: string): Promise<string | undefined> {
+  if ("cookieStore" in window) {
+    const cookie = await window.cookieStore.get(name);
+    return cookie?.value;
+  }
+  return document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(`${name}=`))
+    ?.split("=")[1];
+}
+
+async function setCookie(name: string, value: string, maxAge: number): Promise<void> {
+  if ("cookieStore" in window) {
+    await window.cookieStore.set({
+      name,
+      value,
+      path: "/",
+      maxAge,
+      sameSite: "lax",
+    });
+    return;
+  }
+  // biome-ignore lint/suspicious/noDocumentCookie: Fallback for browsers without Cookie Store API
+  document.cookie = `${name}=${value};path=/;max-age=${maxAge};samesite=lax`;
+}
+
+export function LanguageProvider({ children, initialLocale }: LanguageProviderProps): React.ReactElement {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("language") as Language | null;
-    if (stored && (stored === "en" || stored === "de")) {
-      setLanguageState(stored);
-    }
+    getCookie(COOKIE_NAME).then((stored) => {
+      if (stored && (stored === "en" || stored === "de")) {
+        setLocaleState(stored);
+      }
+    });
   }, []);
 
-  function setLanguage(lang: Language): void {
-    setLanguageState(lang);
-    localStorage.setItem("language", lang);
+  function setLocale(newLocale: Locale): void {
+    setCookie(COOKIE_NAME, newLocale, COOKIE_MAX_AGE);
+    setLocaleState(newLocale);
+    startTransition(() => {
+      router.refresh();
+    });
   }
 
-  const data = language === "de" ? dataDe : dataEn;
-
-  if (!mounted) {
-    return (
-      <LanguageContext.Provider value={{ language: "en", setLanguage, data: dataEn }}>
-        {children}
-      </LanguageContext.Provider>
-    );
-  }
+  const content = getContent(locale);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, data }}>
+    <LanguageContext.Provider value={{ locale, setLocale, content, isPending }}>
       {children}
     </LanguageContext.Provider>
   );

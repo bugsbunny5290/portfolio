@@ -1,35 +1,50 @@
-import { BorderStyle, Document, Packer, Paragraph, TextRun } from "docx";
-import * as dataEn from "./data";
-import * as dataDe from "./data-de";
+import { Document, Paragraph, TextRun, BorderStyle, Packer } from "docx";
+import { getContent, skillCategories } from "./content";
+import type { Locale } from "./i18n";
 
-type Language = "en" | "de";
+const categoryLabels = {
+  en: {
+    cloud: "Cloud & Infrastructure",
+    backend: "Backend",
+    frontend: "Frontend",
+    devops: "DevOps",
+    languages: "Languages",
+  },
+  de: {
+    cloud: "Cloud & Infrastruktur",
+    backend: "Backend",
+    frontend: "Frontend",
+    devops: "DevOps",
+    languages: "Programmiersprachen",
+  },
+};
 
-export async function generateCVDocx(language: Language): Promise<Buffer> {
-  const data = language === "de" ? dataDe : dataEn;
-  const { personalInfo, professionalSummary, experiences, education, skills, skillCategories } =
-    data;
+export async function generateCVDocx(language: Locale): Promise<Buffer> {
+  const content = getContent(language);
+  const { personalInfo, professionalSummary, experiences, education, skills } = content;
 
   const sectionTitles =
     language === "de"
       ? {
-          summary: "ZUSAMMENFASSUNG",
-          experience: "BERUFSERFAHRUNG",
-          education: "AUSBILDUNG",
-          skills: "TECHNISCHE FÄHIGKEITEN",
-        }
+        summary: "ZUSAMMENFASSUNG",
+        experience: "BERUFSERFAHRUNG",
+        education: "AUSBILDUNG",
+        skills: "TECHNISCHE FÄHIGKEITEN",
+      }
       : {
-          summary: "PROFESSIONAL SUMMARY",
-          experience: "EXPERIENCE",
-          education: "EDUCATION",
-          skills: "TECHNICAL SKILLS",
-        };
+        summary: "PROFESSIONAL SUMMARY",
+        experience: "EXPERIENCE",
+        education: "EDUCATION",
+        skills: "TECHNICAL SKILLS",
+      };
+
+  const labels = categoryLabels[language];
 
   const doc = new Document({
     sections: [
       {
         properties: {},
         children: [
-          // Header - Name
           new Paragraph({
             children: [
               new TextRun({
@@ -40,7 +55,6 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
             ],
             spacing: { after: 100 },
           }),
-          // Title
           new Paragraph({
             children: [
               new TextRun({
@@ -51,7 +65,6 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
             ],
             spacing: { after: 200 },
           }),
-          // Contact info
           new Paragraph({
             children: [
               new TextRun({
@@ -63,7 +76,6 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
             spacing: { after: 400 },
           }),
 
-          // Summary Section
           createSectionHeader(sectionTitles.summary),
           new Paragraph({
             children: [
@@ -75,7 +87,6 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
             spacing: { after: 400 },
           }),
 
-          // Experience Section
           createSectionHeader(sectionTitles.experience),
           ...experiences.flatMap((exp) => [
             new Paragraph({
@@ -122,12 +133,11 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
                     }),
                   ],
                   indent: { left: 360 },
-                }),
+                })
             ),
             new Paragraph({ spacing: { after: 200 } }),
           ]),
 
-          // Education Section
           createSectionHeader(sectionTitles.education),
           ...education.flatMap((edu) => [
             new Paragraph({
@@ -157,14 +167,13 @@ export async function generateCVDocx(language: Language): Promise<Buffer> {
             }),
           ]),
 
-          // Skills Section
           createSectionHeader(sectionTitles.skills),
-          ...Object.entries(skillCategories).map(([category, info]) => {
+          ...skillCategories.map((category) => {
             const categorySkills = skills.filter((s) => s.category === category);
             return new Paragraph({
               children: [
                 new TextRun({
-                  text: `${info.label}: `,
+                  text: `${labels[category as keyof typeof labels]}: `,
                   bold: true,
                   size: 20,
                 }),
