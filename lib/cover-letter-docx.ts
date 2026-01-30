@@ -52,6 +52,15 @@ export async function generateCoverLetterDocx(language: Locale): Promise<Buffer>
           new Paragraph({
             children: [
               new TextRun({
+                text: personalInfo.website,
+                size: 20,
+                color: "666666",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
                 text: personalInfo.github,
                 size: 20,
                 color: "666666",

@@ -4,6 +4,7 @@ export const personalInfo = {
   tagline: "Entwicklung skalierbarer Systeme an der Schnittstelle von Cloud-Architektur und Platform Engineering",
   location: "Heidelberg, Deutschland",
   email: "pranav.gautam.pro@gmail.com",
+  website: "https://pranavgautam.me",
   github: "https://github.com/bugsbunny5290",
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
