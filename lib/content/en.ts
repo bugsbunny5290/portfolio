@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Senior Software Engineer at DrAnsay AU-Schein GmbH with 7 years of experience building and scaling digital healthcare systems. Evolved from CTO to hands-on platform engineering role, focusing on cloud architecture, infrastructure as code, and technical leadership. Passionate about building robust, maintainable systems that deliver real value.`;
+export const professionalSummary = `Senior Software Engineer with 8+ years of experience building and scaling digital systems across healthcare, gaming, and AI research domains. Former CTO at DrAnsay AU-Schein GmbH, now focused on hands-on platform engineering. Proven track record of growing startups from early-stage to established businesses. Collaborated with renowned institutions including DFKI (German AI Research Center), Data4Life (Hasso Plattner Institute), Fraunhofer, and John Deere. Expert in cloud architecture, Kubernetes, and infrastructure as code.`;
 
 export const whatIDo = [
   {
@@ -41,13 +41,15 @@ export const experiences = [
       "Platform engineering and cloud architecture for digital healthcare platform providing sick leave certificates. Previously served as CTO, transitioned to hands-on engineering as company matured.",
     highlights: [
       "Architected and maintain microservices infrastructure on GCP",
+      "Leading transformation from Cloud Functions to managed APIs on Kubernetes (GKE)",
+      "Implemented GitOps workflows and CI/CD pipelines for automated deployments",
+      "Set up API management portal using Gravitee for developer experience and governance",
       "Implemented infrastructure as code using Pulumi",
       "Designed and built RESTful APIs powering web and mobile clients",
       "Integrated payment systems (PayPal, Adyen), logistics (Deutsche Post), and healthcare APIs",
       "Lead technical decisions and consult engineers on architecture and best practices",
-      "Mentor development team and conduct code reviews",
     ],
-    technologies: ["GCP", "Pulumi", "NestJS", "Next.js", "Firebase", "TypeScript", "Adyen"],
+    technologies: ["GCP", "Kubernetes", "Pulumi", "Gravitee", "GitOps", "NestJS", "Next.js", "TypeScript"],
   },
   {
     company: "GameBuddy GmbH",
@@ -138,24 +140,37 @@ export const education = [
 
 export const skills = [
   { name: "GCP", category: "cloud" as const },
+  { name: "Kubernetes", category: "cloud" as const },
   { name: "Firebase", category: "cloud" as const },
   { name: "AWS", category: "cloud" as const },
+  { name: "Cloud Run", category: "cloud" as const },
+  { name: "Cloud Functions", category: "cloud" as const },
   { name: "Pulumi", category: "devops" as const },
+  { name: "Terraform", category: "devops" as const },
+  { name: "GitOps", category: "devops" as const },
+  { name: "ArgoCD", category: "devops" as const },
   { name: "Docker", category: "devops" as const },
+  { name: "Helm", category: "devops" as const },
   { name: "CI/CD", category: "devops" as const },
   { name: "GitHub Actions", category: "devops" as const },
+  { name: "Gravitee", category: "devops" as const },
   { name: "NestJS", category: "backend" as const },
   { name: "Node.js", category: "backend" as const },
   { name: "Express", category: "backend" as const },
   { name: "PostgreSQL", category: "backend" as const },
+  { name: "MongoDB", category: "backend" as const },
+  { name: "Redis", category: "backend" as const },
+  { name: "GraphQL", category: "backend" as const },
   { name: "Next.js", category: "frontend" as const },
   { name: "React", category: "frontend" as const },
   { name: "Vue.js", category: "frontend" as const },
+  { name: "Angular", category: "frontend" as const },
   { name: "Tailwind CSS", category: "frontend" as const },
   { name: "TypeScript", category: "languages" as const },
   { name: "JavaScript", category: "languages" as const },
   { name: "Python", category: "languages" as const },
   { name: "SQL", category: "languages" as const },
+  { name: "Bash", category: "languages" as const },
 ];
 
 export const navLinks = [

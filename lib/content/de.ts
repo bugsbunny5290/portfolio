@@ -9,7 +9,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/pranavgautam",
 } as const;
 
-export const professionalSummary = `Senior Software Engineer bei DrAnsay AU-Schein GmbH mit 7 Jahren Erfahrung in der Entwicklung und Skalierung digitaler Gesundheitssysteme. Vom CTO zur praxisorientierten Platform-Engineering-Rolle gewechselt, mit Fokus auf Cloud-Architektur, Infrastructure as Code und technische Führung. Leidenschaft für robuste, wartbare Systeme, die echten Mehrwert liefern.`;
+export const professionalSummary = `Senior Software Engineer mit 8+ Jahren Erfahrung im Aufbau und der Skalierung digitaler Systeme in den Bereichen Gesundheitswesen, Gaming und KI-Forschung. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, jetzt fokussiert auf praxisorientiertes Platform Engineering. Nachgewiesene Erfolgsbilanz beim Wachstum von Startups vom Frühstadium zu etablierten Unternehmen. Zusammenarbeit mit renommierten Institutionen wie DFKI (Deutsches Forschungszentrum für Künstliche Intelligenz), Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte für Cloud-Architektur, Kubernetes und Infrastructure as Code.`;
 
 export const whatIDo = [
   {
@@ -41,13 +41,15 @@ export const experiences = [
       "Platform Engineering und Cloud-Architektur für digitale Gesundheitsplattform zur Ausstellung von Krankmeldungen. Zuvor als CTO tätig, dann Wechsel zur praxisorientierten Engineering-Rolle mit Unternehmenswachstum.",
     highlights: [
       "Architektur und Wartung der Microservices-Infrastruktur auf GCP",
+      "Leitung der Transformation von Cloud Functions zu Managed APIs auf Kubernetes (GKE)",
+      "Implementierung von GitOps-Workflows und CI/CD-Pipelines für automatisierte Deployments",
+      "Einrichtung eines API-Management-Portals mit Gravitee für Developer Experience und Governance",
       "Implementierung von Infrastructure as Code mit Pulumi",
       "Design und Entwicklung von RESTful APIs für Web- und Mobile-Clients",
       "Integration von Zahlungssystemen (PayPal, Adyen), Logistik (Deutsche Post) und Gesundheits-APIs",
       "Leitung technischer Entscheidungen und Beratung von Entwicklern zu Architektur und Best Practices",
-      "Mentoring des Entwicklungsteams und Durchführung von Code Reviews",
     ],
-    technologies: ["GCP", "Pulumi", "NestJS", "Next.js", "Firebase", "TypeScript", "Adyen"],
+    technologies: ["GCP", "Kubernetes", "Pulumi", "Gravitee", "GitOps", "NestJS", "Next.js", "TypeScript"],
   },
   {
     company: "GameBuddy GmbH",
@@ -138,24 +140,37 @@ export const education = [
 
 export const skills = [
   { name: "GCP", category: "cloud" as const },
+  { name: "Kubernetes", category: "cloud" as const },
   { name: "Firebase", category: "cloud" as const },
   { name: "AWS", category: "cloud" as const },
+  { name: "Cloud Run", category: "cloud" as const },
+  { name: "Cloud Functions", category: "cloud" as const },
   { name: "Pulumi", category: "devops" as const },
+  { name: "Terraform", category: "devops" as const },
+  { name: "GitOps", category: "devops" as const },
+  { name: "ArgoCD", category: "devops" as const },
   { name: "Docker", category: "devops" as const },
+  { name: "Helm", category: "devops" as const },
   { name: "CI/CD", category: "devops" as const },
   { name: "GitHub Actions", category: "devops" as const },
+  { name: "Gravitee", category: "devops" as const },
   { name: "NestJS", category: "backend" as const },
   { name: "Node.js", category: "backend" as const },
   { name: "Express", category: "backend" as const },
   { name: "PostgreSQL", category: "backend" as const },
+  { name: "MongoDB", category: "backend" as const },
+  { name: "Redis", category: "backend" as const },
+  { name: "GraphQL", category: "backend" as const },
   { name: "Next.js", category: "frontend" as const },
   { name: "React", category: "frontend" as const },
   { name: "Vue.js", category: "frontend" as const },
+  { name: "Angular", category: "frontend" as const },
   { name: "Tailwind CSS", category: "frontend" as const },
   { name: "TypeScript", category: "languages" as const },
   { name: "JavaScript", category: "languages" as const },
   { name: "Python", category: "languages" as const },
   { name: "SQL", category: "languages" as const },
+  { name: "Bash", category: "languages" as const },
 ];
 
 export const navLinks = [

@@ -112,6 +112,16 @@ export async function generateCoverLetterDocx(language: Locale): Promise<Buffer>
           new Paragraph({
             children: [
               new TextRun({
+                text: t.startupExperience,
+                size: 22,
+              }),
+            ],
+            spacing: { after: 200 },
+          }),
+
+          new Paragraph({
+            children: [
+              new TextRun({
                 text: t.highlightsTitle,
                 size: 22,
               }),
@@ -153,6 +163,16 @@ export async function generateCoverLetterDocx(language: Locale): Promise<Buffer>
             children: [
               new TextRun({
                 text: `- ${t.highlight4}`,
+                size: 22,
+              }),
+            ],
+            indent: { left: 360 },
+            spacing: { after: 50 },
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: `- ${t.highlight5}`,
                 size: 22,
               }),
             ],
