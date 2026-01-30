@@ -91,6 +91,8 @@ export function CoverLetterDocument({ language }: CoverLetterDocumentProps): Rea
 
         <Text style={styles.paragraph}>{t.experience}</Text>
 
+        <Text style={styles.paragraph}>{t.startupExperience}</Text>
+
         <Text style={styles.paragraph}>{t.highlightsTitle}</Text>
 
         <View style={styles.highlightList}>
@@ -98,6 +100,7 @@ export function CoverLetterDocument({ language }: CoverLetterDocumentProps): Rea
           <Text style={styles.highlightItem}>- {t.highlight2}</Text>
           <Text style={styles.highlightItem}>- {t.highlight3}</Text>
           <Text style={styles.highlightItem}>- {t.highlight4}</Text>
+          <Text style={styles.highlightItem}>- {t.highlight5}</Text>
         </View>
 
         <Text style={styles.paragraph}>{t.skills}</Text>

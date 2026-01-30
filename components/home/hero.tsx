@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui";
 import { useLanguage } from "@/lib/language-context";
 
-const techHighlights = ["GCP", "TypeScript", "Next.js", "NestJS", "Pulumi", "CI/CD"];
+const techHighlights = ["GCP", "Kubernetes", "TypeScript", "Next.js", "NestJS", "Pulumi", "GitOps", "Gravitee"];
 
 export function Hero(): React.ReactElement {
   const t = useTranslations("hero");
@@ -12,8 +12,8 @@ export function Hero(): React.ReactElement {
   const { personalInfo } = content;
 
   const highlights = [
-    { label: t("yearsExperience"), value: "7+" },
-    { label: t("currentRole"), value: "Senior SWE" },
+    { label: t("yearsExperience"), value: "8+" },
+    { label: t("companies"), value: "5+" },
     { label: t("focus"), value: "Platform Engineering" },
   ];
 

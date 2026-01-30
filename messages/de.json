@@ -8,12 +8,12 @@
   "hero": {
     "greeting": "Hallo, ich bin",
     "yearsExperience": "Jahre Erfahrung",
-    "currentRole": "Aktuelle Rolle",
+    "companies": "Unternehmen",
     "focus": "Fokus",
     "aboutMe": "Über mich",
     "getInTouch": "Kontakt",
     "downloadCV": "Lebenslauf",
-    "taglineExtended": "Derzeit leite ich Platform-Engineering-Aktivitäten für ein digitales Gesundheitsunternehmen und baue robuste Infrastruktur und skalierbare Systeme, die täglich Tausende von Nutzern bedienen."
+    "taglineExtended": "Ehemaliger CTO, jetzt praxisorientierter Ingenieur. Aufbau und Skalierung einer digitalen Gesundheitsplattform vom Startup bis zur Bedienung tausender Nutzer täglich. Zusammenarbeit mit DFKI, Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere an innovativen Projekten."
   },
   "about": {
     "title": "Über mich",
@@ -46,15 +46,17 @@
   },
   "coverLetter": {
     "greeting": "Sehr geehrte Damen und Herren,",
-    "intro": "mit großem Interesse bewerbe ich mich auf die ausgeschriebene Position in Ihrem Unternehmen. Als Senior Software Engineer mit über 7 Jahren Erfahrung in der Entwicklung und Skalierung digitaler Systeme bringe ich umfassende Expertise in Cloud-Architektur, Platform Engineering und technischer Führung mit.",
-    "experience": "In meiner aktuellen Position bei DrAnsay AU-Schein GmbH verantworte ich die Platform-Engineering- und Cloud-Architektur für eine digitale Gesundheitsplattform. Zuvor war ich als CTO tätig und habe den Wechsel zu einer praxisorientierten Engineering-Rolle vollzogen, um näher an der technischen Umsetzung zu arbeiten.",
+    "intro": "mit großem Interesse bewerbe ich mich auf die ausgeschriebene Position in Ihrem Unternehmen. Als Senior Software Engineer mit über 8 Jahren Erfahrung in der Entwicklung und Skalierung digitaler Systeme bringe ich umfassende Expertise in Cloud-Architektur, Platform Engineering und technischer Führung mit - geprägt durch dynamische Startup-Umgebungen, in denen Anpassungsfähigkeit und schnelle Umsetzung entscheidend sind.",
+    "experience": "In meiner aktuellen Position bei DrAnsay AU-Schein GmbH verantworte ich die Platform-Engineering- und Cloud-Architektur für eine digitale Gesundheitsplattform. Zuvor war ich als CTO tätig und habe den Wechsel zu einer praxisorientierten Engineering-Rolle vollzogen, um näher an der technischen Umsetzung zu arbeiten. Meine Beiträge waren maßgeblich daran beteiligt, das Unternehmen von einem frühen Startup zu einem florierenden Geschäft zu skalieren - mit deutlichem Wachstum bei Teamgröße und Umsatz.",
+    "startupExperience": "Ich blühe in schnelllebigen, dynamischen Umgebungen auf, in denen vielseitige Einsatzbereitschaft gefragt ist. Von der Architektur der Kerninfrastruktur bis zur Integration geschäftskritischer Systeme habe ich konsequent Lösungen geliefert, die direkt zum Geschäftswachstum und zur operativen Skalierbarkeit beigetragen haben.",
     "highlightsTitle": "Meine Kernkompetenzen:",
-    "highlight1": "Architektur und Wartung von Microservices-Infrastruktur auf Google Cloud Platform",
-    "highlight2": "Implementierung von Infrastructure as Code mit Pulumi für reproduzierbare Deployments",
-    "highlight3": "Integration von Zahlungssystemen (PayPal, Adyen) und Logistik-APIs (Deutsche Post)",
-    "highlight4": "Technische Führung und Mentoring von Entwicklungsteams",
-    "skills": "Mein technisches Profil umfasst GCP, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich bin es gewohnt, in agilen Teams zu arbeiten und komplexe technische Herausforderungen zu lösen.",
-    "closing": "Ich freue mich auf die Möglichkeit, meine Erfahrungen und Fähigkeiten in Ihr Team einzubringen und gemeinsam innovative Lösungen zu entwickeln.",
+    "highlight1": "Leitung der Infrastruktur-Transformation von Cloud Functions zu Managed APIs auf Kubernetes (GKE) zur Verbesserung von Skalierbarkeit und operativer Effizienz",
+    "highlight2": "Implementierung von GitOps-Workflows und CI/CD-Pipelines für schnelle, zuverlässige Deployments",
+    "highlight3": "Einrichtung von API-Management mit Gravitee für Developer Experience, Governance und externe Partnerintegrationen",
+    "highlight4": "Architektur von Microservices-Infrastruktur auf GCP, die mit dem signifikanten Geschäftswachstum skalierte",
+    "highlight5": "Integration von Zahlungssystemen (PayPal, Adyen) und Logistik-APIs (Deutsche Post), die neue Einnahmequellen erschlossen",
+    "skills": "Mein technisches Profil umfasst GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich bin es gewohnt, in agilen Teams zu arbeiten, schnelle Entscheidungen unter Unsicherheit zu treffen und komplexe technische Herausforderungen in ressourcenbeschränkten Umgebungen zu lösen.",
+    "closing": "Ich freue mich auf die Möglichkeit, meine Startup-Erfahrung und nachgewiesene Erfolgsbilanz im Bereich Wachstum in Ihr Team einzubringen. Ich freue mich darauf, zu besprechen, wie ich zu Ihrem Erfolg beitragen kann.",
     "signOff": "Mit freundlichen Grüßen,"
   },
   "cv": {
