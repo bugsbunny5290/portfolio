@@ -21,7 +21,7 @@ const categoryLabels = {
 
 export async function generateCVDocx(language: Locale): Promise<Buffer> {
   const content = getContent(language);
-  const { personalInfo, professionalSummary, experiences, education, skills } = content;
+  const { personalInfo, professionalSummary, experiences, education, skills, spokenLanguages } = content;
 
   const sectionTitles =
     language === "de"
@@ -29,12 +29,14 @@ export async function generateCVDocx(language: Locale): Promise<Buffer> {
         summary: "ZUSAMMENFASSUNG",
         experience: "BERUFSERFAHRUNG",
         education: "AUSBILDUNG",
+        languages: "SPRACHEN",
         skills: "TECHNISCHE FÄHIGKEITEN",
       }
       : {
         summary: "PROFESSIONAL SUMMARY",
         experience: "EXPERIENCE",
         education: "EDUCATION",
+        languages: "LANGUAGES",
         skills: "TECHNICAL SKILLS",
       };
 
@@ -166,6 +168,19 @@ export async function generateCVDocx(language: Locale): Promise<Buffer> {
               spacing: { after: 200 },
             }),
           ]),
+
+          createSectionHeader(sectionTitles.languages),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: spokenLanguages
+                  .map((lang) => `${lang.language} - ${lang.level}${lang.cefr ? ` (${lang.cefr})` : ""}`)
+                  .join("  |  "),
+                size: 20,
+              }),
+            ],
+            spacing: { after: 200 },
+          }),
 
           createSectionHeader(sectionTitles.skills),
           ...skillCategories.map((category) => {
