@@ -12,6 +12,7 @@ export type Experience = (typeof contentEn.experiences)[number];
 export type Education = (typeof contentEn.education)[number];
 export type Skill = (typeof contentEn.skills)[number];
 export type WhatIDo = (typeof contentEn.whatIDo)[number];
+export type SpokenLanguage = (typeof contentEn.spokenLanguages)[number];
 
 export const skillCategories = ["cloud", "backend", "frontend", "devops", "languages"] as const;
 export type SkillCategory = (typeof skillCategories)[number];

@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language-context";
 export default function AboutPage(): React.ReactElement {
   const t = useTranslations("about");
   const { content } = useLanguage();
-  const { professionalSummary, whatIDo, education } = content;
+  const { professionalSummary, whatIDo, education, spokenLanguages } = content;
 
   return (
     <Section>
@@ -48,6 +48,20 @@ export default function AboutPage(): React.ReactElement {
             {edu.description && (
               <p className="mt-2 text-sm text-muted-foreground">{edu.description}</p>
             )}
+          </div>
+        ))}
+      </div>
+
+      <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">{t("languages")}</h3>
+      <div className="flex flex-wrap gap-4">
+        {spokenLanguages.map((lang) => (
+          <div key={lang.language} className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3">
+            <span className="font-medium text-foreground">{lang.language}</span>
+            <span className="text-muted-foreground">-</span>
+            <span className="text-muted-foreground">
+              {lang.level}
+              {lang.cefr && ` (${lang.cefr})`}
+            </span>
           </div>
         ))}
       </div>

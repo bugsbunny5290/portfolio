@@ -138,6 +138,12 @@ export const education = [
   },
 ];
 
+export const spokenLanguages = [
+  { language: "Hindi", level: "Native", cefr: null },
+  { language: "English", level: "Advanced", cefr: "C1" },
+  { language: "German", level: "Elementary", cefr: "A2" },
+];
+
 export const skills = [
   { name: "GCP", category: "cloud" as const },
   { name: "Kubernetes", category: "cloud" as const },
