@@ -1,15 +1,32 @@
+"use client";
+
 import { Button, Section } from "@/components/ui";
+import { useLanguage } from "@/lib/language-context";
 
 export default function NotFound(): React.ReactElement {
+  const { locale } = useLanguage();
+
+  const content = locale === "de"
+    ? {
+      title: "404",
+      heading: "Seite nicht gefunden",
+      description: "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+      backHome: "Zur Startseite",
+    }
+    : {
+      title: "404",
+      heading: "Page Not Found",
+      description: "The page you're looking for doesn't exist or has been moved.",
+      backHome: "Back to Home",
+    };
+
   return (
     <Section className="flex flex-col items-center justify-center text-center min-h-[60vh]">
-      <h1 className="text-6xl font-bold text-foreground">404</h1>
-      <p className="mt-4 text-xl text-muted-foreground">Page not found</p>
-      <p className="mt-2 text-muted-foreground">
-        The page you&apos;re looking for doesn&apos;t exist or has been moved.
-      </p>
-      <Button href="/" className="mt-8">
-        Go Home
+      <p className="text-8xl font-bold text-primary mb-4">{content.title}</p>
+      <h1 className="text-3xl font-bold text-foreground mb-4">{content.heading}</h1>
+      <p className="text-muted-foreground mb-8 max-w-md">{content.description}</p>
+      <Button href="/" size="lg">
+        {content.backHome}
       </Button>
     </Section>
   );
