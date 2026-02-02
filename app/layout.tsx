@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale, getMessages } from "next-intl/server";
-import { Analytics } from "@vercel/analytics/next";
+import { AnalyticsWrapper } from "@/components/analytics-wrapper";
 import "./globals.css";
 import { Footer, Header } from "@/components/layout";
 import { Providers } from "@/components/providers";
@@ -77,8 +77,8 @@ export default async function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <AnalyticsWrapper />
         </Providers>
-        <Analytics />
       </body>
     </html>
   );
