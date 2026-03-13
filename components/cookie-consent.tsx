@@ -73,7 +73,12 @@ export function CookieConsent({ onAccept, onDecline }: CookieConsentProps): Reac
   const t = locale === "de" ? content.de : content.en;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg">
+    <div
+      role="dialog"
+      aria-label={t.title}
+      aria-live="polite"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg"
+    >
       <div className="mx-auto max-w-5xl p-4 sm:p-6">
         <h3 className="text-base font-semibold text-foreground mb-2">{t.title}</h3>
         <div className="space-y-2 mb-4">
@@ -88,6 +93,7 @@ export function CookieConsent({ onAccept, onDecline }: CookieConsentProps): Reac
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline hover:no-underline"
+              aria-label={`${t.vercelPrivacy} (opens in new window)`}
             >
               {t.vercelPrivacy}
             </a>

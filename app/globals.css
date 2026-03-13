@@ -5,16 +5,18 @@
   --foreground: 222 47% 11%;
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
-  --primary: 221 83% 45%;
+  --primary: 221 83% 37%;
   --primary-foreground: 210 40% 98%;
   --secondary: 214 20% 92%;
   --secondary-foreground: 222 47% 11%;
   --muted: 214 20% 92%;
-  --muted-foreground: 215 16% 40%;
+  --muted-foreground: 215 20% 32%;
   --accent: 214 20% 92%;
   --accent-foreground: 222 47% 11%;
+  --destructive: 0 72% 40%;
+  --destructive-foreground: 210 40% 98%;
   --border: 214 25% 85%;
-  --ring: 221 83% 45%;
+  --ring: 221 83% 37%;
 }
 
 .dark {
@@ -22,7 +24,7 @@
   --foreground: 210 40% 98%;
   --card: 222 47% 13%;
   --card-foreground: 210 40% 98%;
-  --primary: 217 91% 60%;
+  --primary: 217 91% 65%;
   --primary-foreground: 222 47% 11%;
   --secondary: 217 33% 17%;
   --secondary-foreground: 210 40% 98%;
@@ -30,8 +32,10 @@
   --muted-foreground: 215 20% 65%;
   --accent: 217 33% 17%;
   --accent-foreground: 210 40% 98%;
+  --destructive: 0 62% 55%;
+  --destructive-foreground: 210 40% 98%;
   --border: 217 33% 17%;
-  --ring: 217 91% 60%;
+  --ring: 217 91% 65%;
 }
 
 @theme inline {
@@ -47,6 +51,8 @@
   --color-muted-foreground: hsl(var(--muted-foreground));
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
   --color-border: hsl(var(--border));
   --color-ring: hsl(var(--ring));
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -63,13 +69,27 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Smooth theme transition */
-html.transitioning,
-html.transitioning *,
-html.transitioning *::before,
-html.transitioning *::after {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease !important;
+/* Smooth theme transition — only for users who haven't opted out of motion */
+@media (prefers-reduced-motion: no-preference) {
+  html.transitioning,
+  html.transitioning *,
+  html.transitioning *::before,
+  html.transitioning *::after {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease !important;
+  }
+}
+
+/* Respect reduced-motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

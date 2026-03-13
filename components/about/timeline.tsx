@@ -26,20 +26,20 @@ function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
       <CardHeader>
         <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
           <CardTitle>{experience.role}</CardTitle>
-          <span className="text-sm text-muted-foreground">
+          <span className="text-sm font-medium text-primary/70">
             {experience.startDate} - {experience.endDate}
           </span>
         </div>
-        <CardDescription>
+        <CardDescription className="text-foreground/70">
           {experience.company} | {experience.location}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-muted-foreground">{experience.description}</p>
+        <p className="text-foreground/80">{experience.description}</p>
         {experience.highlights.length > 0 && (
           <ul className="mt-4 space-y-2">
             {experience.highlights.map((highlight) => (
-              <li key={highlight} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <li key={highlight} className="flex items-start gap-2 text-sm text-foreground/80">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 {highlight}
               </li>
