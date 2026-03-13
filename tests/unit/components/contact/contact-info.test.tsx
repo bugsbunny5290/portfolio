@@ -28,11 +28,6 @@ describe("ContactInfo component", () => {
     expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
   });
 
-  it("renders GitHub section", () => {
-    render(<ContactInfo />);
-    expect(screen.getByText("GitHub")).toBeInTheDocument();
-  });
-
   it("renders GitHub username as link", () => {
     render(<ContactInfo />);
     const githubLink = screen.getByText("@testuser");

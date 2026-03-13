@@ -1,13 +1,14 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
 import { getContent, skillCategories } from "./content";
 import type { Locale } from "./i18n";
+import { pdfColors } from "./pdf-tokens";
 
 const styles = StyleSheet.create({
   page: {
     padding: 40,
     fontSize: 10,
     fontFamily: "Helvetica",
-    color: "#1a1a1a",
+    color: pdfColors.foreground,
   },
   header: {
     marginBottom: 20,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 14,
-    color: "#4a4a4a",
+    color: pdfColors.mutedForeground,
     marginBottom: 8,
   },
   contactRow: {
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 12,
     fontSize: 9,
-    color: "#666666",
+    color: pdfColors.secondary,
   },
   contactItem: {
     marginRight: 12,
@@ -41,14 +42,14 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     paddingBottom: 4,
     borderBottomWidth: 1,
-    borderBottomColor: "#e0e0e0",
+    borderBottomColor: pdfColors.border,
     textTransform: "uppercase",
     letterSpacing: 0.5,
   },
   summary: {
     fontSize: 10,
     lineHeight: 1.5,
-    color: "#333333",
+    color: pdfColors.mutedForeground,
   },
   experienceItem: {
     marginBottom: 12,
@@ -64,17 +65,17 @@ const styles = StyleSheet.create({
   },
   experienceDate: {
     fontSize: 9,
-    color: "#666666",
+    color: pdfColors.secondary,
   },
   experienceCompany: {
     fontSize: 10,
-    color: "#4a4a4a",
+    color: pdfColors.mutedForeground,
     marginBottom: 4,
   },
   experienceDescription: {
     fontSize: 9,
     lineHeight: 1.4,
-    color: "#333333",
+    color: pdfColors.mutedForeground,
     marginBottom: 4,
   },
   bulletList: {
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   bulletItem: {
     fontSize: 9,
     lineHeight: 1.4,
-    color: "#333333",
+    color: pdfColors.mutedForeground,
     marginBottom: 2,
   },
   educationItem: {
@@ -100,11 +101,11 @@ const styles = StyleSheet.create({
   },
   educationYear: {
     fontSize: 9,
-    color: "#666666",
+    color: pdfColors.secondary,
   },
   educationInstitution: {
     fontSize: 9,
-    color: "#4a4a4a",
+    color: pdfColors.mutedForeground,
   },
   skillsContainer: {
     flexDirection: "row",
@@ -118,11 +119,11 @@ const styles = StyleSheet.create({
     fontSize: 9,
     fontWeight: "bold",
     marginBottom: 4,
-    color: "#4a4a4a",
+    color: pdfColors.mutedForeground,
   },
   skillTag: {
     fontSize: 8,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: pdfColors.tagBackground,
     padding: "3 6",
     marginRight: 4,
     marginBottom: 4,

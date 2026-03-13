@@ -17,6 +17,7 @@ export function Button({
   href,
   external,
   className,
+  "aria-label": ariaLabel,
   ...props
 }: ButtonProps): React.ReactElement {
   const baseStyles =
@@ -29,8 +30,8 @@ export function Button({
   };
 
   const sizes = {
-    sm: "h-9 px-3 text-sm rounded-md",
-    md: "h-10 px-4 text-sm rounded-md",
+    sm: "h-11 px-3 text-sm rounded-md",
+    md: "h-11 px-4 text-sm rounded-md",
     lg: "h-12 px-6 text-base rounded-lg",
   };
 
@@ -39,20 +40,20 @@ export function Button({
   if (href) {
     if (external) {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        <a href={href} target="_blank" rel="noopener noreferrer" className={classes} aria-label={ariaLabel}>
           {children}
         </a>
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} aria-label={ariaLabel}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} aria-label={ariaLabel} {...props}>
       {children}
     </button>
   );

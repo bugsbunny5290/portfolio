@@ -13,7 +13,7 @@ export function LanguageToggle(): React.ReactElement {
         onClick={() => setLocale("en")}
         disabled={isPending}
         className={cn(
-          "px-2 py-1 text-xs font-medium rounded transition-colors",
+          "px-3 py-2 text-sm font-medium rounded transition-colors",
           locale === "en"
             ? "bg-primary text-primary-foreground"
             : "text-muted-foreground hover:text-foreground"
@@ -27,7 +27,7 @@ export function LanguageToggle(): React.ReactElement {
         onClick={() => setLocale("de")}
         disabled={isPending}
         className={cn(
-          "px-2 py-1 text-xs font-medium rounded transition-colors",
+          "px-3 py-2 text-sm font-medium rounded transition-colors",
           locale === "de"
             ? "bg-primary text-primary-foreground"
             : "text-muted-foreground hover:text-foreground"

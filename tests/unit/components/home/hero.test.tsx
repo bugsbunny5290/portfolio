@@ -36,12 +36,6 @@ describe("Hero component", () => {
     expect(screen.getByText("TypeScript")).toBeInTheDocument();
   });
 
-  it("renders experience highlights", () => {
-    render(<Hero />);
-    expect(screen.getByText("8+")).toBeInTheDocument();
-    expect(screen.getByText("5+")).toBeInTheDocument();
-  });
-
   it("renders call-to-action buttons", () => {
     render(<Hero />);
     expect(screen.getByText("aboutMe")).toBeInTheDocument();

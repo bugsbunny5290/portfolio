@@ -13,18 +13,23 @@ export function ThemeToggle(): React.ReactElement {
   }, []);
 
   function toggleTheme(): void {
-    document.documentElement.classList.add("transitioning");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReducedMotion) {
+      document.documentElement.classList.add("transitioning");
+    }
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
-    setTimeout(() => {
-      document.documentElement.classList.remove("transitioning");
-    }, 300);
+    if (!prefersReducedMotion) {
+      setTimeout(() => {
+        document.documentElement.classList.remove("transitioning");
+      }, 300);
+    }
   }
 
   if (!mounted) {
     return (
       <button
         type="button"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-border bg-background text-sm font-medium text-foreground"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-background text-sm font-medium text-foreground"
         aria-label="Toggle theme"
       >
         <span className="h-4 w-4" />
@@ -37,7 +42,7 @@ export function ThemeToggle(): React.ReactElement {
       type="button"
       onClick={toggleTheme}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-md border border-border",
+        "inline-flex h-11 w-11 items-center justify-center rounded-md border border-border",
         "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
         "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
       )}

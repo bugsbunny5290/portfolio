@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/language-context";
 export function Footer(): React.ReactElement {
   const currentYear = new Date().getFullYear();
   const t = useTranslations("footer");
-  const { content } = useLanguage();
+  const { content, locale } = useLanguage();
 
   return (
     <footer className="border-t border-border bg-background">
@@ -20,15 +20,15 @@ export function Footer(): React.ReactElement {
               href={content.personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               GitHub
             </a>
             <a
               href={`mailto:${content.personalInfo.email}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              {t("allRightsReserved").includes("Alle") ? "E-Mail" : "Email"}
+              {locale === "de" ? "E-Mail" : "Email"}
             </a>
           </div>
         </div>
