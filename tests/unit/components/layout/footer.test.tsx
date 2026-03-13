@@ -1,21 +1,27 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Footer } from "@/components/layout/footer";
 
+const mockUseLanguage = vi.fn();
+
 vi.mock("@/lib/language-context", () => ({
-  useLanguage: () => ({
-    locale: "en",
-    content: {
-      personalInfo: {
-        name: "Pranav Gautam",
-        email: "test@example.com",
-        github: "https://github.com/test",
-      },
-    },
-  }),
+  useLanguage: () => mockUseLanguage(),
 }));
 
 describe("Footer component", () => {
+  beforeEach(() => {
+    mockUseLanguage.mockReturnValue({
+      locale: "en",
+      content: {
+        personalInfo: {
+          name: "Pranav Gautam",
+          email: "test@example.com",
+          github: "https://github.com/test",
+        },
+      },
+    });
+  });
+
   it("renders footer element", () => {
     render(<Footer />);
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
@@ -32,9 +38,9 @@ describe("Footer component", () => {
     expect(screen.getByText(new RegExp(currentYear))).toBeInTheDocument();
   });
 
-  it("renders email link", () => {
+  it("renders email link with English label", () => {
     render(<Footer />);
-    const emailLink = screen.getByRole("link", { name: /email/i });
+    const emailLink = screen.getByRole("link", { name: /^email$/i });
     expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
   });
 
@@ -42,5 +48,21 @@ describe("Footer component", () => {
     render(<Footer />);
     const githubLink = screen.getByRole("link", { name: /github/i });
     expect(githubLink).toHaveAttribute("href", "https://github.com/test");
+  });
+
+  it("shows E-Mail label in German locale", () => {
+    mockUseLanguage.mockReturnValue({
+      locale: "de",
+      content: {
+        personalInfo: {
+          name: "Pranav Gautam",
+          email: "test@example.com",
+          github: "https://github.com/test",
+        },
+      },
+    });
+
+    render(<Footer />);
+    expect(screen.getByText("E-Mail")).toBeInTheDocument();
   });
 });
