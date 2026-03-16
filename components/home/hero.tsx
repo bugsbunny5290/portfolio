@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Button, GitHubIcon, EmailIcon } from "@/components/ui";
+import { Button, EmailIcon, GitHubIcon } from "@/components/ui";
 import { useLanguage } from "@/lib/language-context";
 
 export function Hero(): React.ReactElement {

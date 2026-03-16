@@ -7,7 +7,12 @@ export function LanguageToggle(): React.ReactElement {
   const { locale, setLocale, isPending } = useLanguage();
 
   return (
-    <div className={cn("flex items-center gap-1 rounded-md border border-border bg-background p-1", isPending && "opacity-50")}>
+    <div
+      className={cn(
+        "flex items-center gap-1 rounded-md border border-border bg-background p-1",
+        isPending && "opacity-50",
+      )}
+    >
       <button
         type="button"
         onClick={() => setLocale("en")}
@@ -16,7 +21,7 @@ export function LanguageToggle(): React.ReactElement {
           "px-3 py-2 text-sm font-medium rounded transition-colors",
           locale === "en"
             ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground hover:text-foreground"
+            : "text-muted-foreground hover:text-foreground",
         )}
         aria-label="Switch to English"
       >
@@ -30,7 +35,7 @@ export function LanguageToggle(): React.ReactElement {
           "px-3 py-2 text-sm font-medium rounded transition-colors",
           locale === "de"
             ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground hover:text-foreground"
+            : "text-muted-foreground hover:text-foreground",
         )}
         aria-label="Auf Deutsch wechseln"
       >

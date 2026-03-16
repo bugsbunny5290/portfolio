@@ -154,24 +154,25 @@ const categoryLabels = {
 
 export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
   const content = getContent(language);
-  const { personalInfo, professionalSummary, experiences, education, skills, spokenLanguages } = content;
+  const { personalInfo, professionalSummary, experiences, education, skills, spokenLanguages } =
+    content;
 
   const sectionTitles =
     language === "de"
       ? {
-        summary: "Zusammenfassung",
-        experience: "Berufserfahrung",
-        education: "Ausbildung",
-        skills: "Technische Fähigkeiten",
-        languages: "Sprachen",
-      }
+          summary: "Zusammenfassung",
+          experience: "Berufserfahrung",
+          education: "Ausbildung",
+          skills: "Technische Fähigkeiten",
+          languages: "Sprachen",
+        }
       : {
-        summary: "Professional Summary",
-        experience: "Experience",
-        education: "Education",
-        skills: "Technical Skills",
-        languages: "Languages",
-      };
+          summary: "Professional Summary",
+          experience: "Experience",
+          education: "Education",
+          skills: "Technical Skills",
+          languages: "Languages",
+        };
 
   const labels = categoryLabels[language];
 
@@ -241,7 +242,8 @@ export function CVDocument({ language }: CVDocumentProps): React.ReactElement {
           <View style={styles.skillsContainer}>
             {spokenLanguages.map((lang) => (
               <Text key={lang.language} style={styles.skillTag}>
-                {lang.language} - {lang.level}{lang.cefr ? ` (${lang.cefr})` : ""}
+                {lang.language} - {lang.level}
+                {lang.cefr ? ` (${lang.cefr})` : ""}
               </Text>
             ))}
           </View>

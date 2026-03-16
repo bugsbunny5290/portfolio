@@ -112,8 +112,7 @@ export const experiences = [
     startDate: "Okt 2016",
     endDate: "Dez 2016",
     contextNote: "",
-    description:
-      "Gemeinsames Fraunhofer–John-Deere-Projekt für Agrartechnologie-Interfaces.",
+    description: "Gemeinsames Fraunhofer–John-Deere-Projekt für Agrartechnologie-Interfaces.",
     highlights: [
       "Design einer Spracherkennungs-UI für Bediener landwirtschaftlicher Maschinen im Rahmen eines gemeinsamen Fraunhofer–John-Deere-Projekts.",
       "Lieferung von Wireframes und interaktiven Prototypen, ausgerichtet am Design-System von John Deere.",

@@ -79,8 +79,7 @@ export const experiences = [
     startDate: "Nov 2018",
     endDate: "Apr 2019",
     contextNote: "",
-    description:
-      "Selected for a competitive R&D programme at HPI's health cloud initiative.",
+    description: "Selected for a competitive R&D programme at HPI's health cloud initiative.",
     highlights: [
       "Designed architecture for a voice-driven data collection platform; built functional prototypes used to validate product-market fit before full investment.",
       "Represented Data4Life at HIMSS 2019 (Orlando), pitching to healthcare executives and potential partners.",
@@ -112,8 +111,7 @@ export const experiences = [
     startDate: "Oct 2016",
     endDate: "Dec 2016",
     contextNote: "",
-    description:
-      "Joint Fraunhofer–John Deere project for agricultural technology interfaces.",
+    description: "Joint Fraunhofer–John Deere project for agricultural technology interfaces.",
     highlights: [
       "Designed speech recognition UI for agricultural machinery operators as part of a joint Fraunhofer–John Deere project.",
       "Delivered wireframes and interactive prototypes aligned to John Deere's design system.",

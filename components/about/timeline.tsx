@@ -1,9 +1,9 @@
 "use client";
 
 import type React from "react";
-import { useLanguage } from "@/lib/language-context";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui";
 import type { Experience } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 export function Timeline(): React.ReactElement {
   const { content } = useLanguage();
@@ -35,9 +35,7 @@ function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
           {experience.company} | {experience.location}
         </CardDescription>
         {experience.contextNote && (
-          <p className="mt-1 text-sm italic text-muted-foreground">
-            {experience.contextNote}
-          </p>
+          <p className="mt-1 text-sm italic text-muted-foreground">{experience.contextNote}</p>
         )}
       </CardHeader>
       <CardContent>
@@ -46,7 +44,9 @@ function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
             {experience.highlights.map((highlight) => (
               <li key={highlight} className="flex items-start gap-2 text-sm text-foreground/80">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                <span><HighlightMetrics text={highlight} /></span>
+                <span>
+                  <HighlightMetrics text={highlight} />
+                </span>
               </li>
             ))}
           </ul>
@@ -73,9 +73,8 @@ function HighlightMetrics({ text }: { text: string }): React.ReactElement {
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   const regex = new RegExp(pattern.source, pattern.flags);
-  let match: RegExpExecArray | null;
 
-  while ((match = regex.exec(text)) !== null) {
+  for (let match = regex.exec(text); match !== null; match = regex.exec(text)) {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index));
     }

@@ -1,9 +1,16 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useTransition, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
+import { type Content, getContent } from "./content";
 import type { Locale } from "./i18n";
-import { getContent, type Content } from "./content";
 
 interface LanguageContextType {
   locale: Locale;
@@ -48,7 +55,10 @@ async function setCookie(name: string, value: string, maxAge: number): Promise<v
   document.cookie = `${name}=${value};path=/;max-age=${maxAge};samesite=lax`;
 }
 
-export function LanguageProvider({ children, initialLocale }: LanguageProviderProps): React.ReactElement {
+export function LanguageProvider({
+  children,
+  initialLocale,
+}: LanguageProviderProps): React.ReactElement {
   const [locale, setLocaleState] = useState<Locale>(initialLocale);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();

@@ -1,8 +1,8 @@
 import { renderToBuffer } from "@react-pdf/renderer";
-import { CVDocument } from "@/lib/cv-template";
-import { generateCVDocx } from "@/lib/cv-docx";
 import type { NextRequest } from "next/server";
 import { getContent } from "@/lib/content";
+import { generateCVDocx } from "@/lib/cv-docx";
+import { CVDocument } from "@/lib/cv-template";
 import type { Locale } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
@@ -22,8 +22,7 @@ export async function GET(request: NextRequest): Promise<Response> {
 
       return new Response(new Uint8Array(buffer), {
         headers: {
-          "Content-Type":
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
           "Content-Disposition": `attachment; filename="${filename}.docx"`,
           "Cache-Control": "no-store",
         },

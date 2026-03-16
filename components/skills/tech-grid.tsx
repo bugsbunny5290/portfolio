@@ -2,8 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
+import { type SkillCategory, skillCategories } from "@/lib/content";
 import { useLanguage } from "@/lib/language-context";
-import { skillCategories, type SkillCategory } from "@/lib/content";
 
 export function TechGrid(): React.ReactElement {
   const t = useTranslations("categories");

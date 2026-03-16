@@ -9,7 +9,9 @@ vi.mock("@/lib/language-context", () => ({
       personalInfo: {
         name: "Pranav Gautam",
         title: "Staff Engineer",
+        subtitle: "Staff Engineer · Platform & Backend",
         tagline: "Test tagline",
+        workAuth: "Work-authorised (EU Blue Card)",
         github: "https://github.com/test",
         email: "test@example.com",
         location: "Heidelberg, Germany",
@@ -24,22 +26,19 @@ describe("Hero component", () => {
     expect(screen.getByText("Pranav Gautam")).toBeInTheDocument();
   });
 
-  it("renders the title", () => {
+  it("renders the subtitle", () => {
     render(<Hero />);
-    expect(screen.getByText("Staff Engineer")).toBeInTheDocument();
+    expect(screen.getByText("Staff Engineer · Platform & Backend")).toBeInTheDocument();
   });
 
-  it("renders tech highlights", () => {
+  it("renders work authorisation status", () => {
     render(<Hero />);
-    expect(screen.getByText("GCP")).toBeInTheDocument();
-    expect(screen.getByText("Kubernetes")).toBeInTheDocument();
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
+    expect(screen.getByText(/Work-authorised/)).toBeInTheDocument();
   });
 
   it("renders call-to-action buttons", () => {
     render(<Hero />);
-    expect(screen.getByText("aboutMe")).toBeInTheDocument();
-    expect(screen.getByText("getInTouch")).toBeInTheDocument();
+    expect(screen.getByText("viewMyWork")).toBeInTheDocument();
     expect(screen.getByText("downloadCV")).toBeInTheDocument();
   });
 
@@ -55,8 +54,8 @@ describe("Hero component", () => {
     expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
   });
 
-  it("renders location", () => {
+  it("renders location with work auth", () => {
     render(<Hero />);
-    expect(screen.getByText("Heidelberg, Germany")).toBeInTheDocument();
+    expect(screen.getByText(/Heidelberg, Germany/)).toBeInTheDocument();
   });
 });
