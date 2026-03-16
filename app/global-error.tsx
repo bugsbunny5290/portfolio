@@ -14,6 +14,40 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
 
   return (
     <html lang="en">
+      <head>
+        <style>{`
+          :root {
+            color-scheme: light dark;
+            --ge-bg: hsl(210, 20%, 98%);
+            --ge-fg: hsl(222, 47%, 11%);
+            --ge-muted: hsl(215, 20%, 32%);
+            --ge-error-bg: hsl(0, 80%, 92%);
+            --ge-error-stroke: hsl(0, 72%, 40%);
+            --ge-border: hsl(214, 25%, 85%);
+            --ge-btn-bg: hsl(210, 20%, 98%);
+            --ge-btn-fg: hsl(222, 47%, 11%);
+            --ge-btn-primary-bg: hsl(222, 47%, 11%);
+            --ge-btn-primary-fg: hsl(210, 40%, 98%);
+          }
+          @media (prefers-color-scheme: dark) {
+            :root {
+              --ge-bg: hsl(222, 47%, 11%);
+              --ge-fg: hsl(210, 40%, 98%);
+              --ge-muted: hsl(215, 20%, 65%);
+              --ge-error-bg: hsl(0, 50%, 18%);
+              --ge-error-stroke: hsl(0, 70%, 60%);
+              --ge-border: hsl(217, 33%, 25%);
+              --ge-btn-bg: hsl(217, 33%, 17%);
+              --ge-btn-fg: hsl(210, 40%, 98%);
+              --ge-btn-primary-bg: hsl(210, 40%, 98%);
+              --ge-btn-primary-fg: hsl(222, 47%, 11%);
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            * { transition-duration: 0.01ms !important; }
+          }
+        `}</style>
+      </head>
       <body style={{ margin: 0, fontFamily: "system-ui, sans-serif" }}>
         <div
           style={{
@@ -24,7 +58,8 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
             justifyContent: "center",
             padding: "2rem",
             textAlign: "center",
-            backgroundColor: "#fafafa",
+            backgroundColor: "var(--ge-bg)",
+            color: "var(--ge-fg)",
           }}
         >
           <div
@@ -32,7 +67,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
               width: "64px",
               height: "64px",
               borderRadius: "50%",
-              backgroundColor: "#fee2e2",
+              backgroundColor: "var(--ge-error-bg)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -45,7 +80,7 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
               height="32"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#dc2626"
+              stroke="var(--ge-error-stroke)"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -57,10 +92,17 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
               <line x1="12" x2="12.01" y1="16" y2="16" />
             </svg>
           </div>
-          <h1 style={{ fontSize: "1.875rem", fontWeight: "bold", color: "#111", marginBottom: "1rem" }}>
+          <h1
+            style={{
+              fontSize: "1.875rem",
+              fontWeight: "bold",
+              color: "var(--ge-fg)",
+              marginBottom: "1rem",
+            }}
+          >
             Something went wrong
           </h1>
-          <p style={{ color: "#666", marginBottom: "2rem", maxWidth: "400px" }}>
+          <p style={{ color: "var(--ge-muted)", marginBottom: "2rem", maxWidth: "400px" }}>
             A critical error occurred. Please try again or contact support if the problem persists.
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
@@ -71,11 +113,12 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
                 padding: "0.75rem 1.5rem",
                 fontSize: "1rem",
                 fontWeight: "500",
-                color: "#111",
-                backgroundColor: "#fff",
-                border: "1px solid #ddd",
+                color: "var(--ge-btn-fg)",
+                backgroundColor: "var(--ge-btn-bg)",
+                border: "1px solid var(--ge-border)",
                 borderRadius: "0.5rem",
                 cursor: "pointer",
+                minHeight: "44px",
               }}
             >
               Try Again
@@ -86,11 +129,14 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
                 padding: "0.75rem 1.5rem",
                 fontSize: "1rem",
                 fontWeight: "500",
-                color: "#fff",
-                backgroundColor: "#111",
+                color: "var(--ge-btn-primary-fg)",
+                backgroundColor: "var(--ge-btn-primary-bg)",
                 border: "none",
                 borderRadius: "0.5rem",
                 textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                minHeight: "44px",
               }}
             >
               Back to Home

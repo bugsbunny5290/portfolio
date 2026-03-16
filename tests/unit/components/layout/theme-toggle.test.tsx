@@ -16,6 +16,7 @@ vi.mock("next-themes", () => ({
 describe("ThemeToggle component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    document.documentElement.classList.remove("transitioning");
   });
 
   it("renders toggle button", () => {
@@ -49,5 +50,39 @@ describe("ThemeToggle component", () => {
       const svg = button.querySelector("svg");
       expect(svg).toBeInTheDocument();
     });
+  });
+
+  it("adds transitioning class when reduced motion is not preferred", async () => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: vi.fn().mockReturnValue({ matches: false }),
+    });
+
+    const user = userEvent.setup();
+    render(<ThemeToggle />);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText(/switch to dark mode/i)).toBeInTheDocument();
+    });
+
+    await user.click(screen.getByRole("button"));
+    expect(document.documentElement.classList.contains("transitioning")).toBe(true);
+  });
+
+  it("skips transitioning class when reduced motion is preferred", async () => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: vi.fn().mockReturnValue({ matches: true }),
+    });
+
+    const user = userEvent.setup();
+    render(<ThemeToggle />);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText(/switch to dark mode/i)).toBeInTheDocument();
+    });
+
+    await user.click(screen.getByRole("button"));
+    expect(document.documentElement.classList.contains("transitioning")).toBe(false);
   });
 });

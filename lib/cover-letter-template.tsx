@@ -1,15 +1,16 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
+import messagesDe from "../messages/de.json";
+import messagesEn from "../messages/en.json";
 import { getContent } from "./content";
 import type { Locale } from "./i18n";
-import messagesEn from "../messages/en.json";
-import messagesDe from "../messages/de.json";
+import { pdfColors } from "./pdf-tokens";
 
 const styles = StyleSheet.create({
   page: {
     padding: 50,
     fontSize: 11,
     fontFamily: "Helvetica",
-    color: "#1a1a1a",
+    color: pdfColors.foreground,
     lineHeight: 1.6,
   },
   header: {
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
   },
   contactInfo: {
     fontSize: 10,
-    color: "#666666",
+    color: pdfColors.secondary,
     marginBottom: 2,
   },
   date: {

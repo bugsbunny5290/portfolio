@@ -13,18 +13,20 @@ vi.mock("@/lib/language-context", () => ({
           location: "Heidelberg, Germany",
           startDate: "2022",
           endDate: "Present",
+          contextNote: "Previously CTO (team of 15); transitioned to Staff Engineer.",
           description: "Leading platform engineering",
           highlights: ["Built scalable systems", "Led architecture decisions"],
           technologies: ["GCP", "Kubernetes", "TypeScript"],
         },
         {
-          company: "Au-Schein GmbH",
-          role: "CTO",
-          location: "Heidelberg, Germany",
-          startDate: "2020",
-          endDate: "2022",
-          description: "Led technical strategy",
-          highlights: ["Scaled from 0 to 2M users"],
+          company: "Data4Life",
+          role: "Resident Entrepreneur",
+          location: "Potsdam, Germany",
+          startDate: "2018",
+          endDate: "2019",
+          contextNote: "",
+          description: "R&D programme at HPI",
+          highlights: ["Designed voice-driven platform"],
           technologies: ["Node.js"],
         },
       ],
@@ -36,32 +38,31 @@ describe("Timeline component", () => {
   it("renders all experiences by company in description", () => {
     render(<Timeline />);
     expect(screen.getByText(/DrAnsay AU-Schein GmbH/)).toBeInTheDocument();
-    expect(screen.getByText(/Au-Schein GmbH/)).toBeInTheDocument();
+    expect(screen.getByText(/Data4Life/)).toBeInTheDocument();
   });
 
   it("displays role for each experience as title", () => {
     render(<Timeline />);
     expect(screen.getByText("Staff Engineer")).toBeInTheDocument();
-    expect(screen.getByText("CTO")).toBeInTheDocument();
+    expect(screen.getByText("Resident Entrepreneur")).toBeInTheDocument();
   });
 
   it("displays date ranges", () => {
     render(<Timeline />);
     expect(screen.getByText("2022 - Present")).toBeInTheDocument();
-    expect(screen.getByText("2020 - 2022")).toBeInTheDocument();
+    expect(screen.getByText("2018 - 2019")).toBeInTheDocument();
   });
 
-  it("displays experience descriptions", () => {
+  it("displays context note when present", () => {
     render(<Timeline />);
-    expect(screen.getByText("Leading platform engineering")).toBeInTheDocument();
-    expect(screen.getByText("Led technical strategy")).toBeInTheDocument();
+    expect(screen.getByText(/Previously CTO/)).toBeInTheDocument();
   });
 
   it("displays highlights as list items", () => {
     render(<Timeline />);
     expect(screen.getByText("Built scalable systems")).toBeInTheDocument();
     expect(screen.getByText("Led architecture decisions")).toBeInTheDocument();
-    expect(screen.getByText("Scaled from 0 to 2M users")).toBeInTheDocument();
+    expect(screen.getByText("Designed voice-driven platform")).toBeInTheDocument();
   });
 
   it("displays technologies as badges", () => {

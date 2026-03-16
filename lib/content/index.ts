@@ -1,6 +1,6 @@
-import * as contentEn from "./en";
-import * as contentDe from "./de";
 import type { Locale } from "../i18n";
+import * as contentDe from "./de";
+import * as contentEn from "./en";
 
 export type Content = typeof contentEn | typeof contentDe;
 

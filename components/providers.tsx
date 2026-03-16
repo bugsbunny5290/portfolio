@@ -1,10 +1,10 @@
 "use client";
 
-import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import type { ReactNode } from "react";
-import { LanguageProvider } from "@/lib/language-context";
 import type { Locale } from "@/lib/i18n";
+import { LanguageProvider } from "@/lib/language-context";
 
 interface ProvidersProps {
   children: ReactNode;
