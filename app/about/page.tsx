@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Section, SectionHeader } from "@/components/ui";
 import { Timeline } from "@/components/about/timeline";
+import { Section, SectionHeader } from "@/components/ui";
 import { useLanguage } from "@/lib/language-context";
 
 export default function AboutPage(): React.ReactElement {
@@ -13,8 +13,12 @@ export default function AboutPage(): React.ReactElement {
   return (
     <Section>
       <SectionHeader title={t("title")} description={t("subtitle")} />
-      <div className="max-w-none mb-8">
-        <p className="text-lg text-foreground/80 leading-relaxed">{professionalSummary}</p>
+      <div className="max-w-none mb-8 space-y-4">
+        {professionalSummary.split("\n\n").map((paragraph) => (
+          <p key={paragraph.slice(0, 40)} className="text-lg text-foreground/80 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
       </div>
 
       <h3 className="text-2xl font-bold text-foreground mb-4">{t("whatIDo")}</h3>
@@ -53,7 +57,10 @@ export default function AboutPage(): React.ReactElement {
       <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">{t("languages")}</h3>
       <div className="flex flex-wrap gap-4">
         {spokenLanguages.map((lang) => (
-          <div key={lang.language} className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3">
+          <div
+            key={lang.language}
+            className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3"
+          >
             <span className="font-medium text-foreground">{lang.language}</span>
             <span className="text-muted-foreground">-</span>
             <span className="text-foreground/70">

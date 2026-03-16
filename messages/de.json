@@ -6,12 +6,7 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "greeting": "Hallo, ich bin",
-    "yearsExperience": "Jahre Erfahrung",
-    "companies": "Unternehmen",
-    "focus": "Fokus",
-    "aboutMe": "Über mich",
-    "getInTouch": "Kontakt",
+    "viewMyWork": "Meine Arbeit",
     "downloadCV": "Lebenslauf",
     "taglineExtended": "Zuvor CTO eines Healthcare-Startups, jetzt fokussiert auf technische Umsetzung. Erfahrung in Gesundheitswesen, KI-Forschung (DFKI), Entrepreneurship (Data4Life am Hasso-Plattner-Institut) und Enterprise-Systemen (Fraunhofer, John Deere)."
   },
@@ -32,6 +27,7 @@
     "subtitle": "Nehmen Sie gerne Kontakt auf für Möglichkeiten oder Zusammenarbeit",
     "email": "E-Mail",
     "location": "Standort",
+    "availability": "Aktuell offen für Staff-/Principal-Engineer-Rollen in Deutschland oder remote-freundliche internationale Positionen.",
     "cvResume": "Lebenslauf",
     "coverLetter": "Anschreiben"
   },
@@ -42,7 +38,7 @@
     "cloud": "Cloud & Infrastruktur",
     "backend": "Backend",
     "frontend": "Frontend",
-    "devops": "DevOps",
+    "devops": "Plattform & DevOps",
     "languages": "Programmiersprachen"
   },
   "coverLetter": {
@@ -57,7 +53,7 @@
     "highlight3": "Einrichtung von API-Management mit Gravitee für Developer Experience, Governance und externe Partnerintegrationen",
     "highlight4": "Architektur von Microservices-Infrastruktur auf GCP, die mit dem signifikanten Geschäftswachstum skalierte",
     "highlight5": "Integration von Zahlungssystemen (PayPal, Adyen) und Logistik-APIs (Deutsche Post), die neue Einnahmequellen erschlossen",
-    "skills": "Mein technisches Profil umfasst GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich setze aktiv KI-gestutzte Entwicklungstools ein, um Prototyping zu beschleunigen und hohe Geschwindigkeit vom Konzept bis zur Produktion zu halten. Ich bin es gewohnt, in agilen Teams zu arbeiten, schnelle Entscheidungen unter Unsicherheit zu treffen und komplexe technische Herausforderungen in ressourcenbeschränkten Umgebungen zu lösen.",
+    "skills": "Mein technisches Profil umfasst GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi und moderne CI/CD-Praktiken. Ich bin es gewohnt, in agilen Teams zu arbeiten, schnelle Entscheidungen unter Unsicherheit zu treffen und komplexe technische Herausforderungen in ressourcenbeschränkten Umgebungen zu lösen.",
     "closing": "Ich freue mich auf die Möglichkeit, meine Startup-Erfahrung und nachgewiesene Erfolgsbilanz im Bereich Wachstum in Ihr Team einzubringen. Ich freue mich darauf, zu besprechen, wie ich zu Ihrem Erfolg beitragen kann.",
     "signOff": "Mit freundlichen Grüßen,"
   },

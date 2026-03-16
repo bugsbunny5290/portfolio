@@ -11,6 +11,9 @@ export function ContactInfo(): React.ReactElement {
 
   return (
     <div className="space-y-10 sm:space-y-12">
+      {/* Availability note */}
+      <p className="text-base font-medium text-primary">{t("availability")}</p>
+
       {/* Contact details — compact, left-aligned, no cards */}
       <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
         <a
@@ -40,16 +43,40 @@ export function ContactInfo(): React.ReactElement {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h3 className="text-base font-semibold text-foreground">{t("cvResume")}</h3>
           <div className="flex flex-wrap gap-2">
-            <Button href="/api/cv?lang=en&format=pdf" variant="outline" size="sm" external aria-label="Download CV as PDF in English">
+            <Button
+              href="/api/cv?lang=en&format=pdf"
+              variant="outline"
+              size="sm"
+              external
+              aria-label="Download CV as PDF in English"
+            >
               PDF (EN)
             </Button>
-            <Button href="/api/cv?lang=de&format=pdf" variant="outline" size="sm" external aria-label="Download CV as PDF in German">
+            <Button
+              href="/api/cv?lang=de&format=pdf"
+              variant="outline"
+              size="sm"
+              external
+              aria-label="Download CV as PDF in German"
+            >
               PDF (DE)
             </Button>
-            <Button href="/api/cv?lang=en&format=docx" variant="secondary" size="sm" external aria-label="Download CV as Word document in English">
+            <Button
+              href="/api/cv?lang=en&format=docx"
+              variant="secondary"
+              size="sm"
+              external
+              aria-label="Download CV as Word document in English"
+            >
               Word (EN)
             </Button>
-            <Button href="/api/cv?lang=de&format=docx" variant="secondary" size="sm" external aria-label="Download CV as Word document in German">
+            <Button
+              href="/api/cv?lang=de&format=docx"
+              variant="secondary"
+              size="sm"
+              external
+              aria-label="Download CV as Word document in German"
+            >
               Word (DE)
             </Button>
           </div>
@@ -58,16 +85,40 @@ export function ContactInfo(): React.ReactElement {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <h3 className="text-base font-semibold text-foreground">{t("coverLetter")}</h3>
           <div className="flex flex-wrap gap-2">
-            <Button href="/api/cover-letter?lang=en&format=pdf" variant="outline" size="sm" external aria-label="Download cover letter as PDF in English">
+            <Button
+              href="/api/cover-letter?lang=en&format=pdf"
+              variant="outline"
+              size="sm"
+              external
+              aria-label="Download cover letter as PDF in English"
+            >
               PDF (EN)
             </Button>
-            <Button href="/api/cover-letter?lang=de&format=pdf" variant="outline" size="sm" external aria-label="Download cover letter as PDF in German">
+            <Button
+              href="/api/cover-letter?lang=de&format=pdf"
+              variant="outline"
+              size="sm"
+              external
+              aria-label="Download cover letter as PDF in German"
+            >
               PDF (DE)
             </Button>
-            <Button href="/api/cover-letter?lang=en&format=docx" variant="secondary" size="sm" external aria-label="Download cover letter as Word document in English">
+            <Button
+              href="/api/cover-letter?lang=en&format=docx"
+              variant="secondary"
+              size="sm"
+              external
+              aria-label="Download cover letter as Word document in English"
+            >
               Word (EN)
             </Button>
-            <Button href="/api/cover-letter?lang=de&format=docx" variant="secondary" size="sm" external aria-label="Download cover letter as Word document in German">
+            <Button
+              href="/api/cover-letter?lang=de&format=docx"
+              variant="secondary"
+              size="sm"
+              external
+              aria-label="Download cover letter as Word document in German"
+            >
               Word (DE)
             </Button>
           </div>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui";
+import type React from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui";
 import type { Experience } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 export function Timeline(): React.ReactElement {
   const { content } = useLanguage();
@@ -33,15 +34,19 @@ function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
         <CardDescription className="text-foreground/70">
           {experience.company} | {experience.location}
         </CardDescription>
+        {experience.contextNote && (
+          <p className="mt-1 text-sm italic text-muted-foreground">{experience.contextNote}</p>
+        )}
       </CardHeader>
       <CardContent>
-        <p className="text-foreground/80">{experience.description}</p>
         {experience.highlights.length > 0 && (
-          <ul className="mt-4 space-y-2">
+          <ul className="space-y-2">
             {experience.highlights.map((highlight) => (
               <li key={highlight} className="flex items-start gap-2 text-sm text-foreground/80">
                 <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                {highlight}
+                <span>
+                  <HighlightMetrics text={highlight} />
+                </span>
               </li>
             ))}
           </ul>
@@ -59,4 +64,31 @@ function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
       </CardContent>
     </Card>
   );
+}
+
+function HighlightMetrics({ text }: { text: string }): React.ReactElement {
+  const pattern =
+    /(\d[\d,.]*[KMB]\+?(?:\s*(?:users|requests?\/day|Requests?\/Tag|microservices|Microservices|APIs?|people|Mitarbeiter|engineers?|Engineers?))?|€[\d,.]+[KMB]?\s*(?:ARR)?|\d+-(?:person|Personen)(?:\s+(?:engineering\s+)?(?:org|Organisation))?|P\d+)/gi;
+
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  const regex = new RegExp(pattern.source, pattern.flags);
+
+  for (let match = regex.exec(text); match !== null; match = regex.exec(text)) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    parts.push(
+      <strong key={match.index} className="font-semibold text-primary">
+        {match[0]}
+      </strong>,
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return <>{parts.length > 0 ? parts : text}</>;
 }

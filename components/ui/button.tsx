@@ -40,7 +40,13 @@ export function Button({
   if (href) {
     if (external) {
       return (
-        <a href={href} target="_blank" rel="noopener noreferrer" className={classes} aria-label={ariaLabel}>
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes}
+          aria-label={ariaLabel}
+        >
           {children}
         </a>
       );

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/language-context";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ export function MobileNav(): React.ReactElement {
       if (e.key !== "Tab" || !navRef.current) return;
 
       const focusable = navRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
       );
       if (focusable.length === 0) return;
 
@@ -55,7 +55,7 @@ export function MobileNav(): React.ReactElement {
 
     // Focus the first link when the menu opens
     const focusable = navRef.current?.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled])'
+      "a[href], button:not([disabled])",
     );
     if (focusable && focusable.length > 0) {
       focusable[0].focus();
@@ -75,7 +75,7 @@ export function MobileNav(): React.ReactElement {
         className={cn(
           "inline-flex h-11 w-11 items-center justify-center rounded-md border border-border",
           "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
-          "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
         )}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
@@ -131,7 +131,7 @@ export function MobileNav(): React.ReactElement {
             aria-label="Mobile navigation"
             className={cn(
               "fixed right-0 top-14 sm:top-16 z-50 w-3/4 max-w-xs border-l border-border bg-background p-6",
-              "h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] overflow-y-auto"
+              "h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] overflow-y-auto",
             )}
           >
             <ul className="flex flex-col gap-2">

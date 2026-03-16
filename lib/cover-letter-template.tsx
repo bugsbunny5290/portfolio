@@ -1,9 +1,9 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
+import messagesDe from "../messages/de.json";
+import messagesEn from "../messages/en.json";
 import { getContent } from "./content";
 import type { Locale } from "./i18n";
 import { pdfColors } from "./pdf-tokens";
-import messagesEn from "../messages/en.json";
-import messagesDe from "../messages/de.json";
 
 const styles = StyleSheet.create({
   page: {

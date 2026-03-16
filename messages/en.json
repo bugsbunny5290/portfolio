@@ -6,12 +6,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hello, I'm",
-    "yearsExperience": "Years Experience",
-    "companies": "Companies",
-    "focus": "Focus",
-    "aboutMe": "About Me",
-    "getInTouch": "Get in Touch",
+    "viewMyWork": "View My Work",
     "downloadCV": "Download CV",
     "taglineExtended": "Previously CTO at a healthcare startup, now focused on technical execution. Experience across healthcare, AI research (DFKI), entrepreneurship (Data4Life at Hasso Plattner Institute), and enterprise systems (Fraunhofer, John Deere)."
   },
@@ -29,9 +24,10 @@
   },
   "contact": {
     "title": "Get in Touch",
-    "subtitle": "Feel free to reach out for opportunities or collaborations",
+    "subtitle": "Reach out for opportunities or collaborations",
     "email": "Email",
     "location": "Location",
+    "availability": "Currently open to Staff / Principal Engineer roles in Germany or remote-friendly international positions.",
     "cvResume": "CV / Resume",
     "coverLetter": "Cover Letter"
   },
@@ -42,7 +38,7 @@
     "cloud": "Cloud & Infrastructure",
     "backend": "Backend",
     "frontend": "Frontend",
-    "devops": "DevOps",
+    "devops": "Platform & DevOps",
     "languages": "Languages"
   },
   "coverLetter": {
@@ -57,7 +53,7 @@
     "highlight3": "Setting up API management with Gravitee for developer experience, governance, and external partner integrations",
     "highlight4": "Architecting microservices infrastructure on GCP that scaled with significant business growth",
     "highlight5": "Integrating payment systems (PayPal, Adyen) and logistics APIs (Deutsche Post) that enabled new revenue streams",
-    "skills": "My technical profile includes GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi, and modern CI/CD practices. I actively leverage AI-assisted development tools to accelerate prototyping and maintain high velocity from concept to production. I am comfortable working in agile teams, making quick decisions under uncertainty, and solving complex technical challenges in resource-constrained environments.",
+    "skills": "My technical profile includes GCP, Kubernetes, GitOps, Gravitee, TypeScript, Next.js, NestJS, Pulumi, and modern CI/CD practices. I am comfortable working in agile teams, making quick decisions under uncertainty, and solving complex technical challenges in resource-constrained environments.",
     "closing": "I am excited about the opportunity to bring my startup experience and proven track record of driving growth to your team. I look forward to discussing how I can contribute to your success.",
     "signOff": "Best regards,"
   },
