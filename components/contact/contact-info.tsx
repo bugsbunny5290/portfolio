@@ -11,6 +11,11 @@ export function ContactInfo(): React.ReactElement {
 
   return (
     <div className="space-y-10 sm:space-y-12">
+      {/* Availability note */}
+      <p className="text-base font-medium text-primary">
+        {t("availability")}
+      </p>
+
       {/* Contact details — compact, left-aligned, no cards */}
       <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-4">
         <a

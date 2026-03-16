@@ -27,7 +27,7 @@ export function TechGrid(): React.ReactElement {
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {categorySkills.map((skill) => (
                   <span
-                    key={skill.name}
+                    key={`${skill.name}-${skill.category}`}
                     className="inline-flex items-center rounded-full bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground sm:px-3 sm:py-1 sm:text-sm"
                   >
                     {skill.name}

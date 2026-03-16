@@ -25,21 +25,23 @@ export async function generateMetadata(): Promise<Metadata> {
   const content = getContent(locale);
   const { personalInfo } = content;
 
+  const title = `${personalInfo.name} — Staff Engineer · Platform & Backend · Heidelberg`;
+  const description = personalInfo.metaDescription;
+  const ogTitle = `${personalInfo.name} — Staff Engineer`;
+
   return {
     title: {
-      default: `${personalInfo.name} | ${personalInfo.title}`,
+      default: title,
       template: `%s | ${personalInfo.name}`,
     },
-    description: personalInfo.tagline,
+    description,
     keywords: [
-      "Software Engineer",
-      "Platform Engineer",
-      "Full Stack Developer",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "GCP",
-      "Cloud Architecture",
+      "Staff Engineer Germany",
+      "Platform Engineer Heidelberg",
+      "GCP Kubernetes Engineer",
+      "Backend Engineer Germany",
+      "NestJS Engineer",
+      "API Architecture",
     ],
     authors: [{ name: personalInfo.name }],
     creator: personalInfo.name,
@@ -47,13 +49,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       locale: locale === "de" ? "de_DE" : "en_US",
       siteName: personalInfo.name,
-      title: `${personalInfo.name} | ${personalInfo.title}`,
-      description: personalInfo.tagline,
+      title: ogTitle,
+      description,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${personalInfo.name} | ${personalInfo.title}`,
-      description: personalInfo.tagline,
+      title: ogTitle,
+      description,
     },
     robots: {
       index: true,

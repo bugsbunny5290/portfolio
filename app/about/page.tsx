@@ -13,8 +13,12 @@ export default function AboutPage(): React.ReactElement {
   return (
     <Section>
       <SectionHeader title={t("title")} description={t("subtitle")} />
-      <div className="max-w-none mb-8">
-        <p className="text-lg text-foreground/80 leading-relaxed">{professionalSummary}</p>
+      <div className="max-w-none mb-8 space-y-4">
+        {professionalSummary.split("\n\n").map((paragraph) => (
+          <p key={paragraph.slice(0, 40)} className="text-lg text-foreground/80 leading-relaxed">
+            {paragraph}
+          </p>
+        ))}
       </div>
 
       <h3 className="text-2xl font-bold text-foreground mb-4">{t("whatIDo")}</h3>
