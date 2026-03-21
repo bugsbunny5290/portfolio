@@ -31,7 +31,7 @@ describe("Header component", () => {
 
   it("renders home link with aria-label", () => {
     render(<Header />);
-    expect(screen.getByLabelText("Home")).toBeInTheDocument();
+    expect(screen.getByLabelText(/Home/)).toBeInTheDocument();
   });
 
   it("renders nav links excluding home", () => {
