@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import { ScrollAnimations } from "@/components/scroll-animations";
 
@@ -94,7 +94,7 @@ describe("ScrollAnimations component", () => {
 
     // Simulate IntersectionObserver callback with isIntersecting = true
     intersectionCallback(
-      [{ isIntersecting: true, target: el } as IntersectionObserverEntry],
+      [{ isIntersecting: true, target: el } as unknown as IntersectionObserverEntry],
       {} as IntersectionObserver,
     );
 
@@ -109,7 +109,7 @@ describe("ScrollAnimations component", () => {
     el.classList.add("animate-on-scroll");
 
     intersectionCallback(
-      [{ isIntersecting: false, target: el } as IntersectionObserverEntry],
+      [{ isIntersecting: false, target: el } as unknown as IntersectionObserverEntry],
       {} as IntersectionObserver,
     );
 
