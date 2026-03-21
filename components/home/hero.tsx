@@ -39,12 +39,6 @@ export function Hero(): React.ReactElement {
           </div>
 
           <div className="hero-enter">
-            <p className="text-sm md:text-base mb-3" style={{ color: "var(--fg-subtle)" }}>
-              {personalInfo.location} · {personalInfo.workAuth}
-            </p>
-          </div>
-
-          <div className="hero-enter">
             <p
               className="text-base md:text-lg leading-relaxed max-w-xl mb-6"
               style={{ color: "var(--fg-muted)" }}

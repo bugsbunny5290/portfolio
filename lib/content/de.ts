@@ -5,7 +5,6 @@ export const personalInfo = {
   tagline:
     "Staff Engineer mit 8+ Jahren Erfahrung im Aufbau cloud-nativer Systeme im großen Maßstab. Zuvor CTO bei DrAnsay AU-Schein GmbH — Skalierung der Plattform von Null auf 2M+ Nutzer und von ~€200K auf €20M ARR. Jetzt fokussiert auf Platform Engineering, verteilte Systeme und API-Architektur als Individual Contributor.",
   location: "Heidelberg, Deutschland",
-  workAuth: "Arbeitserlaubnis (EU Blue Card)",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
   github: "https://github.com/bugsbunny5290",

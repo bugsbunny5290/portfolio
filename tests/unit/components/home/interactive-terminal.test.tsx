@@ -11,7 +11,6 @@ vi.mock("@/lib/language-context", () => ({
         title: "Staff Engineer",
         subtitle: "Staff Engineer · Platform & Backend",
         tagline: "Test tagline",
-        workAuth: "Work-authorised (EU Blue Card)",
         github: "https://github.com/test",
         linkedin: "https://linkedin.com/in/test",
         email: "test@example.com",
