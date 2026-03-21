@@ -8,7 +8,7 @@ import { InteractiveTerminal } from "./interactive-terminal";
 
 export function Hero(): React.ReactElement {
   const t = useTranslations("hero");
-  const { content, locale } = useLanguage();
+  const { content } = useLanguage();
   const { personalInfo } = content;
   const sectionRef = useRef<HTMLDivElement>(null);
 

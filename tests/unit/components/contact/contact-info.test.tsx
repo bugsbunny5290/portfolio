@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { ContactInfo } from "@/components/contact/contact-info";
 
 vi.mock("@/lib/language-context", () => ({
@@ -60,5 +60,37 @@ describe("ContactInfo component", () => {
     render(<ContactInfo />);
     const buttons = screen.getAllByRole("link");
     expect(buttons.length).toBeGreaterThan(4);
+  });
+
+  it("changes email link color on hover and resets on leave", () => {
+    render(<ContactInfo />);
+    const emailLink = screen.getByText("test@example.com");
+    fireEvent.mouseEnter(emailLink);
+    expect(emailLink.style.color).toBe("var(--color-purple)");
+    fireEvent.mouseLeave(emailLink);
+    expect(emailLink.style.color).toBe("var(--fg)");
+  });
+
+  it("changes GitHub link color on hover and resets on leave", () => {
+    render(<ContactInfo />);
+    const githubLink = screen.getByText("@testuser");
+    fireEvent.mouseEnter(githubLink);
+    expect(githubLink.style.color).toBe("var(--color-purple)");
+    fireEvent.mouseLeave(githubLink);
+    expect(githubLink.style.color).toBe("var(--fg)");
+  });
+
+  it("renders availability note", () => {
+    render(<ContactInfo />);
+    expect(screen.getByText("availability")).toBeInTheDocument();
+  });
+
+  it("renders all CV format buttons", () => {
+    render(<ContactInfo />);
+    // Each format appears twice: once for CV, once for Cover Letter
+    expect(screen.getAllByText("PDF (EN)")).toHaveLength(2);
+    expect(screen.getAllByText("PDF (DE)")).toHaveLength(2);
+    expect(screen.getAllByText("Word (EN)")).toHaveLength(2);
+    expect(screen.getAllByText("Word (DE)")).toHaveLength(2);
   });
 });
