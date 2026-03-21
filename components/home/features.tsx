@@ -70,6 +70,13 @@ const featureIcons = [
   </svg>,
 ];
 
+const featureAccents = [
+  "var(--color-strategy)",
+  "var(--color-platform)",
+  "var(--color-ai)",
+  "var(--color-code)",
+];
+
 export function Features(): React.ReactElement {
   const { content } = useLanguage();
   const t = useTranslations("about");
@@ -93,7 +100,18 @@ export function Features(): React.ReactElement {
           <div
             key={feature.title}
             className={`animate-on-scroll stagger-${i + 1} card-brutal overflow-hidden flex flex-col h-full`}
+            style={{ position: "relative" }}
           >
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "4px",
+                height: "100%",
+                background: featureAccents[i],
+              }}
+            />
             <div
               className="aspect-[4/3] flex items-center justify-center p-3 md:p-6 overflow-hidden"
               style={{
