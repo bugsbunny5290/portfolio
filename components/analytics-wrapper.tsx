@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useCallback } from "react";
 import { Analytics } from "@vercel/analytics/next";
+import { useCallback, useState } from "react";
 import { CookieConsent } from "./cookie-consent";
 
 export function AnalyticsWrapper(): React.ReactElement {

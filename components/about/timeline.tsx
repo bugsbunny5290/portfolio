@@ -1,16 +1,19 @@
 "use client";
 
-import { useLanguage } from "@/lib/language-context";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui";
 import type { Experience } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 export function Timeline(): React.ReactElement {
   const { content } = useLanguage();
 
   return (
-    <div className="space-y-4 sm:space-y-8">
+    <div className="space-y-5">
       {content.experiences.map((experience, index) => (
-        <TimelineItem key={`${experience.company}-${index}`} experience={experience} />
+        <TimelineItem
+          key={`${experience.company}-${index}`}
+          experience={experience}
+          index={index}
+        />
       ))}
     </div>
   );
@@ -18,45 +21,50 @@ export function Timeline(): React.ReactElement {
 
 interface TimelineItemProps {
   experience: Experience;
+  index: number;
 }
 
-function TimelineItem({ experience }: TimelineItemProps): React.ReactElement {
+function TimelineItem({ experience, index }: TimelineItemProps): React.ReactElement {
   return (
-    <Card className="relative">
-      <CardHeader>
-        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-          <CardTitle>{experience.role}</CardTitle>
-          <span className="text-sm font-medium text-primary/70">
-            {experience.startDate} - {experience.endDate}
-          </span>
-        </div>
-        <CardDescription className="text-foreground/70">
-          {experience.company} | {experience.location}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-foreground/80">{experience.description}</p>
-        {experience.highlights.length > 0 && (
-          <ul className="mt-4 space-y-2">
-            {experience.highlights.map((highlight) => (
-              <li key={highlight} className="flex items-start gap-2 text-sm text-foreground/80">
-                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
-                {highlight}
-              </li>
-            ))}
-          </ul>
-        )}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {experience.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+    <div className={`animate-on-scroll stagger-${Math.min(index + 1, 6)} card-brutal p-5 md:p-6`}>
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between flex-wrap mb-2">
+        <h3 className="text-base md:text-lg font-bold" style={{ color: "var(--fg-heading)" }}>
+          {experience.role}
+        </h3>
+        <span className="date-badge flex-shrink-0">
+          {experience.startDate} - {experience.endDate}
+        </span>
+      </div>
+      <p className="text-sm mb-3" style={{ color: "var(--fg-muted)" }}>
+        {experience.company} | {experience.location}
+      </p>
+      <p className="text-sm leading-relaxed" style={{ color: "var(--fg)" }}>
+        {experience.description}
+      </p>
+      {experience.highlights.length > 0 && (
+        <ul className="mt-4 space-y-2">
+          {experience.highlights.map((highlight) => (
+            <li
+              key={highlight}
+              className="flex items-start gap-2 text-sm"
+              style={{ color: "var(--fg)" }}
             >
-              {tech}
-            </span>
+              <span
+                className="mt-2 h-1.5 w-1.5 flex-shrink-0"
+                style={{ background: "var(--color-purple)" }}
+              />
+              {highlight}
+            </li>
           ))}
-        </div>
-      </CardContent>
-    </Card>
+        </ul>
+      )}
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {experience.technologies.map((tech) => (
+          <span key={tech} className="tag-brutal">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

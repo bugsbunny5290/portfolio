@@ -1,4 +1,4 @@
-import { Document, Paragraph, TextRun, BorderStyle, Packer } from "docx";
+import { BorderStyle, Document, Packer, Paragraph, TextRun } from "docx";
 import { getContent, skillCategories } from "./content";
 import type { Locale } from "./i18n";
 
@@ -21,24 +21,25 @@ const categoryLabels = {
 
 export async function generateCVDocx(language: Locale): Promise<Buffer> {
   const content = getContent(language);
-  const { personalInfo, professionalSummary, experiences, education, skills, spokenLanguages } = content;
+  const { personalInfo, professionalSummary, experiences, education, skills, spokenLanguages } =
+    content;
 
   const sectionTitles =
     language === "de"
       ? {
-        summary: "ZUSAMMENFASSUNG",
-        experience: "BERUFSERFAHRUNG",
-        education: "AUSBILDUNG",
-        languages: "SPRACHEN",
-        skills: "TECHNISCHE FÄHIGKEITEN",
-      }
+          summary: "ZUSAMMENFASSUNG",
+          experience: "BERUFSERFAHRUNG",
+          education: "AUSBILDUNG",
+          languages: "SPRACHEN",
+          skills: "TECHNISCHE FÄHIGKEITEN",
+        }
       : {
-        summary: "PROFESSIONAL SUMMARY",
-        experience: "EXPERIENCE",
-        education: "EDUCATION",
-        languages: "LANGUAGES",
-        skills: "TECHNICAL SKILLS",
-      };
+          summary: "PROFESSIONAL SUMMARY",
+          experience: "EXPERIENCE",
+          education: "EDUCATION",
+          languages: "LANGUAGES",
+          skills: "TECHNICAL SKILLS",
+        };
 
   const labels = categoryLabels[language];
 
@@ -135,7 +136,7 @@ export async function generateCVDocx(language: Locale): Promise<Buffer> {
                     }),
                   ],
                   indent: { left: 360 },
-                })
+                }),
             ),
             new Paragraph({ spacing: { after: 200 } }),
           ]),
@@ -174,7 +175,10 @@ export async function generateCVDocx(language: Locale): Promise<Buffer> {
             children: [
               new TextRun({
                 text: spokenLanguages
-                  .map((lang) => `${lang.language} - ${lang.level}${lang.cefr ? ` (${lang.cefr})` : ""}`)
+                  .map(
+                    (lang) =>
+                      `${lang.language} - ${lang.level}${lang.cefr ? ` (${lang.cefr})` : ""}`,
+                  )
                   .join("  |  "),
                 size: 20,
               }),

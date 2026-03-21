@@ -1,7 +1,8 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
-  tagline: "Driving technical strategy and building systems that scale from zero to millions, both in revenue and in user base",
+  tagline:
+    "Driving technical strategy and building systems that scale from zero to millions, both in revenue and in user base",
   location: "Heidelberg, Germany",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
@@ -14,19 +15,23 @@ export const professionalSummary = `Staff Engineer with 8+ years of experience d
 export const whatIDo = [
   {
     title: "Technical Strategy",
-    description: "Defining architecture roadmaps, evaluating build-vs-buy decisions, and making high-impact technical choices that align with business goals.",
+    description:
+      "Defining architecture roadmaps, evaluating build-vs-buy decisions, and making high-impact technical choices that align with business goals.",
   },
   {
     title: "Platform Engineering",
-    description: "Building cloud infrastructure, CI/CD pipelines, and developer platforms that enable teams to ship faster and more reliably.",
+    description:
+      "Building cloud infrastructure, CI/CD pipelines, and developer platforms that enable teams to ship faster and more reliably.",
   },
   {
     title: "AI-Assisted Development",
-    description: "Leveraging AI tools for rapid concept-to-solution prototyping. Accelerating development cycles while maintaining code quality and architectural integrity.",
+    description:
+      "Leveraging AI tools for rapid concept-to-solution prototyping. Accelerating development cycles while maintaining code quality and architectural integrity.",
   },
   {
     title: "Hands-On Execution",
-    description: "Staying close to the code - architecting systems, writing critical path code, and unblocking teams on tough technical challenges.",
+    description:
+      "Staying close to the code - architecting systems, writing critical path code, and unblocking teams on tough technical challenges.",
   },
 ];
 
@@ -38,7 +43,7 @@ export const experiences = [
     startDate: "Dec 2019",
     endDate: "Present",
     description:
-      "Platform engineering and cloud architecture for digital healthcare platform providing sick leave certificates. Previously served as CTO, transitioned to hands-on engineering as company matured.",
+      "Platform engineering and cloud architecture for a telemedicine platform connecting patients with licensed physicians for online consultations, prescriptions, and digital healthcare services — serving 3M+ patients across Germany. Previously served as CTO, transitioned to hands-on engineering as the company scaled.",
     highlights: [
       "Architected and maintain microservices infrastructure on GCP",
       "Leading transformation from Cloud Functions to managed APIs on Kubernetes (GKE)",
@@ -49,7 +54,16 @@ export const experiences = [
       "Integrated payment systems (PayPal, Adyen), logistics (Deutsche Post), and healthcare APIs",
       "Lead technical decisions and consult engineers on architecture and best practices",
     ],
-    technologies: ["GCP", "Kubernetes", "Pulumi", "Gravitee", "GitOps", "NestJS", "Next.js", "TypeScript"],
+    technologies: [
+      "GCP",
+      "Kubernetes",
+      "Pulumi",
+      "Gravitee",
+      "GitOps",
+      "NestJS",
+      "Next.js",
+      "TypeScript",
+    ],
   },
   {
     company: "GameBuddy GmbH",

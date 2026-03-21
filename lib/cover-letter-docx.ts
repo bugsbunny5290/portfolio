@@ -1,8 +1,8 @@
-import { Document, Paragraph, TextRun, Packer } from "docx";
+import { Document, Packer, Paragraph, TextRun } from "docx";
+import messagesDe from "../messages/de.json";
+import messagesEn from "../messages/en.json";
 import { getContent } from "./content";
 import type { Locale } from "./i18n";
-import messagesEn from "../messages/en.json";
-import messagesDe from "../messages/de.json";
 
 export async function generateCoverLetterDocx(language: Locale): Promise<Buffer> {
   const content = getContent(language);

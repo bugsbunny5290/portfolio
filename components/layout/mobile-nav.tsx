@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/lib/language-context";
-import { cn } from "@/lib/utils";
 
 export function MobileNav(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +21,6 @@ export function MobileNav(): React.ReactElement {
     toggleRef.current?.focus();
   }, []);
 
-  // Focus trap and Escape key handling
   useEffect(() => {
     if (!isOpen) return;
 
@@ -35,7 +33,7 @@ export function MobileNav(): React.ReactElement {
       if (e.key !== "Tab" || !navRef.current) return;
 
       const focusable = navRef.current.querySelectorAll<HTMLElement>(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
       );
       if (focusable.length === 0) return;
 
@@ -53,9 +51,8 @@ export function MobileNav(): React.ReactElement {
 
     document.addEventListener("keydown", handleKeyDown);
 
-    // Focus the first link when the menu opens
     const focusable = navRef.current?.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled])'
+      "a[href], button:not([disabled])",
     );
     if (focusable && focusable.length > 0) {
       focusable[0].focus();
@@ -72,11 +69,12 @@ export function MobileNav(): React.ReactElement {
         ref={toggleRef}
         type="button"
         onClick={toggleMenu}
-        className={cn(
-          "inline-flex h-11 w-11 items-center justify-center rounded-md border border-border",
-          "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
-          "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        )}
+        className="inline-flex items-center justify-center w-10 h-10 shadow-brutal-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        style={{
+          border: "2px solid var(--border-strong)",
+          background: "var(--bg-card)",
+          color: "var(--fg-muted)",
+        }}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
         aria-controls="mobile-nav-panel"
@@ -120,7 +118,8 @@ export function MobileNav(): React.ReactElement {
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm"
+            className="fixed inset-0 z-40"
+            style={{ background: "rgba(0,0,0,0.5)" }}
             onClick={closeMenu}
             aria-hidden="true"
           />
@@ -129,18 +128,26 @@ export function MobileNav(): React.ReactElement {
             id="mobile-nav-panel"
             role="dialog"
             aria-label="Mobile navigation"
-            className={cn(
-              "fixed right-0 top-14 sm:top-16 z-50 w-3/4 max-w-xs border-l border-border bg-background p-6",
-              "h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] overflow-y-auto"
-            )}
+            className="fixed right-0 top-[65px] z-50 w-3/4 max-w-xs p-6 h-[calc(100vh-65px)] overflow-y-auto"
+            style={{
+              borderLeft: "2px solid var(--border-strong)",
+              background: "var(--bg)",
+            }}
           >
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-1">
               {content.navLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={closeMenu}
-                    className="block min-h-[44px] py-3 text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    className="block min-h-[44px] py-3 text-lg font-bold transition-colors"
+                    style={{ color: "var(--fg)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.color = "var(--color-purple)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.color = "var(--fg)";
+                    }}
                   >
                     {t(link.label)}
                   </Link>

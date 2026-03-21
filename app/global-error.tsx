@@ -92,7 +92,14 @@ export default function GlobalError({ error, reset }: GlobalErrorProps): React.R
               <line x1="12" x2="12.01" y1="16" y2="16" />
             </svg>
           </div>
-          <h1 style={{ fontSize: "1.875rem", fontWeight: "bold", color: "var(--ge-fg)", marginBottom: "1rem" }}>
+          <h1
+            style={{
+              fontSize: "1.875rem",
+              fontWeight: "bold",
+              color: "var(--ge-fg)",
+              marginBottom: "1rem",
+            }}
+          >
             Something went wrong
           </h1>
           <p style={{ color: "var(--ge-muted)", marginBottom: "2rem", maxWidth: "400px" }}>

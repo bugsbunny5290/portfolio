@@ -1,0 +1,13 @@
+<svg width="180" height="180" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="140" height="140" fill="white"/>
+  <rect x="16" y="16" width="114" height="114" rx="8" fill="#1c1917"/>
+  <rect x="8" y="8" width="114" height="114" rx="8" fill="white" stroke="#1c1917" stroke-width="5"/>
+  <text x="65" y="84" text-anchor="middle" font-family="'DM Sans',system-ui,sans-serif" font-weight="800" font-size="64" fill="url(#pg-grad)" letter-spacing="-3">PG</text>
+</svg>

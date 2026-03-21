@@ -24,7 +24,7 @@ describe("Section component", () => {
   it("has correct base styles", () => {
     render(<Section>Content</Section>);
     const section = screen.getByText("Content").closest("section");
-    expect(section).toHaveClass("mx-auto", "max-w-5xl");
+    expect(section).toHaveClass("mx-auto", "max-w-6xl");
   });
 
   it("applies id attribute", () => {

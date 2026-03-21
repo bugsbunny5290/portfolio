@@ -11,6 +11,7 @@ vi.mock("@/lib/language-context", () => ({
         title: "Staff Engineer",
         tagline: "Test tagline",
         github: "https://github.com/test",
+        linkedin: "https://linkedin.com/in/test",
         email: "test@example.com",
         location: "Heidelberg, Germany",
       },
@@ -19,28 +20,26 @@ vi.mock("@/lib/language-context", () => ({
 }));
 
 describe("Hero component", () => {
-  it("renders the name", () => {
+  it("renders the first name with text-gradient styling", () => {
     render(<Hero />);
-    expect(screen.getByText("Pranav Gautam")).toBeInTheDocument();
+    const firstName = screen.getByText("Pranav");
+    expect(firstName).toBeInTheDocument();
+    expect(firstName).toHaveClass("text-gradient");
   });
 
-  it("renders the title", () => {
+  it("renders the last name", () => {
     render(<Hero />);
-    expect(screen.getByText("Staff Engineer")).toBeInTheDocument();
+    expect(screen.getByText(/Gautam/)).toBeInTheDocument();
   });
 
-  it("renders tech highlights", () => {
+  it("renders the title and tagline", () => {
     render(<Hero />);
-    expect(screen.getByText("GCP")).toBeInTheDocument();
-    expect(screen.getByText("Kubernetes")).toBeInTheDocument();
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
+    expect(screen.getByText(/Staff Engineer.*Test tagline/)).toBeInTheDocument();
   });
 
-  it("renders call-to-action buttons", () => {
+  it("renders the aboutMe call-to-action link", () => {
     render(<Hero />);
     expect(screen.getByText("aboutMe")).toBeInTheDocument();
-    expect(screen.getByText("getInTouch")).toBeInTheDocument();
-    expect(screen.getByText("downloadCV")).toBeInTheDocument();
   });
 
   it("renders GitHub link", () => {
@@ -55,8 +54,15 @@ describe("Hero component", () => {
     expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
   });
 
-  it("renders location", () => {
+  it("renders LinkedIn link", () => {
     render(<Hero />);
-    expect(screen.getByText("Heidelberg, Germany")).toBeInTheDocument();
+    const linkedinLink = screen.getByRole("link", { name: /linkedin/i });
+    expect(linkedinLink).toHaveAttribute("href", "https://linkedin.com/in/test");
+  });
+
+  it("renders the interactive terminal", () => {
+    render(<Hero />);
+    // The InteractiveTerminal component is rendered inside the hero
+    expect(screen.getByText("terminal.ts")).toBeInTheDocument();
   });
 });

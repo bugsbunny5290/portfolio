@@ -1,7 +1,8 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
-  tagline: "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren - sowohl beim Umsatz als auch bei der Nutzerbasis",
+  tagline:
+    "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren - sowohl beim Umsatz als auch bei der Nutzerbasis",
   location: "Heidelberg, Deutschland",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
@@ -14,19 +15,23 @@ export const professionalSummary = `Staff Engineer mit 8+ Jahren Erfahrung in de
 export const whatIDo = [
   {
     title: "Technische Strategie",
-    description: "Definition von Architektur-Roadmaps, Bewertung von Build-vs-Buy-Entscheidungen und wirkungsvolle technische Entscheidungen im Einklang mit Geschaftszielen.",
+    description:
+      "Definition von Architektur-Roadmaps, Bewertung von Build-vs-Buy-Entscheidungen und wirkungsvolle technische Entscheidungen im Einklang mit Geschaftszielen.",
   },
   {
     title: "Platform Engineering",
-    description: "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlassiger liefern lassen.",
+    description:
+      "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlassiger liefern lassen.",
   },
   {
     title: "KI-gestutzte Entwicklung",
-    description: "Einsatz von KI-Tools fur schnelles Prototyping vom Konzept zur Losung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalitat und Architekturintegritat.",
+    description:
+      "Einsatz von KI-Tools fur schnelles Prototyping vom Konzept zur Losung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalitat und Architekturintegritat.",
   },
   {
     title: "Praxisnahe Umsetzung",
-    description: "Nah am Code bleiben - Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstutzen.",
+    description:
+      "Nah am Code bleiben - Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstutzen.",
   },
 ];
 
@@ -38,7 +43,7 @@ export const experiences = [
     startDate: "Dez 2019",
     endDate: "Heute",
     description:
-      "Platform Engineering und Cloud-Architektur für digitale Gesundheitsplattform zur Ausstellung von Krankmeldungen. Zuvor als CTO tätig, dann Wechsel zur praxisorientierten Engineering-Rolle mit Unternehmenswachstum.",
+      "Platform Engineering und Cloud-Architektur für eine Telemedizin-Plattform, die Patienten mit approbierten Ärzten für Online-Konsultationen, Rezepte und digitale Gesundheitsleistungen verbindet — über 3 Mio. Patienten deutschlandweit. Zuvor als CTO tätig, dann Wechsel zur praxisorientierten Engineering-Rolle im Zuge der Skalierung.",
     highlights: [
       "Architektur und Wartung der Microservices-Infrastruktur auf GCP",
       "Leitung der Transformation von Cloud Functions zu Managed APIs auf Kubernetes (GKE)",
@@ -49,7 +54,16 @@ export const experiences = [
       "Integration von Zahlungssystemen (PayPal, Adyen), Logistik (Deutsche Post) und Gesundheits-APIs",
       "Leitung technischer Entscheidungen und Beratung von Entwicklern zu Architektur und Best Practices",
     ],
-    technologies: ["GCP", "Kubernetes", "Pulumi", "Gravitee", "GitOps", "NestJS", "Next.js", "TypeScript"],
+    technologies: [
+      "GCP",
+      "Kubernetes",
+      "Pulumi",
+      "Gravitee",
+      "GitOps",
+      "NestJS",
+      "Next.js",
+      "TypeScript",
+    ],
   },
   {
     company: "GameBuddy GmbH",
