@@ -9,7 +9,9 @@ vi.mock("@/lib/language-context", () => ({
       personalInfo: {
         name: "Pranav Gautam",
         title: "Staff Engineer",
+        subtitle: "Staff Engineer · Platform & Backend",
         tagline: "Test tagline",
+        workAuth: "Work-authorised (EU Blue Card)",
         github: "https://github.com/test",
         linkedin: "https://linkedin.com/in/test",
         email: "test@example.com",
@@ -32,9 +34,14 @@ describe("Hero component", () => {
     expect(screen.getByText(/Gautam/)).toBeInTheDocument();
   });
 
-  it("renders the title and tagline", () => {
+  it("renders the subtitle", () => {
     render(<Hero />);
-    expect(screen.getByText(/Staff Engineer.*Test tagline/)).toBeInTheDocument();
+    expect(screen.getByText("Staff Engineer · Platform & Backend")).toBeInTheDocument();
+  });
+
+  it("renders work authorisation status", () => {
+    render(<Hero />);
+    expect(screen.getByText(/Work-authorised/)).toBeInTheDocument();
   });
 
   it("renders the aboutMe call-to-action link", () => {

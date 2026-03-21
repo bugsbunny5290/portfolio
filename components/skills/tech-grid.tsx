@@ -40,7 +40,7 @@ export function TechGrid(): React.ReactElement {
               </h3>
               <div className="flex flex-wrap gap-1.5">
                 {categorySkills.map((skill) => (
-                  <span key={skill.name} className="tag-brutal">
+                  <span key={`${skill.name}-${skill.category}`} className="tag-brutal">
                     {skill.name}
                   </span>
                 ))}

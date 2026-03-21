@@ -1,37 +1,47 @@
 export const personalInfo = {
   name: "Pranav Gautam",
   title: "Staff Engineer",
+  subtitle: "Staff Engineer · Plattform & Backend",
   tagline:
-    "Technische Strategie und Aufbau von Systemen, die von Null auf Millionen skalieren - sowohl beim Umsatz als auch bei der Nutzerbasis",
+    "Staff Engineer mit 8+ Jahren Erfahrung im Aufbau cloud-nativer Systeme im großen Maßstab. Zuvor CTO bei DrAnsay AU-Schein GmbH — Skalierung der Plattform von Null auf 2M+ Nutzer und von €15K auf €20M ARR. Jetzt fokussiert auf Platform Engineering, verteilte Systeme und API-Architektur als Individual Contributor.",
   location: "Heidelberg, Deutschland",
+  workAuth: "Arbeitserlaubnis (EU Blue Card)",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
   github: "https://github.com/bugsbunny5290",
   linkedin: "https://linkedin.com/in/pranavgautam",
+  metaDescription:
+    "Staff Engineer mit 8+ Jahren in cloud-nativen Systemen, GCP, Kubernetes und API-Architektur. Zuvor CTO bei DrAnsay (2M+ Nutzer, €20M ARR). Standort: Heidelberg, Deutschland.",
 } as const;
 
-export const professionalSummary = `Staff Engineer mit 8+ Jahren Erfahrung in der Entwicklung technischer Strategien und dem Aufbau skalierbarer Systeme. Ich spezialisiere mich auf die Losung komplexer, ubergreifender Probleme - von der Architektur der Cloud-Infrastruktur bis zur Definition von Engineering-Standards, die ganze Teams voranbringen. Ehemaliger CTO bei DrAnsay AU-Schein GmbH, wo ich die Plattform von Null auf uber 2 Millionen Nutzer skaliert und den Umsatz von 15.000 EUR auf 20 Millionen EUR gesteigert habe. Ich verbinde Geschaftsziele mit technischer Umsetzung und treffe wirkungsvolle Architekturentscheidungen, wahrend ich praxisnah bleibe. Zusammenarbeit mit DFKI, Data4Life (Hasso-Plattner-Institut), Fraunhofer und John Deere. Experte fur GCP, Kubernetes, GitOps und Infrastructure as Code.`;
+export const professionalSummary = `Ich bin Staff Engineer mit Sitz in Heidelberg, Deutschland, mit 8+ Jahren Erfahrung in der Gestaltung und Skalierung cloud-nativer Systeme — vorwiegend in HealthTech und B2C-Plattformen.
+
+Mein Werdegang reicht vom Forscher über den Gründer bis zum Individual Contributor. Zu Beginn meiner Karriere war ich am DFKI und am Hasso-Plattner-Institut tätig, dann Mitgründer und CTO bei DrAnsay AU-Schein GmbH, wo ich die Engineering-Organisation von 3 auf 15 Mitarbeiter und die Plattform auf 2M+ Nutzer aufgebaut habe. Ich bin bewusst vom Management zurückgetreten, um tiefer in Architektur, Platform Engineering und Systemdesign einzusteigen — dort leiste ich meine beste Arbeit.
+
+Aktuell arbeite ich von Heidelberg aus remote für ein Hamburger Unternehmen.
+
+Außerhalb der Arbeit: Ich interessiere mich für persönliche Finanzsysteme, europäische Geografie und den Bau von Tools, die Entwickler-Workflows beschleunigen.`;
 
 export const whatIDo = [
   {
     title: "Technische Strategie",
     description:
-      "Definition von Architektur-Roadmaps, Bewertung von Build-vs-Buy-Entscheidungen und wirkungsvolle technische Entscheidungen im Einklang mit Geschaftszielen.",
+      "Definition von Architektur-Roadmaps, Bewertung von Build-vs-Buy-Entscheidungen und wirkungsvolle technische Entscheidungen im Einklang mit Geschäftszielen.",
   },
   {
     title: "Platform Engineering",
     description:
-      "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlassiger liefern lassen.",
+      "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlässiger liefern lassen.",
   },
   {
-    title: "KI-gestutzte Entwicklung",
+    title: "KI-gestützte Entwicklung",
     description:
-      "Einsatz von KI-Tools fur schnelles Prototyping vom Konzept zur Losung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalitat und Architekturintegritat.",
+      "Einsatz von KI-Tools für schnelles Prototyping vom Konzept zur Lösung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalität und Architekturintegrität.",
   },
   {
     title: "Praxisnahe Umsetzung",
     description:
-      "Nah am Code bleiben - Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstutzen.",
+      "Nah am Code bleiben — Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstützen.",
   },
 ];
 
@@ -42,60 +52,47 @@ export const experiences = [
     location: "Hamburg, Deutschland (Remote aus Heidelberg)",
     startDate: "Dez 2019",
     endDate: "Heute",
+    contextNote:
+      "Digitale Gesundheitsplattform für Krankmeldungen. Zuvor CTO (Team von 15); Wechsel zum Staff Engineer mit Skalierung der Organisation auf 40 Engineers.",
     description:
       "Platform Engineering und Cloud-Architektur für eine Telemedizin-Plattform, die Patienten mit approbierten Ärzten für Online-Konsultationen, Rezepte und digitale Gesundheitsleistungen verbindet — über 3 Mio. Patienten deutschlandweit. Zuvor als CTO tätig, dann Wechsel zur praxisorientierten Engineering-Rolle im Zuge der Skalierung.",
     highlights: [
-      "Architektur und Wartung der Microservices-Infrastruktur auf GCP",
-      "Leitung der Transformation von Cloud Functions zu Managed APIs auf Kubernetes (GKE)",
-      "Implementierung von GitOps-Workflows und CI/CD-Pipelines für automatisierte Deployments",
-      "Einrichtung eines API-Management-Portals mit Gravitee für Developer Experience und Governance",
-      "Implementierung von Infrastructure as Code mit Pulumi",
-      "Design und Entwicklung von RESTful APIs für Web- und Mobile-Clients",
-      "Integration von Zahlungssystemen (PayPal, Adyen), Logistik (Deutsche Post) und Gesundheits-APIs",
-      "Leitung technischer Entscheidungen und Beratung von Entwicklern zu Architektur und Best Practices",
+      "Verantwortung für die gesamte Cloud-Architektur auf GCP — 10+ Microservices mit 100K+ Requests/Tag und P90-SLA-Commitment.",
+      "Reduzierung von Produktionsvorfällen von mehrmals täglich auf ca. zweimal pro Monat durch strukturierten On-Call, Runbooks und automatisiertes Alerting.",
+      "Leitung der Plattformmigration von Cloud Functions zu GKE-gehosteten Managed Services, Verbesserung der Deployment-Isolation und Ermöglichung unabhängiger Service-Skalierung.",
+      "Implementierung von GitOps-Workflows mit ArgoCD, Ermöglichung mehrerer Produktions-Deployments pro Tag mit vollständigem Audit-Trail und Ein-Klick-Rollback.",
+      "Design und Rollout der Gravitee API-Management-Plattform für 10+ interne und externe APIs; Ermöglichung von Self-Service-API-Publishing für das Engineering-Team.",
+      "Definition von Engineering-Standards, ADR-Prozess und Code-Review-Kultur, übernommen von einer 40-Personen-Engineering-Organisation.",
+      "Als CTO: Engineering von 3 auf 15 Mitarbeiter aufgebaut; technische Strategie geleitet, die die Plattform von MVP zu €20M ARR brachte.",
     ],
     technologies: [
       "GCP",
       "Kubernetes",
-      "Pulumi",
-      "Gravitee",
+      "GKE",
+      "ArgoCD",
       "GitOps",
+      "Gravitee",
       "NestJS",
-      "Next.js",
-      "TypeScript",
+      "PostgreSQL",
+      "Cloud Functions",
+      "Cloud Run",
     ],
   },
   {
-    company: "GameBuddy GmbH",
-    role: "Full Stack Developer",
-    location: "Hamburg, Deutschland",
-    startDate: "Okt 2019",
-    endDate: "Dez 2019",
-    description:
-      "Full-Stack-Entwicklung für eine soziale Gaming-Plattform. Kurzes Engagement vor dem Wechsel zu Au-Schein, aber wertvolle Erfahrungen mit modernen Frontend-Frameworks und Echtzeit-Datensystemen.",
-    highlights: [
-      "Entwicklung interaktiver UI-Komponenten mit React und TypeScript",
-      "Implementierung von Echtzeit-Features mit Firebase Realtime Database",
-      "Arbeit mit PostgreSQL für persistente Datenspeicherung und komplexe Abfragen",
-      "Zusammenarbeit im agilen Team mit schnellen Iterationszyklen",
-    ],
-    technologies: ["React", "TypeScript", "Angular", "Firebase", "PostgreSQL"],
-  },
-  {
-    company: "Data4Life",
+    company: "Data4Life · Hasso-Plattner-Institut",
     role: "Resident Entrepreneur",
     location: "Potsdam, Deutschland",
     startDate: "Nov 2018",
     endDate: "Apr 2019",
+    contextNote: "",
     description:
-      "Ausgewählt für das renommierte Resident Entrepreneur Programm der Health Cloud Initiative des Hasso-Plattner-Instituts. Leitung von F&E-Aktivitäten an der Schnittstelle von Forschung und praktischen Gesundheitsanwendungen.",
+      "Ausgewählt für ein kompetitives F&E-Programm der Health-Cloud-Initiative des HPI.",
     highlights: [
-      "Erstellung von Architekturkonzepten für Spracherkennungssoftware und Datenerfassungsplattform",
-      "Entwicklung funktionaler Prototypen zur Validierung von Produkthypothesen",
-      "Vertretung von Data4Life auf der HIMSS 2019 in Orlando, Demonstration von Produkten an potenzielle Partner",
-      "Durchführung technischer Interviews und Rekrutierung des Mobile-Entwicklungsteams für Barcelona",
+      "Architektur für eine sprachgesteuerte Datenerfassungsplattform entworfen; funktionale Prototypen zur Validierung von Product-Market-Fit vor vollständiger Investition erstellt.",
+      "Vertretung von Data4Life auf der HIMSS 2019 (Orlando), Pitches vor Healthcare-Führungskräften und potenziellen Partnern.",
+      "Leitung des technischen Recruitings für die Erweiterung des Mobile-Teams in Barcelona.",
     ],
-    technologies: ["Node.js", "Prototyping", "Technische Architektur"],
+    technologies: ["Architektur", "Healthcare", "Voice AI", "Prototyping"],
   },
   {
     company: "DFKI GmbH",
@@ -103,33 +100,30 @@ export const experiences = [
     location: "Kaiserslautern, Deutschland",
     startDate: "Feb 2018",
     endDate: "Nov 2018",
+    contextNote:
+      "Deutsches Forschungszentrum für Künstliche Intelligenz — eines der größten KI-Forschungsinstitute Europas.",
     description:
-      "Forschungsposition am Deutschen Forschungszentrum für Künstliche Intelligenz (DFKI), einem der weltweit größten KI-Forschungsinstitute. Fokus auf kontextbewusstes Computing und adaptive Systeme.",
+      "Forschung an einem der größten KI-Forschungsinstitute Europas, Fokus auf kontextbewusstes Computing.",
     highlights: [
-      "Durchführung einer umfassenden Literaturrecherche zu bestehenden Umfragesystemen",
-      "Design und Implementierung einer regelbasierten dynamischen Umfrage-Engine",
-      "Integration von Standortdiensten und Wetter-APIs für kontextbewusste Frageverzweigung",
-      "Architektur eines erweiterbaren Systems für zukünftige Sensordatenintegration",
-      "Veröffentlichung von Forschungsergebnissen und Beitrag zur akademischen Wissensbasis",
+      "Erforschung kontextbewusster Umfragesysteme; umfassende Literaturrecherche zur Identifizierung von Lücken im adaptiven Fragendesign.",
+      "Design und Implementierung einer regelbasierten dynamischen Umfrage-Engine, die Fragen basierend auf Echtzeitsignalen anpasst (Standort, Wetter, Sensordaten).",
+      "Aufbau einer erweiterbaren Architektur für zukünftige biometrische Sensorintegration (Beschleunigungsmesser, Herzfrequenz).",
     ],
-    technologies: ["JavaScript", "Node.js", "REST APIs", "Context-Aware Computing", "Forschung"],
+    technologies: ["Forschung", "Context-Aware Computing", "Python", "Sensor-APIs"],
   },
   {
-    company: "Fraunhofer IESE / John Deere ETIC",
-    role: "UI Designer Praktikant",
+    company: "Fraunhofer IESE · John Deere ETIC",
+    role: "UI Designer (Industrieprojekt)",
     location: "Kaiserslautern, Deutschland",
     startDate: "Okt 2016",
     endDate: "Dez 2016",
-    description:
-      "Industriekooperation zwischen dem Fraunhofer-Institut für Experimentelles Software Engineering und dem John Deere European Technology Innovation Center. Teil eines Master-Teamprojekts zur Entwicklung von Landwirtschaftstechnologie-Interfaces.",
+    contextNote: "",
+    description: "Gemeinsames Fraunhofer–John-Deere-Projekt für Agrartechnologie-Interfaces.",
     highlights: [
-      "Design intuitiver UI-Screens für Spracherkennungsfunktion für Landwirte auf schweren Maschinen",
-      "Erstellung von Wireframes und interaktiven Prototypen nach John Deeres Design-System",
-      "Pair Programming mit erfahrenen Entwicklern zur Beschleunigung der Lernkurve",
-      "Teilnahme an SCRUM-Zeremonien inkl. Daily Standups, Sprint Planning und Retrospektiven",
-      "Prototyp erfolgreich vor Stakeholdern präsentiert und später in MyJohnDeere App integriert",
+      "Design einer Spracherkennungs-UI für Bediener landwirtschaftlicher Maschinen im Rahmen eines gemeinsamen Fraunhofer–John-Deere-Projekts.",
+      "Lieferung von Wireframes und interaktiven Prototypen, ausgerichtet am Design-System von John Deere.",
     ],
-    technologies: ["UI/UX Design", "Wireframing", "SCRUM", "Agile", "Spracherkennung"],
+    technologies: ["UI Design", "Prototyping", "Agile", "Figma"],
   },
 ];
 
@@ -165,15 +159,15 @@ export const skills = [
   { name: "AWS", category: "cloud" as const },
   { name: "Cloud Run", category: "cloud" as const },
   { name: "Cloud Functions", category: "cloud" as const },
+  { name: "Gravitee APIM", category: "devops" as const },
+  { name: "ArgoCD", category: "devops" as const },
+  { name: "GitOps", category: "devops" as const },
   { name: "Pulumi", category: "devops" as const },
   { name: "Terraform", category: "devops" as const },
-  { name: "GitOps", category: "devops" as const },
-  { name: "ArgoCD", category: "devops" as const },
-  { name: "Docker", category: "devops" as const },
   { name: "Helm", category: "devops" as const },
-  { name: "CI/CD", category: "devops" as const },
+  { name: "Docker", category: "devops" as const },
   { name: "GitHub Actions", category: "devops" as const },
-  { name: "Gravitee", category: "devops" as const },
+  { name: "CI/CD", category: "devops" as const },
   { name: "NestJS", category: "backend" as const },
   { name: "Node.js", category: "backend" as const },
   { name: "Express", category: "backend" as const },
@@ -181,18 +175,16 @@ export const skills = [
   { name: "MongoDB", category: "backend" as const },
   { name: "Redis", category: "backend" as const },
   { name: "GraphQL", category: "backend" as const },
-  { name: "Next.js", category: "frontend" as const },
   { name: "React", category: "frontend" as const },
+  { name: "Next.js", category: "frontend" as const },
+  { name: "TypeScript", category: "frontend" as const },
   { name: "Vue.js", category: "frontend" as const },
-  { name: "Angular", category: "frontend" as const },
   { name: "Tailwind CSS", category: "frontend" as const },
   { name: "TypeScript", category: "languages" as const },
   { name: "JavaScript", category: "languages" as const },
   { name: "Python", category: "languages" as const },
   { name: "SQL", category: "languages" as const },
   { name: "Bash", category: "languages" as const },
-  { name: "KI-gestutzte Entwicklung", category: "devops" as const },
-  { name: "Cursor/Copilot", category: "devops" as const },
 ];
 
 export const navLinks = [

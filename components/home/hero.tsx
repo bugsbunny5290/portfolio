@@ -8,7 +8,7 @@ import { InteractiveTerminal } from "./interactive-terminal";
 
 export function Hero(): React.ReactElement {
   const t = useTranslations("hero");
-  const { content } = useLanguage();
+  const { content, locale } = useLanguage();
   const { personalInfo } = content;
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -31,16 +31,25 @@ export function Hero(): React.ReactElement {
 
           <div className="hero-enter">
             <p
-              className="text-base md:text-xl leading-relaxed max-w-xl mb-3"
+              className="text-base md:text-xl leading-relaxed max-w-xl mb-2"
               style={{ color: "var(--fg-muted)" }}
             >
-              {personalInfo.title}. {personalInfo.tagline}.
+              {personalInfo.subtitle}
             </p>
           </div>
 
           <div className="hero-enter">
-            <p className="text-sm md:text-lg mb-6" style={{ color: "var(--fg-subtle)" }}>
-              {t("taglineExtended")}
+            <p className="text-sm md:text-base mb-3" style={{ color: "var(--fg-subtle)" }}>
+              {personalInfo.location} · {personalInfo.workAuth}
+            </p>
+          </div>
+
+          <div className="hero-enter">
+            <p
+              className="text-base md:text-lg leading-relaxed max-w-xl mb-6"
+              style={{ color: "var(--fg-muted)" }}
+            >
+              {personalInfo.tagline}
             </p>
           </div>
 
