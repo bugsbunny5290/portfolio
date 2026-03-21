@@ -17,6 +17,7 @@ describe("Footer component", () => {
           name: "Pranav Gautam",
           email: "test@example.com",
           github: "https://github.com/test",
+          linkedin: "https://linkedin.com/in/test",
         },
       },
     });
@@ -38,7 +39,7 @@ describe("Footer component", () => {
     expect(screen.getByText(new RegExp(currentYear))).toBeInTheDocument();
   });
 
-  it("renders email link with English label", () => {
+  it("renders email link with aria-label", () => {
     render(<Footer />);
     const emailLink = screen.getByRole("link", { name: /^email$/i });
     expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
@@ -50,7 +51,18 @@ describe("Footer component", () => {
     expect(githubLink).toHaveAttribute("href", "https://github.com/test");
   });
 
-  it("shows E-Mail label in German locale", () => {
+  it("renders Let's connect heading", () => {
+    render(<Footer />);
+    expect(screen.getByText(/Let's connect/)).toBeInTheDocument();
+  });
+
+  it("renders LinkedIn link", () => {
+    render(<Footer />);
+    const linkedinLink = screen.getByRole("link", { name: /linkedin/i });
+    expect(linkedinLink).toHaveAttribute("href", "https://linkedin.com/in/test");
+  });
+
+  it("renders icon links in German locale too", () => {
     mockUseLanguage.mockReturnValue({
       locale: "de",
       content: {
@@ -58,11 +70,14 @@ describe("Footer component", () => {
           name: "Pranav Gautam",
           email: "test@example.com",
           github: "https://github.com/test",
+          linkedin: "https://linkedin.com/in/test",
         },
       },
     });
 
     render(<Footer />);
-    expect(screen.getByText("E-Mail")).toBeInTheDocument();
+    // Footer now uses icon links with aria-labels in both locales
+    const emailLink = screen.getByRole("link", { name: /email/i });
+    expect(emailLink).toHaveAttribute("href", "mailto:test@example.com");
   });
 });

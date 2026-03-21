@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { getLocale, getMessages } from "next-intl/server";
 import { AnalyticsWrapper } from "@/components/analytics-wrapper";
 import "./globals.css";
+import { CommandPalette } from "@/components/command-palette";
+import { DevtoolsEasterEggs } from "@/components/devtools-easter-eggs";
 import { Footer, Header } from "@/components/layout";
 import { Providers } from "@/components/providers";
+import { ScrollAnimations } from "@/components/scroll-animations";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/i18n";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -79,14 +82,16 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${dmSans.variable} ${jetbrainsMono.variable} min-h-screen flex flex-col`}
+        style={{ fontFamily: "var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif" }}
       >
         <Providers locale={locale} messages={messages}>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground focus:text-sm focus:font-medium focus:outline-none focus:ring-2 focus:ring-ring"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:outline-none focus:ring-2"
+            style={{ background: "var(--color-purple)", color: "white" }}
           >
             Skip to main content
           </a>
@@ -96,6 +101,9 @@ export default async function RootLayout({
           </main>
           <Footer />
           <AnalyticsWrapper />
+          <ScrollAnimations />
+          <CommandPalette />
+          <DevtoolsEasterEggs />
         </Providers>
       </body>
     </html>

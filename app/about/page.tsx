@@ -13,57 +13,96 @@ export default function AboutPage(): React.ReactElement {
   return (
     <Section>
       <SectionHeader title={t("title")} description={t("subtitle")} />
-      <div className="max-w-none mb-8 space-y-4">
-        {professionalSummary.split("\n\n").map((paragraph) => (
-          <p key={paragraph.slice(0, 40)} className="text-lg text-foreground/80 leading-relaxed">
-            {paragraph}
-          </p>
-        ))}
+
+      <div className="max-w-none mb-8 animate-on-scroll">
+        <p className="text-base sm:text-lg leading-relaxed" style={{ color: "var(--fg)" }}>
+          {professionalSummary}
+        </p>
       </div>
 
-      <h3 className="text-2xl font-bold text-foreground mb-4">{t("whatIDo")}</h3>
-      <div className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
-        {whatIDo.map((item) => (
-          <div key={item.title}>
-            <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
-            <p className="text-sm text-muted-foreground">{item.description}</p>
+      <hr className="section-divider my-12" />
+
+      <h3
+        className="text-xl sm:text-2xl font-extrabold mb-6 animate-on-scroll"
+        style={{ color: "var(--fg-heading)" }}
+      >
+        {t("whatIDo")}
+      </h3>
+      <div className="grid gap-3 md:gap-5 sm:grid-cols-2">
+        {whatIDo.map((item, i) => (
+          <div key={item.title} className={`animate-on-scroll stagger-${i + 1} card-dashed p-5`}>
+            <h4 className="font-bold mb-1" style={{ color: "var(--fg-heading)" }}>
+              {item.title}
+            </h4>
+            <p className="text-sm" style={{ color: "var(--fg-muted)" }}>
+              {item.description}
+            </p>
           </div>
         ))}
       </div>
 
-      <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">{t("experience")}</h3>
+      <hr className="section-divider my-12" />
+
+      <h3
+        className="text-xl sm:text-2xl font-extrabold mb-6 animate-on-scroll"
+        style={{ color: "var(--fg-heading)" }}
+      >
+        {t("experience")}
+      </h3>
       <Timeline />
 
-      <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">{t("education")}</h3>
-      <div className="space-y-6">
-        {education.map((edu) => (
-          <div key={`${edu.degree}-${edu.startYear}`} className="border-l-2 border-primary pl-6">
+      <hr className="section-divider my-12" />
+
+      <h3
+        className="text-xl sm:text-2xl font-extrabold mb-6 animate-on-scroll"
+        style={{ color: "var(--fg-heading)" }}
+      >
+        {t("education")}
+      </h3>
+      <div className="space-y-5">
+        {education.map((edu, i) => (
+          <div
+            key={`${edu.degree}-${edu.startYear}`}
+            className={`animate-on-scroll stagger-${i + 1} card-dashed p-5`}
+          >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="text-lg font-semibold text-foreground">{edu.degree}</h3>
-              <span className="text-sm font-medium text-primary/70">
+              <h3 className="text-base font-bold" style={{ color: "var(--fg-heading)" }}>
+                {edu.degree}
+              </h3>
+              <span className="text-sm font-medium" style={{ color: "var(--color-purple)" }}>
                 {edu.startYear} - {edu.endYear}
               </span>
             </div>
-            <p className="text-foreground/70">
+            <p className="text-sm mt-1" style={{ color: "var(--fg-muted)" }}>
               {edu.institution} | {edu.location}
             </p>
             {edu.description && (
-              <p className="mt-2 text-sm text-muted-foreground">{edu.description}</p>
+              <p className="mt-2 text-sm" style={{ color: "var(--fg)" }}>
+                {edu.description}
+              </p>
             )}
           </div>
         ))}
       </div>
 
-      <h3 className="text-2xl font-bold text-foreground mt-12 mb-6">{t("languages")}</h3>
-      <div className="flex flex-wrap gap-4">
+      <hr className="section-divider my-12" />
+
+      <h3
+        className="text-xl sm:text-2xl font-extrabold mb-6 animate-on-scroll"
+        style={{ color: "var(--fg-heading)" }}
+      >
+        {t("languages")}
+      </h3>
+      <div className="flex flex-wrap gap-3 animate-on-scroll stagger-1">
         {spokenLanguages.map((lang) => (
-          <div
-            key={lang.language}
-            className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-3"
-          >
-            <span className="font-medium text-foreground">{lang.language}</span>
-            <span className="text-muted-foreground">-</span>
-            <span className="text-foreground/70">
+          <div key={lang.language} className="tag-brutal text-sm px-4 py-2">
+            <span className="font-bold" style={{ color: "var(--fg-heading)" }}>
+              {lang.language}
+            </span>
+            <span className="mx-2" style={{ color: "var(--fg-subtle)" }}>
+              -
+            </span>
+            <span style={{ color: "var(--fg-muted)" }}>
               {lang.level}
               {lang.cefr && ` (${lang.cefr})`}
             </span>

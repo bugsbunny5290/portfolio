@@ -29,9 +29,15 @@ describe("Header component", () => {
     expect(homeLinks.length).toBeGreaterThan(0);
   });
 
-  it("renders nav links", () => {
+  it("renders home link with aria-label", () => {
     render(<Header />);
-    expect(screen.getByText("home")).toBeInTheDocument();
+    expect(screen.getByLabelText("Home")).toBeInTheDocument();
+  });
+
+  it("renders nav links excluding home", () => {
+    render(<Header />);
+    // The header filters out the "/" nav link and uses t(label) for the rest
+    // Since useTranslations is mocked to return the key, t("about") => "about"
     expect(screen.getByText("about")).toBeInTheDocument();
     expect(screen.getByText("skills")).toBeInTheDocument();
     expect(screen.getByText("contact")).toBeInTheDocument();

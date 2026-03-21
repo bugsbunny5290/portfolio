@@ -34,6 +34,11 @@ export const whatIDo = [
       "Aufbau von Cloud-Infrastruktur, CI/CD-Pipelines und Entwicklerplattformen, die Teams schneller und zuverlässiger liefern lassen.",
   },
   {
+    title: "KI-gestützte Entwicklung",
+    description:
+      "Einsatz von KI-Tools für schnelles Prototyping vom Konzept zur Lösung. Beschleunigung von Entwicklungszyklen bei gleichzeitiger Wahrung von Codequalität und Architekturintegrität.",
+  },
+  {
     title: "Praxisnahe Umsetzung",
     description:
       "Nah am Code bleiben — Systeme entwerfen, kritischen Code schreiben und Teams bei schwierigen technischen Herausforderungen unterstützen.",
@@ -49,7 +54,8 @@ export const experiences = [
     endDate: "Heute",
     contextNote:
       "Digitale Gesundheitsplattform für Krankmeldungen. Zuvor CTO (Team von 15); Wechsel zum Staff Engineer mit Skalierung der Organisation auf 40 Engineers.",
-    description: "Platform Engineering und Cloud-Architektur für digitale Gesundheitsplattform.",
+    description:
+      "Platform Engineering und Cloud-Architektur für eine Telemedizin-Plattform, die Patienten mit approbierten Ärzten für Online-Konsultationen, Rezepte und digitale Gesundheitsleistungen verbindet — über 3 Mio. Patienten deutschlandweit. Zuvor als CTO tätig, dann Wechsel zur praxisorientierten Engineering-Rolle im Zuge der Skalierung.",
     highlights: [
       "Verantwortung für die gesamte Cloud-Architektur auf GCP — 10+ Microservices mit 100K+ Requests/Tag und P90-SLA-Commitment.",
       "Reduzierung von Produktionsvorfällen von mehrmals täglich auf ca. zweimal pro Monat durch strukturierten On-Call, Runbooks und automatisiertes Alerting.",
