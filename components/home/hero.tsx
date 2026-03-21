@@ -53,7 +53,7 @@ export function Hero(): React.ReactElement {
                 href="/about"
                 className="btn-brutal btn-brutal-primary inline-flex items-center gap-2 text-sm"
               >
-                {t("aboutMe")}
+                {t("viewMyWork")}
                 <svg
                   className="w-4 h-4"
                   fill="none"

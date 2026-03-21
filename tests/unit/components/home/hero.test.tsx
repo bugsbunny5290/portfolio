@@ -38,9 +38,9 @@ describe("Hero component", () => {
     expect(screen.getByText("Staff Engineer · Platform & Backend")).toBeInTheDocument();
   });
 
-  it("renders the aboutMe call-to-action link", () => {
+  it("renders the viewMyWork call-to-action link", () => {
     render(<Hero />);
-    expect(screen.getByText("aboutMe")).toBeInTheDocument();
+    expect(screen.getByText("viewMyWork")).toBeInTheDocument();
   });
 
   it("renders GitHub link", () => {
