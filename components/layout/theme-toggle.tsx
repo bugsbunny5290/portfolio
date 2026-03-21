@@ -20,7 +20,7 @@ export function ThemeToggle(): React.ReactElement {
     if (!prefersReducedMotion) {
       setTimeout(() => {
         document.documentElement.classList.remove("transitioning");
-      }, 300);
+      }, 200);
     }
   }
 

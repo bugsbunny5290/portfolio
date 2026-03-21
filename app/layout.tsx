@@ -3,6 +3,7 @@ import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { getLocale, getMessages } from "next-intl/server";
 import { AnalyticsWrapper } from "@/components/analytics-wrapper";
 import "./globals.css";
+import { ColorThemePicker } from "@/components/color-theme-picker";
 import { CommandPalette } from "@/components/command-palette";
 import { DevtoolsEasterEggs } from "@/components/devtools-easter-eggs";
 import { Footer, Header } from "@/components/layout";
@@ -66,8 +67,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     alternates: {
       languages: {
-        en: "/",
-        de: "/",
+        en: "https://pranavgautam.me",
+        de: "https://pranavgautam.me",
       },
     },
   };
@@ -103,6 +104,7 @@ export default async function RootLayout({
           <AnalyticsWrapper />
           <ScrollAnimations />
           <CommandPalette />
+          <ColorThemePicker />
           <DevtoolsEasterEggs />
         </Providers>
       </body>
