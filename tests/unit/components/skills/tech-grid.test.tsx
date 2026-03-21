@@ -62,10 +62,10 @@ describe("TechGrid component", () => {
     expect(screen.getByText("Next.js")).toBeInTheDocument();
   });
 
-  it("renders skills as badges with proper styling", () => {
+  it("renders skills as badges with tag-brutal styling", () => {
     render(<TechGrid />);
     const gcpBadge = screen.getByText("GCP");
-    expect(gcpBadge).toHaveClass("rounded-full", "bg-secondary");
+    expect(gcpBadge).toHaveClass("tag-brutal");
   });
 
   it("renders all five skill categories", () => {

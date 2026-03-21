@@ -8,21 +8,19 @@ export function LanguageToggle(): React.ReactElement {
 
   return (
     <div
-      className={cn(
-        "flex items-center gap-1 rounded-md border border-border bg-background p-1",
-        isPending && "opacity-50",
-      )}
+      className={cn("flex items-center gap-0", isPending && "opacity-50")}
+      style={{ border: "2px solid var(--border-strong)" }}
     >
       <button
         type="button"
         onClick={() => setLocale("en")}
         disabled={isPending}
-        className={cn(
-          "px-3 py-2 text-sm font-medium rounded transition-colors",
-          locale === "en"
-            ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground hover:text-foreground",
-        )}
+        className="px-2.5 py-1.5 text-xs font-bold transition-colors"
+        style={{
+          background: locale === "en" ? "var(--color-purple)" : "var(--bg-card)",
+          color: locale === "en" ? "white" : "var(--fg-muted)",
+          borderRight: "1px solid var(--border-strong)",
+        }}
         aria-label="Switch to English"
       >
         EN
@@ -31,12 +29,11 @@ export function LanguageToggle(): React.ReactElement {
         type="button"
         onClick={() => setLocale("de")}
         disabled={isPending}
-        className={cn(
-          "px-3 py-2 text-sm font-medium rounded transition-colors",
-          locale === "de"
-            ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground hover:text-foreground",
-        )}
+        className="px-2.5 py-1.5 text-xs font-bold transition-colors"
+        style={{
+          background: locale === "de" ? "var(--color-purple)" : "var(--bg-card)",
+          color: locale === "de" ? "white" : "var(--fg-muted)",
+        }}
         aria-label="Auf Deutsch wechseln"
       >
         DE

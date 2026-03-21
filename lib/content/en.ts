@@ -34,6 +34,11 @@ export const whatIDo = [
       "Building cloud infrastructure, CI/CD pipelines, and developer platforms that enable teams to ship faster and more reliably.",
   },
   {
+    title: "AI-Assisted Development",
+    description:
+      "Leveraging AI tools for rapid concept-to-solution prototyping. Accelerating development cycles while maintaining code quality and architectural integrity.",
+  },
+  {
     title: "Hands-On Execution",
     description:
       "Staying close to the code — architecting systems, writing critical path code, and unblocking teams on tough technical challenges.",
@@ -49,7 +54,8 @@ export const experiences = [
     endDate: "Present",
     contextNote:
       "Digital health platform for sick leave certificates. Previously CTO (team of 15); transitioned to Staff Engineer as the organisation scaled to 40 engineers.",
-    description: "Platform engineering and cloud architecture for digital healthcare platform.",
+    description:
+      "Platform engineering and cloud architecture for a telemedicine platform connecting patients with licensed physicians for online consultations, prescriptions, and digital healthcare services — serving 3M+ patients across Germany. Previously served as CTO, transitioned to hands-on engineering as the company scaled.",
     highlights: [
       "Own end-to-end cloud architecture on GCP — 10+ microservices processing 100K+ requests/day with a P90 SLA commitment.",
       "Reduced production incidents from several per day to approximately twice per month through structured on-call, runbooks, and automated alerting.",

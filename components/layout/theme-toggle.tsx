@@ -2,7 +2,6 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 
 export function ThemeToggle(): React.ReactElement {
   const { setTheme, resolvedTheme } = useTheme();
@@ -25,14 +24,21 @@ export function ThemeToggle(): React.ReactElement {
     }
   }
 
+  const buttonStyle = {
+    border: "2px solid var(--border-strong)",
+    background: "var(--bg-card)",
+    color: "var(--fg-muted)",
+  };
+
   if (!mounted) {
     return (
       <button
         type="button"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-border bg-background text-sm font-medium text-foreground"
+        className="inline-flex items-center justify-center w-10 h-10 shadow-brutal-sm"
+        style={buttonStyle}
         aria-label="Toggle theme"
       >
-        <span className="h-4 w-4" />
+        <span className="w-4 h-4" />
       </button>
     );
   }
@@ -41,11 +47,16 @@ export function ThemeToggle(): React.ReactElement {
     <button
       type="button"
       onClick={toggleTheme}
-      className={cn(
-        "inline-flex h-11 w-11 items-center justify-center rounded-md border border-border",
-        "bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
-        "transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
-      )}
+      className="inline-flex items-center justify-center w-10 h-10 shadow-brutal-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      style={buttonStyle}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "var(--color-purple)";
+        e.currentTarget.style.color = "var(--color-purple)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "var(--border-strong)";
+        e.currentTarget.style.color = "var(--fg-muted)";
+      }}
       aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
     >
       {resolvedTheme === "dark" ? (

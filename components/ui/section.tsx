@@ -9,10 +9,7 @@ interface SectionProps {
 
 export function Section({ children, className, id }: SectionProps): React.ReactElement {
   return (
-    <section
-      id={id}
-      className={cn("mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-24 lg:px-8", className)}
-    >
+    <section id={id} className={cn("mx-auto max-w-6xl px-6 md:px-24 py-12 sm:py-24", className)}>
       {children}
     </section>
   );
@@ -30,10 +27,17 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps): React.ReactElement {
   return (
-    <div className={cn("mb-8 sm:mb-12", className)}>
-      <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">{title}</h2>
+    <div className={cn("mb-10 animate-on-scroll", className)}>
+      <h2
+        className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2"
+        style={{ color: "var(--fg-heading)" }}
+      >
+        {title}
+      </h2>
       {description && (
-        <p className="mt-2 text-base text-muted-foreground sm:mt-4 sm:text-lg">{description}</p>
+        <p className="text-lg" style={{ color: "var(--fg-muted)" }}>
+          {description}
+        </p>
       )}
     </div>
   );

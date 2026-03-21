@@ -53,9 +53,10 @@ describe("LanguageToggle component", () => {
     expect(mockSetLocale).toHaveBeenCalledWith("en");
   });
 
-  it("highlights active locale", () => {
+  it("highlights active locale with inline style", () => {
     render(<LanguageToggle />);
     const enButton = screen.getByText("EN");
-    expect(enButton).toHaveClass("bg-primary");
+    expect(enButton).toHaveStyle({ background: "var(--color-purple)" });
+    expect(enButton).toHaveStyle({ color: "rgb(255, 255, 255)" });
   });
 });

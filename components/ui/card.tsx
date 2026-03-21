@@ -4,16 +4,12 @@ import { cn } from "@/lib/utils";
 interface CardProps {
   children: ReactNode;
   className?: string;
+  variant?: "brutal" | "dashed";
 }
 
-export function Card({ children, className }: CardProps): React.ReactElement {
+export function Card({ children, className, variant = "brutal" }: CardProps): React.ReactElement {
   return (
-    <div
-      className={cn(
-        "rounded-lg border border-border bg-card p-6 text-card-foreground shadow-sm",
-        className,
-      )}
-    >
+    <div className={cn(variant === "brutal" ? "card-brutal" : "card-dashed", "p-6", className)}>
       {children}
     </div>
   );
@@ -34,7 +30,11 @@ interface CardTitleProps {
 }
 
 export function CardTitle({ children, className }: CardTitleProps): React.ReactElement {
-  return <h3 className={cn("text-lg font-semibold text-foreground", className)}>{children}</h3>;
+  return (
+    <h3 className={cn("text-base font-bold", className)} style={{ color: "var(--fg-heading)" }}>
+      {children}
+    </h3>
+  );
 }
 
 interface CardDescriptionProps {
@@ -43,7 +43,11 @@ interface CardDescriptionProps {
 }
 
 export function CardDescription({ children, className }: CardDescriptionProps): React.ReactElement {
-  return <p className={cn("text-sm text-muted-foreground", className)}>{children}</p>;
+  return (
+    <p className={cn("text-sm", className)} style={{ color: "var(--fg-muted)" }}>
+      {children}
+    </p>
+  );
 }
 
 interface CardContentProps {
