@@ -5,7 +5,6 @@ export const personalInfo = {
   tagline:
     "Staff Engineer with 8+ years building cloud-native systems at scale. Previously CTO at DrAnsay AU-Schein GmbH — scaled the platform from zero to 2M+ users and ~€200K to €20M ARR. Now focused on platform engineering, distributed systems, and API architecture as an individual contributor.",
   location: "Heidelberg, Germany",
-  workAuth: "Work-authorised (EU Blue Card)",
   email: "pranav.gautam.pro@gmail.com",
   website: "https://pranavgautam.me",
   github: "https://github.com/bugsbunny5290",
