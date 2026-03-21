@@ -35,7 +35,11 @@ export function Header(): React.ReactElement {
         style={{ borderBottom: "2px solid var(--border-medium)", background: "var(--bg)" }}
       >
         <nav className="mx-auto max-w-6xl px-6 md:px-24 py-3 flex items-center justify-between">
-          <Link href="/" aria-label="Home" className="logo-press flex items-center gap-2.5">
+          <Link
+            href="/"
+            aria-label="Pranav Gautam — Home"
+            className="logo-press flex items-center gap-2.5"
+          >
             <svg
               width="28"
               height="28"

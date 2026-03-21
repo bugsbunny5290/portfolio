@@ -6,7 +6,7 @@
   --color-stone-100: #f5f5f4;
   --color-stone-200: #e7e5e4;
   --color-stone-300: #d6d3d1;
-  --color-stone-400: #a8a29e;
+  --color-stone-400: #8a857f;
   --color-stone-500: #78716c;
   --color-stone-600: #57534e;
   --color-stone-700: #44403c;
@@ -16,6 +16,7 @@
   --color-purple: #4f46e5;
   --color-purple-dark: #4338ca;
   --color-purple-light: #818cf8;
+  --gradient: linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #7c3aed 100%);
   --radius: 5px;
 
   /* Semantic tokens — light mode */
@@ -42,10 +43,10 @@
   --scrollbar-thumb-hover: var(--color-stone-400);
 
   /* Feature card icon area colors */
-  --feature-bg-0: #eef2ff;
-  --feature-bg-1: #ecfeff;
-  --feature-bg-2: #f5f3ff;
-  --feature-bg-3: #fff7ed;
+  --feature-bg-0: var(--color-strategy-bg, #eef2ff);
+  --feature-bg-1: var(--color-platform-bg, #ecfeff);
+  --feature-bg-2: var(--color-ai-bg, #f5f3ff);
+  --feature-bg-3: var(--color-code-bg, #fff7ed);
   --feature-icon-color: #1c1917;
 
   /* Legacy semantic tokens for existing components */
@@ -66,10 +67,10 @@
 }
 
 .dark {
-  --feature-bg-0: rgba(67, 56, 202, 0.2);
-  --feature-bg-1: rgba(14, 116, 144, 0.2);
-  --feature-bg-2: rgba(109, 40, 217, 0.2);
-  --feature-bg-3: rgba(194, 65, 12, 0.2);
+  --feature-bg-0: var(--color-strategy-bg, rgba(67, 56, 202, 0.2));
+  --feature-bg-1: var(--color-platform-bg, rgba(14, 116, 144, 0.2));
+  --feature-bg-2: var(--color-ai-bg, rgba(109, 40, 217, 0.2));
+  --feature-bg-3: var(--color-code-bg, rgba(194, 65, 12, 0.2));
   --feature-icon-color: #f0f0f0;
 
   --color-cream: #262040;
@@ -87,10 +88,10 @@
   --bg: #262040;
   --bg-card: #1c1832;
   --bg-card-hover: #231f3a;
-  --fg: #d4d4d4;
-  --fg-heading: #f0f0f0;
-  --fg-muted: #999999;
-  --fg-subtle: #666666;
+  --fg: #e4e4e7;
+  --fg-heading: #f4f4f5;
+  --fg-muted: #b0b0b8;
+  --fg-subtle: #808088;
   --border-strong: #888888;
   --border-medium: #444444;
   --border-light: #333333;
@@ -99,7 +100,7 @@
   --selection-bg: #312e81;
   --selection-fg: #c7d2fe;
   --tag-bg: #231f3a;
-  --tag-fg: #b3b3b3;
+  --tag-fg: #c4c4cc;
   --tag-border: #444444;
   --scrollbar-bg: #262040;
   --scrollbar-border: #3d3757;
@@ -139,6 +140,269 @@
   --color-ring: hsl(var(--ring));
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ─── COLOR THEMES ─── */
+
+/* Rainbow (default) — already defined in :root, just add feature card colors */
+.theme-rainbow {
+  --color-strategy: #4f46e5;
+  --color-platform: #0891b2;
+  --color-ai: #7c3aed;
+  --color-code: #ea580c;
+  --color-strategy-bg: #eef2ff;
+  --color-platform-bg: #ecfeff;
+  --color-ai-bg: #f5f3ff;
+  --color-code-bg: #fff7ed;
+}
+
+.theme-ocean {
+  --color-purple: #0891b2;
+  --color-purple-dark: #0e7490;
+  --color-purple-light: #22d3ee;
+  --gradient: linear-gradient(135deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
+  --color-strategy: #0e7490;
+  --color-platform: #0369a1;
+  --color-ai: #4338ca;
+  --color-code: #059669;
+  --color-strategy-bg: #ecfeff;
+  --color-platform-bg: #f0f9ff;
+  --color-ai-bg: #eef2ff;
+  --color-code-bg: #ecfdf5;
+}
+
+.theme-sunset {
+  --color-purple: #ea580c;
+  --color-purple-dark: #c2410c;
+  --color-purple-light: #fb923c;
+  --gradient: linear-gradient(135deg, #f97316 0%, #ea580c 40%, #e11d48 100%);
+  --color-strategy: #ea580c;
+  --color-platform: #e11d48;
+  --color-ai: #d97706;
+  --color-code: #be123c;
+  --color-strategy-bg: #fff7ed;
+  --color-platform-bg: #fff1f2;
+  --color-ai-bg: #fffbeb;
+  --color-code-bg: #fdf2f8;
+}
+
+.theme-forest {
+  --color-purple: #059669;
+  --color-purple-dark: #047857;
+  --color-purple-light: #34d399;
+  --gradient: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  --color-strategy: #059669;
+  --color-platform: #0891b2;
+  --color-ai: #4f46e5;
+  --color-code: #d97706;
+  --color-strategy-bg: #ecfdf5;
+  --color-platform-bg: #ecfeff;
+  --color-ai-bg: #eef2ff;
+  --color-code-bg: #fffbeb;
+}
+
+.theme-neon {
+  --color-purple: #e11d48;
+  --color-purple-dark: #be123c;
+  --color-purple-light: #fb7185;
+  --gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 40%, #7c3aed 100%);
+  --color-strategy: #e11d48;
+  --color-platform: #7c3aed;
+  --color-ai: #0891b2;
+  --color-code: #ea580c;
+  --color-strategy-bg: #fff1f2;
+  --color-platform-bg: #f5f3ff;
+  --color-ai-bg: #ecfeff;
+  --color-code-bg: #fff7ed;
+}
+
+/* Dark mode per-theme overrides */
+/* Rainbow dark — purple-navy (default) */
+.dark.theme-rainbow {
+  --color-cream: #262040;
+  --color-stone-50: #1c1832;
+  --color-stone-100: #231f3a;
+  --color-stone-200: #2e2a48;
+  --color-stone-300: #3d3757;
+  --bg: #262040;
+  --bg-card: #1c1832;
+  --bg-card-hover: #231f3a;
+  --dot-color: #3d3757;
+  --tag-bg: #231f3a;
+  --selection-bg: #312e81;
+  --border-strong: #5a5480;
+  --border-medium: #3d3757;
+  --color-strategy: #818cf8;
+  --color-platform: #22d3ee;
+  --color-ai: #a78bfa;
+  --color-code: #fb923c;
+  --color-strategy-bg: rgba(79,70,229,0.12);
+  --color-platform-bg: rgba(8,145,178,0.12);
+  --color-ai-bg: rgba(124,58,237,0.12);
+  --color-code-bg: rgba(234,88,12,0.12);
+}
+
+/* Ocean dark — deep teal-navy */
+.dark.theme-ocean {
+  --color-cream: #0f2830;
+  --color-stone-50: #0c2028;
+  --color-stone-100: #112a32;
+  --color-stone-200: #1a3540;
+  --color-stone-300: #264550;
+  --bg: #0f2830;
+  --bg-card: #0c2028;
+  --bg-card-hover: #112a32;
+  --dot-color: #264550;
+  --tag-bg: #112a32;
+  --selection-bg: #164e63;
+  --border-strong: #3d6878;
+  --border-medium: #264550;
+  --color-purple: #22d3ee;
+  --color-purple-dark: #0891b2;
+  --color-purple-light: #67e8f9;
+  --color-strategy: #22d3ee;
+  --color-platform: #38bdf8;
+  --color-ai: #a5b4fc;
+  --color-code: #34d399;
+  --color-strategy-bg: rgba(8,145,178,0.12);
+  --color-platform-bg: rgba(3,105,161,0.12);
+  --color-ai-bg: rgba(67,56,202,0.12);
+  --color-code-bg: rgba(5,150,105,0.12);
+}
+
+/* Sunset dark — deep warm brown */
+.dark.theme-sunset {
+  --color-cream: #2a1a0e;
+  --color-stone-50: #22150b;
+  --color-stone-100: #2e1c10;
+  --color-stone-200: #3a2518;
+  --color-stone-300: #4d3322;
+  --bg: #2a1a0e;
+  --bg-card: #22150b;
+  --bg-card-hover: #2e1c10;
+  --dot-color: #4d3322;
+  --tag-bg: #2e1c10;
+  --selection-bg: #7c2d12;
+  --border-strong: #7a5040;
+  --border-medium: #4d3322;
+  --color-purple: #fb923c;
+  --color-purple-dark: #ea580c;
+  --color-purple-light: #fdba74;
+  --color-strategy: #fb923c;
+  --color-platform: #fb7185;
+  --color-ai: #fbbf24;
+  --color-code: #f472b6;
+  --color-strategy-bg: rgba(234,88,12,0.12);
+  --color-platform-bg: rgba(225,29,72,0.12);
+  --color-ai-bg: rgba(217,119,6,0.12);
+  --color-code-bg: rgba(190,18,60,0.12);
+}
+
+/* Forest dark — deep forest green */
+.dark.theme-forest {
+  --color-cream: #0f1f1a;
+  --color-stone-50: #162b24;
+  --color-stone-100: #1e3830;
+  --color-stone-200: #28453b;
+  --color-stone-300: #356050;
+  --bg: #0f1f1a;
+  --bg-card: #162b24;
+  --bg-card-hover: #1e3830;
+  --dot-color: #28453b;
+  --tag-bg: #1e3830;
+  --selection-bg: #065f46;
+  --border-strong: #5a9a85;
+  --border-medium: #356050;
+  --fg: #e8efe9;
+  --fg-heading: #f5faf6;
+  --fg-muted: #b5c8bc;
+  --fg-subtle: #88a898;
+  --color-purple: #34d399;
+  --color-purple-dark: #059669;
+  --color-purple-light: #6ee7b7;
+  --color-strategy: #34d399;
+  --color-platform: #22d3ee;
+  --color-ai: #818cf8;
+  --color-code: #fbbf24;
+  --color-strategy-bg: rgba(5,150,105,0.12);
+  --color-platform-bg: rgba(8,145,178,0.12);
+  --color-ai-bg: rgba(79,70,229,0.12);
+  --color-code-bg: rgba(217,119,6,0.12);
+}
+
+/* Neon dark — deep rose-purple */
+.dark.theme-neon {
+  --color-cream: #2c1520;
+  --color-stone-50: #24101a;
+  --color-stone-100: #301824;
+  --color-stone-200: #3e2030;
+  --color-stone-300: #50293e;
+  --bg: #2c1520;
+  --bg-card: #24101a;
+  --bg-card-hover: #301824;
+  --dot-color: #50293e;
+  --tag-bg: #301824;
+  --selection-bg: #881337;
+  --border-strong: #7a4060;
+  --border-medium: #50293e;
+  --color-purple: #fb7185;
+  --color-purple-dark: #e11d48;
+  --color-purple-light: #fda4af;
+  --color-strategy: #fb7185;
+  --color-platform: #a78bfa;
+  --color-ai: #22d3ee;
+  --color-code: #fb923c;
+  --color-strategy-bg: rgba(225,29,72,0.12);
+  --color-platform-bg: rgba(124,58,237,0.12);
+  --color-ai-bg: rgba(8,145,178,0.12);
+  --color-code-bg: rgba(234,88,12,0.12);
+}
+
+/* Color theme picker button */
+.color-theme-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--fg);
+  box-shadow: 2px 2px 0px 0px var(--shadow-color);
+  cursor: pointer;
+  z-index: 101;
+}
+
+.color-theme-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Color theme picker popup */
+.color-theme-picker {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  width: 260px;
+  z-index: 100;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: 4px 4px 0px 0px var(--shadow-color);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .color-theme-picker {
+    right: 0.75rem;
+    bottom: 4.5rem;
+    width: calc(100vw - 1.5rem);
+    max-width: 300px;
+  }
 }
 
 /* Base styles */
@@ -337,9 +601,9 @@ h1, h2, h3, h4, h5, h6 {
 .date-badge {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-purple);
+  color: white;
   padding: 0.125rem 0.625rem;
-  background: var(--color-purple-light);
+  background: var(--color-purple-dark);
   border: 2px solid var(--border-strong);
   border-radius: var(--radius);
   white-space: nowrap;
@@ -437,7 +701,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #4f46e5, #7c3aed);
+  background: var(--gradient, linear-gradient(90deg, #3b82f6, #4f46e5, #7c3aed));
   z-index: 100;
   transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
@@ -482,7 +746,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Name gradient text */
 .text-gradient {
-  background: linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #7c3aed 100%);
+  background: var(--gradient, linear-gradient(135deg, #3b82f6 0%, #4f46e5 50%, #7c3aed 100%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -530,9 +794,10 @@ h1, h2, h3, h4, h5, h6 {
   html.transitioning *::before,
   html.transitioning *::after {
     transition:
-      background-color 0.3s ease,
-      color 0.3s ease,
-      border-color 0.3s ease !important;
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease !important;
   }
 }
 
