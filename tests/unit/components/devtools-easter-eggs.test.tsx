@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render } from "@testing-library/react";
 import { DevtoolsEasterEggs } from "@/components/devtools-easter-eggs";
 
@@ -134,5 +134,88 @@ describe("DevtoolsEasterEggs component", () => {
     });
 
     vi.unstubAllGlobals();
+  });
+
+  describe("rate limiting", () => {
+    beforeEach(() => {
+      vi.useFakeTimers();
+    });
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it("pranav.skills only fires once within cooldown window", () => {
+      render(<DevtoolsEasterEggs />);
+      const desc = Object.getOwnPropertyDescriptor(window.pranav, "skills");
+
+      desc?.get?.call(window.pranav);
+      desc?.get?.call(window.pranav);
+      desc?.get?.call(window.pranav);
+
+      expect(console.table).toHaveBeenCalledTimes(1);
+    });
+
+    it("pranav.hire only fires once within cooldown window", () => {
+      render(<DevtoolsEasterEggs />);
+      const desc = Object.getOwnPropertyDescriptor(window.pranav, "hire");
+
+      desc?.get?.call(window.pranav);
+      desc?.get?.call(window.pranav);
+      desc?.get?.call(window.pranav);
+
+      const redirectCalls = (console.log as ReturnType<typeof vi.fn>).mock.calls.filter(
+        (c: unknown[]) => typeof c[0] === "string" && c[0].includes("Redirecting"),
+      );
+      expect(redirectCalls).toHaveLength(1);
+    });
+
+    it("getter works again after cooldown expires", () => {
+      render(<DevtoolsEasterEggs />);
+      const desc = Object.getOwnPropertyDescriptor(window.pranav, "skills");
+
+      desc?.get?.call(window.pranav);
+      expect(console.table).toHaveBeenCalledTimes(1);
+
+      vi.advanceTimersByTime(3001);
+
+      desc?.get?.call(window.pranav);
+      expect(console.table).toHaveBeenCalledTimes(2);
+    });
+
+    it("pranav.joke blocks concurrent fetches via in-flight guard", () => {
+      const mockFetch = vi.fn().mockReturnValue(new Promise(() => {}));
+      vi.stubGlobal("fetch", mockFetch);
+
+      render(<DevtoolsEasterEggs />);
+      const desc = Object.getOwnPropertyDescriptor(window.pranav, "joke");
+
+      desc?.get?.call(window.pranav);
+
+      // Advance past cooldown so only the in-flight guard blocks
+      vi.advanceTimersByTime(3001);
+
+      desc?.get?.call(window.pranav);
+
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+
+      vi.unstubAllGlobals();
+    });
+
+    it("while(true) loop simulation only triggers one fetch", () => {
+      const mockFetch = vi.fn().mockReturnValue(new Promise(() => {}));
+      vi.stubGlobal("fetch", mockFetch);
+
+      render(<DevtoolsEasterEggs />);
+      const desc = Object.getOwnPropertyDescriptor(window.pranav, "joke");
+
+      for (let i = 0; i < 1000; i++) {
+        desc?.get?.call(window.pranav);
+      }
+
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+
+      vi.unstubAllGlobals();
+    });
   });
 });
