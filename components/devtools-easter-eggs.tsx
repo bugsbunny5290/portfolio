@@ -13,16 +13,7 @@ declare global {
   }
 }
 
-function makeGetter(fn: () => void): PropertyDescriptor {
-  return {
-    get() {
-      fn();
-      return undefined;
-    },
-    configurable: true,
-    enumerable: true,
-  };
-}
+const COOLDOWN_MS = 3000;
 
 // Shuffle bag — exhausts all quips before repeating any, and never repeats across refills
 let quipBag: string[] = [];
@@ -92,17 +83,48 @@ export function DevtoolsEasterEggs(): React.ReactElement {
       "color: #78716c; font-size: 12px; line-height: 1.6;",
     );
 
+    // Rate-limit state — scoped to this mount so tests get fresh state per render
+    const cooldowns: Record<string, number> = {};
+    const inFlight: Record<string, boolean> = {};
+
+    function guardedGetter(
+      name: string,
+      fn: () => void | Promise<void>,
+    ): PropertyDescriptor {
+      return {
+        get() {
+          const now = Date.now();
+          if (now - (cooldowns[name] ?? 0) < COOLDOWN_MS) return undefined;
+          if (inFlight[name]) return undefined;
+
+          cooldowns[name] = now;
+
+          const result = fn();
+          if (result instanceof Promise) {
+            inFlight[name] = true;
+            result.finally(() => {
+              inFlight[name] = false;
+            });
+          }
+
+          return undefined;
+        },
+        configurable: true,
+        enumerable: true,
+      };
+    }
+
     // Use getters so typing `pranav.joke` (without parens) still executes
     const obj = {};
     Object.defineProperties(obj, {
-      hire: makeGetter(() => {
+      hire: guardedGetter("hire", () => {
         console.log(
           "%c\uD83D\uDCE7 Redirecting to contact page...",
           "color: #22c55e; font-size: 14px;",
         );
         window.location.href = "/contact";
       }),
-      skills: makeGetter(() => {
+      skills: guardedGetter("skills", () => {
         console.log(
           "%c\uD83D\uDEE0 Tech Stack:",
           "color: #4f46e5; font-size: 14px; font-weight: bold;",
@@ -114,8 +136,8 @@ export function DevtoolsEasterEggs(): React.ReactElement {
           { category: "DevOps", skills: "Pulumi, GitOps, ArgoCD, Docker" },
         ]);
       }),
-      joke: makeGetter(() => {
-        fetchJoke();
+      joke: guardedGetter("joke", () => {
+        return fetchJoke();
       }),
     });
     window.pranav = obj as Window["pranav"];
