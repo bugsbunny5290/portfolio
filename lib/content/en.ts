@@ -15,7 +15,7 @@ export const personalInfo = {
 
 export const professionalSummary = `I'm a Staff Engineer based in Heidelberg, Germany, with 8+ years of experience designing and scaling cloud-native systems — primarily in healthcare tech and B2C platforms.
 
-My background spans the full arc from researcher to founder to individual contributor. I spent time at DFKI and the Hasso Plattner Institute early in my career, then co-founded and served as CTO at DrAnsay AU-Schein GmbH, where I grew the engineering organisation from 3 to 15 people and the platform to 2M+ users. I deliberately stepped back from management to go deeper on architecture, platform engineering, and systems design — which is where I do my best work.
+My background spans the full arc from researcher to technical leader to individual contributor. I spent time at DFKI and at a health-tech initiative supported by the Hasso Plattner Institute early in my career, then joined DrAnsay AU-Schein GmbH as CTO, where I grew the engineering organisation from 3 to 15 people and the platform to 2M+ users. I deliberately stepped back from management to go deeper on architecture, platform engineering, and systems design — which is where I do my best work.
 
 I'm currently based in Heidelberg, working remotely for a Hamburg-based company.
 
@@ -78,7 +78,7 @@ export const experiences = [
     ],
   },
   {
-    company: "Data4Life · Hasso Plattner Institute",
+    company: "Data4Life (supported by Hasso Plattner Institute)",
     role: "Resident Entrepreneur",
     location: "Potsdam, Germany",
     startDate: "Nov 2018",
